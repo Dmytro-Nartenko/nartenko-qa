@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google-site-verification" content="7C3EFuLxFGKMMxpXnV8WymMvuYQ6ezsJT_MShJPUJbQ">
-<meta name="x-build" content="20260905-022308">
+<meta name="x-build" content="20260905-022731">
 <meta name="description" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор. Послуги, ціни, оплата карткою/PayPal, контакти. ФОП, офіційно з рахунком.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://nartenkoqa.com/">
@@ -787,8 +787,14 @@
       btn.textContent = (lang === 'en') ? 'UA' : 'EN';
       try { localStorage.setItem('nq_lang', lang); } catch(e){}
     }
-    let init = 'uk';
-    try { init = localStorage.getItem('nq_lang') || 'uk'; } catch(e){}
+    let init = null;
+    try { init = localStorage.getItem('nq_lang'); } catch(e){}
+    if (init !== 'en' && init !== 'uk') {
+      // немає збереженого вибору → визначаємо за мовою браузера: українці → UA, решта світу → EN
+      var nav = '';
+      try { nav = ((navigator.languages && navigator.languages.join(',')) || navigator.language || ''); } catch(e){}
+      init = /\buk\b/i.test(nav) ? 'uk' : 'en';
+    }
     apply(init === 'en' ? 'en' : 'uk');
     btn.addEventListener('click', () => apply(document.body.dataset.lang === 'en' ? 'uk' : 'en'));
   })();
