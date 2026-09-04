@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="x-build" content="20260905-002610">
+<meta name="x-build" content="20260905-003403">
 <meta name="description" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор. Послуги, ціни, оплата карткою/PayPal, контакти. ФОП, офіційно з рахунком.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://nartenkoqa.com/">
@@ -13,7 +13,6 @@
 <meta property="og:description" content="Розробка, тестування та автоматизація для ігор і софту.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nartenko.QA","description":"Розробка, тестування та автоматизація програмного забезпечення й ігор, цифрові товари, хостинг.","url":"https://nartenkoqa.com/","email":"dimanartenko00@gmail.com","telephone":"+380770770203","areaServed":"Worldwide","founder":{"@type":"Person","name":"Dmytro Nartenko"},"address":{"@type":"PostalAddress","addressLocality":"Romny","addressCountry":"UA"},"sameAs":["https://t.me/DamnGiveMeMoney"],"knowsAbout":["Software development","Game QA","Test automation","Digital goods","Hosting"]}</script>
-<script defer src="https://js.puter.com/v2/"></script>
 <title>Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
@@ -1181,34 +1180,23 @@
       var topic = forcedTopic || match(userText);
       if(topic){ respond(topic); } else { aiRespond(userText); }
     }
+    var WORKER_URL = "";  /* <-- встав сюди URL Cloudflare Worker, щоб увімкнути справжній АІ */
     function aiRespond(userText){
       if(pendingTimer){ clearTimeout(pendingTimer); pendingTimer = null; }
       if(curTyping && curTyping.parentNode){ curTyping.parentNode.removeChild(curTyping); }
       var tp = typingEl(); curTyping = tp;
       var L = T[lang()];
-      var langName = (lang() === 'en') ? 'English' : 'Ukrainian';
-      var sys = "You are the friendly consultant for Nartenko.QA — a Ukrainian sole proprietor (FOP) IT studio: software development, game QA/testing, automation, digital goods and hosting. Reply concisely (2-5 sentences) in " + langName + ". If it is about services, pricing or an order, help briefly and invite the user to write on Telegram @DamnGiveMeMoney. For legal, tax, medical or official topics (e.g. mobilization or deferral law) give only a short general note and advise checking official sources or a specialist — never present it as professional or legal advice.";
       function done(txt){
         if(tp && tp.parentNode) tp.parentNode.removeChild(tp);
         if(curTyping === tp) curTyping = null;
         bubble((txt && String(txt).trim()) ? String(txt).trim() : L.fallback, 'bot');
       }
-      try{
-        if(window.puter && puter.ai && puter.ai.chat){
-          puter.ai.chat(sys + "\n\nUser: " + userText).then(function(res){
-            var t = '';
-            if(res == null) t = '';
-            else if(typeof res === 'string') t = res;
-            else if(res.message && res.message.content){
-              t = (typeof res.message.content === 'string') ? res.message.content
-                : (Array.isArray(res.message.content) ? res.message.content.map(function(c){return (c&&c.text)||'';}).join('') : String(res.message.content));
-            }
-            else if(res.text) t = res.text;
-            else t = String(res);
-            done(t);
-          }).catch(function(){ done(L.fallback); });
-        } else { done(L.fallback); }
-      }catch(e){ done(L.fallback); }
+      if(!WORKER_URL){ done(L.fallback); return; }
+      fetch(WORKER_URL, { method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ q:userText, lang:lang() }) })
+        .then(function(r){ return r.json(); })
+        .then(function(d){ done(d && d.reply); })
+        .catch(function(){ done(L.fallback); });
     }
     function renderGreeting(){
       log.innerHTML = '';
