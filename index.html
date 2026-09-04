@@ -379,13 +379,16 @@
           <span class="live"><b></b> LIVE</span>
         </div>
         <div class="body">
-          <div class="cmd"><span class="p">$</span> npm run qa --scope=game</div>
-          <div class="dim">running 128 checks…</div>
-          <div class="ok">✓ scenario: level_load ........ passed</div>
-          <div class="ok">✓ mechanics: hit_detection .... passed</div>
-          <div class="ok">✓ economy: reward_payout ...... passed</div>
-          <div class="ok">✓ network: sync_state ......... passed</div>
-          <div class="sum"><span class="ok">✓ 128 passed</span> <span class="dim">· 0 failed · 2.3s</span></div>
+          <div class="cmd"><span class="p">$</span> npm run qa --scope=game --coverage</div>
+          <div class="dim">→ loading 128 checks · 6 suites…</div>
+          <div class="ok">✓ scenario · level_load ....... <span class="dim">pass 21ms</span></div>
+          <div class="ok">✓ mechanics · hit_detection ... <span class="dim">pass 34ms</span></div>
+          <div class="ok">✓ economy · reward_payout ..... <span class="dim">pass 18ms</span></div>
+          <div class="ok">✓ network · sync_state ........ <span class="dim">pass 42ms</span></div>
+          <div class="ok">✓ anticheat · integrity ....... <span class="dim">pass 27ms</span></div>
+          <div class="dim">────────────────────────────</div>
+          <div class="sum"><span class="ok">✓ 128 passed</span> <span class="dim">· 0 failed ·</span> <span class="p">cov 97%</span> <span class="dim">· 2.3s</span></div>
+          <div class="cmd"><span class="p">$</span> git push origin main <span class="ok">✓ deployed</span></div>
           <div class="cmd"><span class="p">$</span><span class="cursor"></span></div>
         </div>
       </div>
