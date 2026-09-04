@@ -1059,7 +1059,8 @@
           international:"Так, працюю з клієнтами по всьому світу. Спілкування українською чи англійською, оплата через PayPal (USD/EUR) або міжнародним переказом.",
           contact:"Найшвидше — Telegram @DamnGiveMeMoney або email dimanartenko00@gmail.com. Опишіть задачу — відповім щодо строків і вартості та виставлю рахунок.",
           greet:"Вітаю! 👋 Я консультант Nartenko.QA. Можу розповісти про послуги, ціни, оплату, строки чи гарантії — оберіть тему нижче або напишіть питання. А найшвидше — Telegram @DamnGiveMeMoney.",
-          thanks:"Будь ласка! 🙌 Звертайтесь будь-коли — Telegram @DamnGiveMeMoney або email dimanartenko00@gmail.com."
+          thanks:"Будь ласка! 🙌 Звертайтесь будь-коли — Telegram @DamnGiveMeMoney або email dimanartenko00@gmail.com.",
+          goods:"Так, працюємо з цифровими та ігровими товарами — ключі, доступи, віртуальні предмети й ресурси. Ціна залежить від позиції та обсягу, тому напишіть у Telegram @DamnGiveMeMoney — підберемо й назвемо точну ціну."
         },
         fallback:"Не впевнений, що правильно зрозумів. Найкраще напишіть у Telegram @DamnGiveMeMoney або на email dimanartenko00@gmail.com — відповім особисто. Також можу розповісти про послуги, ціни, оплату, строки чи гарантії."
       },
@@ -1080,7 +1081,8 @@
           international:"Yes, I work with clients worldwide. Communication in Ukrainian or English, payment via PayPal (USD/EUR) or international transfer.",
           contact:"Fastest is Telegram @DamnGiveMeMoney or email dimanartenko00@gmail.com. Describe your task and I'll reply about timeline and cost and issue an invoice.",
           greet:"Hi there! 👋 I'm the Nartenko.QA consultant. I can tell you about services, prices, payment, timelines or guarantees — pick a topic below or ask a question. Fastest is Telegram @DamnGiveMeMoney.",
-          thanks:"You're welcome! 🙌 Reach out any time — Telegram @DamnGiveMeMoney or email dimanartenko00@gmail.com."
+          thanks:"You're welcome! 🙌 Reach out any time — Telegram @DamnGiveMeMoney or email dimanartenko00@gmail.com.",
+          goods:"Yes, we deal in digital and in-game goods — keys, access, virtual items and resources. Pricing depends on the item and volume, so message Telegram @DamnGiveMeMoney and we'll find the best option and quote you."
         },
         fallback:"I'm not sure I got that right. Best to message me on Telegram @DamnGiveMeMoney or email dimanartenko00@gmail.com and I'll reply personally. I can also tell you about services, prices, payment, timelines or guarantees."
       }
@@ -1089,6 +1091,7 @@
     function lang(){ return (document.body.dataset.lang === 'en') ? 'en' : 'uk'; }
 
     var RULES = [
+      {t:'goods', k:['срібло','silver','ресурс','resource','голд','gold','валют','currency','акаунт','account','предмет','item','віртуал','virtual','ключ','key','буст','boost','фарм','farm','прокач']},
       {t:'pay', k:['оплат','плат','pay','карт','card','paypal','iban','рахун','invoice','кошт','money','переказ','transfer']},
       {t:'price', k:['цін','варт','скільк','price','cost','how much','бюджет','budget']},
       {t:'deadline', k:['строк','термін','дедлайн','коли','deadline','timeline','how long','when','швидк']},
