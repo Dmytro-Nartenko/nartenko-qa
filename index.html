@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="x-build" content="20260905-003403">
+<meta name="x-build" content="20260905-005417">
 <meta name="description" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор. Послуги, ціни, оплата карткою/PayPal, контакти. ФОП, офіційно з рахунком.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://nartenkoqa.com/">
@@ -1180,7 +1180,7 @@
       var topic = forcedTopic || match(userText);
       if(topic){ respond(topic); } else { aiRespond(userText); }
     }
-    var WORKER_URL = "";  /* <-- встав сюди URL Cloudflare Worker, щоб увімкнути справжній АІ */
+    var WORKER_URL = "https://nartenkoqa-ai.dimanartenko79.workers.dev";  /* Cloudflare Worker (Claude AI) */
     function aiRespond(userText){
       if(pendingTimer){ clearTimeout(pendingTimer); pendingTimer = null; }
       if(curTyping && curTyping.parentNode){ curTyping.parentNode.removeChild(curTyping); }
