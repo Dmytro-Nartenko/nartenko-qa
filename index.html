@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google-site-verification" content="7C3EFuLxFGKMMxpXnV8WymMvuYQ6ezsJT_MShJPUJbQ">
-<meta name="x-build" content="20260905-015925">
+<meta name="x-build" content="20260905-021050">
 <meta name="description" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор. Послуги, ціни, оплата карткою/PayPal, контакти. ФОП, офіційно з рахунком.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://nartenkoqa.com/">
@@ -1227,14 +1227,14 @@
     }
 
     function isOpen(){ return root.classList.contains('open'); }
-    function openChat(){
+    function openChat(skipFocus){
       root.classList.add('open');
       panel.hidden = false;
       fab.setAttribute('aria-expanded','true');
       fab.setAttribute('aria-label', T[lang()].fabClose);
       if(!log.children.length) renderGreeting();
       try{ localStorage.setItem('nq_chat_open','1'); }catch(e){}
-      setTimeout(function(){ try{ input.focus(); }catch(e){} }, 60);
+      if(!skipFocus) setTimeout(function(){ try{ input.focus(); }catch(e){} }, 60);
     }
     function closeChat(returnFocus){
       root.classList.remove('open');
@@ -1269,7 +1269,17 @@
 
     var openState = '0';
     try{ openState = localStorage.getItem('nq_chat_open') || '0'; }catch(e){}
-    if(openState === '1') openChat();
+    if(openState === '1'){
+      openChat(true);
+    } else {
+      // авто-відкриття: чат сам визирає один раз за сесію, коли хтось заходить на сайт
+      var autoDone = '0';
+      try{ autoDone = sessionStorage.getItem('nq_chat_auto') || '0'; }catch(e){}
+      if(autoDone !== '1'){
+        try{ sessionStorage.setItem('nq_chat_auto','1'); }catch(e){}
+        setTimeout(function(){ if(!isOpen()) openChat(true); }, 2200);
+      }
+    }
   })();
 </script>
 
