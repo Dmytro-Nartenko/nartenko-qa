@@ -1,0 +1,1487 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<meta name="google-site-verification" content="7C3EFuLxFGKMMxpXnV8WymMvuYQ6ezsJT_MShJPUJbQ">
+<meta name="x-build" content="20260905-041125">
+<title>Nartenko.QA — développement logiciel, QA de jeux & automatisation</title>
+<meta name="description" content="Développement, tests et automatisation pour jeux et logiciels. Services, tarifs, paiement carte/PayPal, contact. Officiel, avec facture.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://nartenkoqa.com/fr/">
+<link rel="alternate" hreflang="uk" href="https://nartenkoqa.com/">
+<link rel="alternate" hreflang="en" href="https://nartenkoqa.com/en/">
+<link rel="alternate" hreflang="pl" href="https://nartenkoqa.com/pl/">
+<link rel="alternate" hreflang="de" href="https://nartenkoqa.com/de/">
+<link rel="alternate" hreflang="es" href="https://nartenkoqa.com/es/">
+<link rel="alternate" hreflang="fr" href="https://nartenkoqa.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://nartenkoqa.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nartenkoqa.com/fr/">
+<meta property="og:title" content="Nartenko.QA — développement logiciel, QA de jeux & automatisation">
+<meta property="og:description" content="Développement, tests et automatisation pour jeux et logiciels.">
+<meta property="og:site_name" content="Nartenko.QA">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://nartenkoqa.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nartenko.QA — développement logiciel, QA de jeux & automatisation">
+<meta name="twitter:description" content="Développement, tests et automatisation pour jeux et logiciels.">
+<meta name="twitter:image" content="https://nartenkoqa.com/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nartenko.QA","description":"Développement, tests et automatisation pour jeux et logiciels.","url":"https://nartenkoqa.com/fr/","image":"https://nartenkoqa.com/og.png","email":"dimanartenko00@gmail.com","telephone":"+380770770203","priceRange":"$3–$49","areaServed":"Worldwide","availableLanguage":["uk","en","pl","de","es","fr"],"founder":{"@type":"Person","name":"Dmytro Nartenko"},"address":{"@type":"PostalAddress","addressLocality":"Romny","addressCountry":"UA"},"sameAs":["https://t.me/DamnGiveMeMoney"],"knowsAbout":["Software development","Game QA","Test automation","Digital goods","Hosting"]}</script>
+
+<style>
+  /* fonts loaded via <link rel=preconnect/stylesheet> in <head> (build_index.py) for faster render */
+
+  :root{
+    --bg:#06090F; --bg2:#080C16; --surface:#101A2E; --surface2:#0B1320;
+    --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.15);
+    --ink:#EAF2FF; --body:#AEBBD4; --muted:#7C89A6;
+    --cyan:#A855F7; --cyan2:#E879F9; --sky:#7C3AED; --green:#34D399;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--body);
+    font-family:'Manrope','Segoe UI',system-ui,sans-serif;
+    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden; position:relative;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+  a{color:inherit; text-decoration:none}
+  h1,h2,h3{color:var(--ink); text-wrap:balance; line-height:1.1}
+  .display{font-family:'Unbounded','Manrope',sans-serif; font-weight:800; letter-spacing:-.01em}
+  .eyebrow{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--cyan); font-weight:500}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  /* ============ AMBIENT BACKGROUND FX ============ */
+  .bgfx{position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none}
+  .bg-grid{position:absolute; inset:-2px;
+    background-image:
+      linear-gradient(rgba(168,85,247,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168,85,247,.055) 1px, transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(125% 95% at 50% 0%, #000 0%, #000 42%, transparent 78%);
+    mask-image:radial-gradient(125% 95% at 50% 0%, #000 0%, #000 42%, transparent 78%);
+    animation:gridpan 44s linear infinite}
+  @keyframes gridpan{to{background-position:46px 46px}}
+  .bg-orb{position:absolute; border-radius:50%; filter:blur(90px); opacity:.5; mix-blend-mode:screen}
+  .o1{width:640px; height:640px; top:-180px; left:-140px;
+    background:radial-gradient(circle, rgba(168,85,247,.55), transparent 66%); animation:drift1 36s ease-in-out infinite}
+  .o2{width:560px; height:560px; top:24%; right:-180px;
+    background:radial-gradient(circle, rgba(232,121,249,.5), transparent 66%); animation:drift2 44s ease-in-out infinite}
+  .o3{width:520px; height:520px; bottom:-200px; left:28%;
+    background:radial-gradient(circle, rgba(124,58,237,.42), transparent 66%); animation:drift3 40s ease-in-out infinite}
+  @keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,50px)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-70px,40px)}}
+  @keyframes drift3{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-60px)}}
+  .bg-aurora{position:absolute; top:-12%; left:-10%; right:-10%; height:62%; opacity:.85;
+    filter:blur(26px);
+    background:
+      radial-gradient(60% 100% at 28% 0%, rgba(168,85,247,.10), transparent 70%),
+      radial-gradient(52% 100% at 76% 8%, rgba(232,121,249,.09), transparent 70%);
+    animation:aurora 20s ease-in-out infinite}
+  @keyframes aurora{0%,100%{transform:translateX(0); opacity:.85}50%{transform:translateX(30px); opacity:1}}
+  .bg-scan{position:absolute; inset:0; opacity:.4; mix-blend-mode:overlay;
+    background:repeating-linear-gradient(0deg, rgba(255,255,255,.028) 0 1px, transparent 1px 3px);
+    animation:scanmove 9s linear infinite}
+  @keyframes scanmove{to{background-position:0 3px}}
+  #fx{position:absolute; inset:0; width:100%; height:100%; display:block}
+
+  /* ============ NAV ============ */
+  header.nav{position:sticky; top:0; z-index:50;
+    -webkit-backdrop-filter:blur(14px) saturate(130%); backdrop-filter:blur(14px) saturate(130%);
+    background:rgba(6,9,15,.72); border-bottom:1px solid rgba(168,85,247,.12);
+    box-shadow:0 1px 0 rgba(168,85,247,.06), 0 8px 30px rgba(0,0,0,.4)}
+  .nav .row{display:flex; align-items:center; justify-content:space-between; height:66px; gap:16px}
+  .logo{display:flex; align-items:center; gap:11px; font-weight:800; color:var(--ink); font-size:17px}
+  .mark{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; position:relative; overflow:hidden;
+    background:linear-gradient(135deg,var(--cyan),var(--cyan2)); color:#04121a;
+    font-weight:800; font-size:15px; box-shadow:0 6px 18px rgba(168,85,247,.4), inset 0 1px 0 rgba(255,255,255,.5)}
+  .mark::after{content:""; position:absolute; inset:0; mix-blend-mode:overlay;
+    background:linear-gradient(135deg,transparent 42%,rgba(255,255,255,.4))}
+  .logo .dot{color:var(--cyan); text-shadow:0 0 12px rgba(168,85,247,.7)}
+  nav.links{display:flex; gap:30px; align-items:center; margin-left:auto}
+  nav.links a{position:relative; font-size:14.5px; color:var(--body); font-weight:500; transition:color .18s ease}
+  nav.links a::after{content:""; position:absolute; left:0; right:0; bottom:-6px; height:1px; transform:scaleX(0);
+    transform-origin:left; transition:transform .22s ease; background:var(--cyan); box-shadow:0 0 8px var(--cyan)}
+  nav.links a:hover{color:var(--ink)}
+  nav.links a:hover::after{transform:scaleX(1)}
+  .navactions{display:flex; align-items:center; gap:10px}
+  .langbtn{background:rgba(255,255,255,.02); border:1px solid var(--line2); color:var(--ink);
+    font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:700; padding:9px 12px;
+    border-radius:10px; cursor:pointer; letter-spacing:.06em; transition:.18s ease}
+  .langbtn:hover{border-color:var(--cyan); color:var(--cyan); box-shadow:0 0 16px rgba(168,85,247,.2)}
+  .langwrap{position:relative}
+  .langmenu{position:absolute; top:calc(100% + 8px); right:0; min-width:184px; z-index:70;
+    background:#16121f; border:1px solid var(--line2); border-radius:12px;
+    box-shadow:0 22px 55px rgba(0,0,0,.55); padding:6px; display:none}
+  .langmenu.open{display:block}
+  .langmenu button{display:flex; align-items:center; gap:10px; width:100%; text-align:left;
+    background:transparent; border:0; color:var(--ink); font-family:inherit; font-size:14px;
+    padding:9px 11px; border-radius:8px; cursor:pointer; transition:.14s ease}
+  .langmenu button:hover{background:rgba(168,85,247,.14)}
+  .langmenu button .cd{margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:11px;
+    color:#9a92b0; letter-spacing:.09em}
+  .langmenu button[aria-current="true"]{color:var(--cyan)}
+  .langmenu button[aria-current="true"] .cd{color:var(--cyan)}
+  .nav .btn{white-space:nowrap}
+  .navtoggle{display:none; align-items:center; justify-content:center; width:42px; height:42px; border-radius:10px;
+    background:rgba(255,255,255,.02); border:1px solid var(--line2); color:var(--ink); cursor:pointer; transition:.18s ease}
+  .navtoggle svg{width:20px; height:20px; stroke:currentColor; stroke-width:2; fill:none}
+  .navtoggle:hover{border-color:var(--cyan); color:var(--cyan)}
+  @media(max-width:900px){
+    nav.links{position:absolute; top:calc(100% + 6px); right:12px; left:12px; margin:0; z-index:60;
+      flex-direction:column; align-items:stretch; gap:2px; display:none;
+      background:#0f0b1a; border:1px solid var(--line2); border-radius:14px; padding:8px;
+      box-shadow:0 22px 55px rgba(0,0,0,.55)}
+    header.nav.menu-open nav.links{display:flex}
+    nav.links a{padding:12px; border-radius:9px; font-size:15px; color:var(--ink)}
+    nav.links a:hover{background:rgba(168,85,247,.14)}
+    nav.links a::after{display:none}
+    .navtoggle{display:inline-flex}
+  }
+  @media(max-width:640px){.nav .btn.primary{padding:10px 14px; font-size:13.5px}}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 32px}
+  .stat{text-align:center; padding:22px 14px; border:1px solid var(--line2); border-radius:16px;
+    background:linear-gradient(180deg,rgba(168,85,247,.09),rgba(168,85,247,.02))}
+  .stat .sv{font-family:'Unbounded',sans-serif; font-weight:800; font-size:36px; line-height:1;
+    background:linear-gradient(100deg,var(--cyan),var(--cyan2)); -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:var(--cyan)}
+  .stat .sl{margin-top:9px; font-size:13px; color:var(--body); letter-spacing:.01em}
+  @media(max-width:560px){ .stats{grid-template-columns:1fr; gap:10px}
+    .stat{display:flex; align-items:center; justify-content:center; gap:12px; padding:15px 16px}
+    .stat .sv{font-size:27px} .stat .sl{margin-top:0; text-align:left} }
+  .skip{position:absolute; left:-9999px; top:0; z-index:200; background:var(--cyan); color:#0b0912;
+    padding:10px 16px; border-radius:0 0 12px 0; font-weight:700; text-decoration:none}
+  .skip:focus{left:0}
+
+  /* ============ BUTTONS ============ */
+  .btn{position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:8px; font-family:inherit;
+    font-weight:700; font-size:14.5px; padding:12px 20px; border-radius:12px; cursor:pointer;
+    border:1px solid transparent; background:transparent; color:var(--ink);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, color .18s ease}
+  .btn.primary{background:linear-gradient(135deg,var(--cyan),var(--cyan2)); color:#04121a;
+    box-shadow:0 8px 24px rgba(168,85,247,.3), inset 0 1px 0 rgba(255,255,255,.4)}
+  .btn.primary:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(168,85,247,.5), inset 0 1px 0 rgba(255,255,255,.5)}
+  .btn.primary::after{content:""; position:absolute; top:0; bottom:0; left:-140%; width:55%; pointer-events:none;
+    transform:skewX(-18deg); background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    animation:shine 5s ease-in-out infinite}
+  @keyframes shine{0%,55%{left:-140%}100%{left:150%}}
+  .btn.ghost{border-color:var(--line2); color:var(--ink); background:rgba(255,255,255,.02)}
+  .btn.ghost:hover{border-color:var(--cyan); color:var(--cyan); transform:translateY(-2px); box-shadow:0 0 22px rgba(168,85,247,.18)}
+
+  /* ============ HERO ============ */
+  .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line)}
+  .hero-glow{position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(720px 400px at 80% -8%, rgba(168,85,247,.18), transparent 62%),
+      radial-gradient(560px 320px at 6% 16%, rgba(232,121,249,.12), transparent 60%)}
+  .hero .grid2{position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:52px;
+    align-items:center; padding:82px 0 92px}
+  @media(max-width:900px){.hero .grid2{grid-template-columns:1fr; gap:38px; padding:62px 0 66px}}
+  .hero-copy{position:relative}
+  .hero-badge{display:inline-flex; align-items:center; gap:9px; padding:8px 15px 8px 12px; border-radius:999px;
+    border:1px solid rgba(168,85,247,.35); background:rgba(168,85,247,.06);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    box-shadow:0 0 22px rgba(168,85,247,.16), inset 0 0 14px rgba(168,85,247,.06)}
+  .hb-dot{width:8px; height:8px; border-radius:50%; background:var(--cyan);
+    box-shadow:0 0 12px var(--cyan); animation:pulse 1.6s ease-in-out infinite}
+  h1.htitle{font-size:clamp(31px,6vw,58px); margin:20px 0 22px; letter-spacing:-.02em; color:var(--ink)}
+  h1.htitle .c{color:var(--cyan)}
+  .lede{font-size:18px; max-width:34ch; color:var(--body)}
+  .hero .cta{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap}
+  .badges{display:flex; gap:10px; margin-top:26px; flex-wrap:wrap}
+  .chip{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--muted);
+    border:1px solid var(--line); border-radius:999px; padding:7px 13px; background:rgba(255,255,255,.02);
+    transition:border-color .2s ease, color .2s ease}
+  .chip:hover{border-color:rgba(168,85,247,.4); color:var(--body)}
+  .chip b{color:var(--cyan); font-weight:500}
+
+  /* gradient display headlines (guarded so text never disappears) */
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    h1.htitle{background:linear-gradient(180deg,#F4FBFF 0%,#BFEAFB 100%);
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent}
+    h1.htitle .c{background:linear-gradient(105deg,var(--cyan) 0%,var(--cyan2) 55%,#C4B5FD 100%);
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;
+      filter:drop-shadow(0 0 20px rgba(168,85,247,.38))}
+    h2.display{background:linear-gradient(180deg,#EEF6FF,#CDE9FB);
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent}
+  }
+
+  /* ============ QA TERMINAL ============ */
+  .term{position:relative; background:linear-gradient(180deg,rgba(20,35,61,.85),rgba(12,20,36,.9));
+    border:1px solid rgba(168,85,247,.42); border-radius:18px; overflow:hidden;
+    -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+    box-shadow:0 0 0 1px rgba(168,85,247,.18), 0 24px 60px rgba(168,85,247,.28), 0 34px 80px rgba(0,0,0,.55);
+    animation:termglow 3.2s ease-in-out infinite}
+  @keyframes termglow{0%,100%{box-shadow:0 0 0 1px rgba(168,85,247,.15),0 20px 52px rgba(168,85,247,.2),0 34px 80px rgba(0,0,0,.55)}
+    50%{box-shadow:0 0 0 1px rgba(168,85,247,.5),0 28px 76px rgba(168,85,247,.55),0 34px 80px rgba(0,0,0,.55)}}
+  .term::after{content:""; position:absolute; left:0; right:0; height:64px; top:-64px; pointer-events:none; z-index:2;
+    background:linear-gradient(rgba(168,85,247,0),rgba(168,85,247,.18),rgba(168,85,247,0)); animation:scan 3.6s linear infinite}
+  @keyframes scan{0%{top:-64px}100%{top:112%}}
+  .term .bar{display:flex; align-items:center; gap:8px; padding:13px 16px; border-bottom:1px solid rgba(168,85,247,.14);
+    background:rgba(168,85,247,.05); position:relative; z-index:1}
+  .term .bar i{width:11px; height:11px; border-radius:50%; display:block}
+  .term .bar .t{margin-left:10px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted)}
+  .term .bar .live{margin-left:auto; display:flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace;
+    font-size:10.5px; font-weight:700; color:#4ade80; letter-spacing:.14em}
+  .term .bar .live b{width:7px; height:7px; border-radius:50%; background:#4ade80;
+    box-shadow:0 0 10px #4ade80; animation:pulse 1.3s ease-in-out infinite}
+  @keyframes pulse{50%{opacity:.3; transform:scale(.75)}}
+  .term .body{padding:20px 20px 22px; font-family:'JetBrains Mono',monospace; font-size:13.5px; line-height:1.95;
+    position:relative; z-index:1; overflow-x:auto}
+  .term .body>div{white-space:nowrap}
+  .term .cmd{color:#dbe6ff} .term .cmd .p{color:var(--cyan); text-shadow:0 0 10px rgba(168,85,247,.6)}
+  .term .ok{color:#4ade80; text-shadow:0 0 14px rgba(74,222,128,.55)} .term .dim{color:var(--muted)}
+  .term .sum{color:var(--ink); margin-top:8px}
+  .term .sum .ok{font-weight:700; text-shadow:0 0 20px rgba(74,222,128,.75)}
+  .cursor{display:inline-block; width:9px; height:16px; background:var(--cyan); vertical-align:-2px;
+    margin-left:4px; box-shadow:0 0 10px var(--cyan); animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* ============ SECTIONS ============ */
+  section{padding:78px 0; position:relative}
+  .shead{max-width:640px; margin-bottom:40px}
+  .shead .eyebrow{display:inline-flex; align-items:center}
+  .shead .eyebrow::before{content:""; display:inline-block; width:24px; height:1px; margin-right:11px;
+    background:linear-gradient(90deg,var(--cyan),transparent); box-shadow:0 0 8px rgba(168,85,247,.6)}
+  .shead h2{font-size:clamp(26px,3.4vw,36px); margin:14px 0 12px}
+  .shead p{color:var(--muted); font-size:16px}
+
+  /* shared card / trust glass + spotlight */
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.cards{grid-template-columns:1fr}}
+  .card,.titem{position:relative; overflow:hidden; isolation:isolate;
+    background:linear-gradient(180deg,rgba(16,25,44,.62),rgba(10,17,31,.66));
+    border:1px solid rgba(255,255,255,.08); border-radius:16px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease}
+  .card>*,.titem>*{position:relative; z-index:1}
+  .card::before,.titem::before{content:""; position:absolute; inset:0; z-index:0; pointer-events:none; border-radius:inherit;
+    opacity:0; transition:opacity .25s ease;
+    background:radial-gradient(240px 240px at var(--mx,50%) var(--my,50%), rgba(168,85,247,.16), transparent 60%)}
+  .card:hover,.titem:hover{transform:translateY(-4px); border-color:rgba(168,85,247,.5);
+    box-shadow:0 0 0 1px rgba(168,85,247,.28), 0 18px 42px rgba(168,85,247,.14), 0 26px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06)}
+  .card:hover::before,.titem:hover::before{opacity:1}
+  .card{padding:24px; display:flex; flex-direction:column}
+  .titem{padding:24px}
+  @media(min-width:768px){.card,.titem{-webkit-backdrop-filter:blur(10px) saturate(120%); backdrop-filter:blur(10px) saturate(120%)}}
+  .ico{width:46px; height:46px; border-radius:12px; display:grid; place-items:center; margin-bottom:16px;
+    background:rgba(168,85,247,.1); border:1px solid rgba(168,85,247,.24); color:var(--cyan);
+    transition:box-shadow .25s ease, border-color .25s ease}
+  .card:hover .ico,.titem:hover .ico{border-color:rgba(168,85,247,.55); box-shadow:0 0 22px rgba(168,85,247,.28)}
+  .ico svg{width:23px; height:23px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+  .card h3{font-size:18px; margin-bottom:8px}
+  .card p{font-size:14px; color:var(--muted); flex:1}
+  .card .foot{display:flex; align-items:center; justify-content:space-between; margin-top:18px;
+    padding-top:15px; border-top:1px solid var(--line)}
+  .kved{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted);
+    border:1px solid var(--line); border-radius:6px; padding:3px 8px}
+  .price{font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--ink); font-weight:500}
+  .price b{color:var(--cyan); font-weight:700}
+  .note{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); margin-top:16px}
+
+  /* ============ PROCESS ============ */
+  .process{position:relative;
+    background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.008));
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+  @media(max-width:820px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.steps{grid-template-columns:1fr}}
+  .step{position:relative; padding-top:18px; border-top:2px solid;
+    border-image:linear-gradient(90deg, rgba(168,85,247,.9), rgba(232,121,249,.12)) 1}
+  .step .n{font-family:'JetBrains Mono',monospace; font-size:15px; color:var(--cyan); font-weight:700;
+    text-shadow:0 0 14px rgba(168,85,247,.5)}
+  .step h3{font-size:16.5px; margin:10px 0 7px}
+  .step p{font-size:13.5px; color:var(--muted)}
+
+  /* ============ TRUST ============ */
+  .trust{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+  .titem h3{font-size:16.5px; margin:14px 0 7px}
+  .titem p{font-size:13.5px; color:var(--muted)}
+  @media(max-width:820px){.trust{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.trust{grid-template-columns:1fr}}
+  section[id],#terms{scroll-margin-top:84px}
+
+  /* ============ PAY / TERMS ============ */
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+  @media(max-width:820px){.two{grid-template-columns:1fr}}
+  .panel{position:relative; overflow:hidden; isolation:isolate;
+    background:linear-gradient(180deg,rgba(16,25,44,.6),rgba(10,17,31,.66));
+    border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:28px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    -webkit-backdrop-filter:blur(10px) saturate(120%); backdrop-filter:blur(10px) saturate(120%)}
+  .panel::before{content:""; position:absolute; left:0; right:0; top:0; height:1px;
+    background:linear-gradient(90deg,transparent,rgba(168,85,247,.6),transparent)}
+  .panel>*{position:relative; z-index:1}
+  .panel h3{font-size:19px; margin-bottom:14px}
+  .panel .lead{color:var(--muted); font-size:14px; margin-bottom:2px}
+  .pay-methods{display:flex; gap:10px; margin:16px 0 6px; flex-wrap:wrap}
+  .pm{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink); border:1px solid var(--line2);
+    border-radius:9px; padding:8px 12px; background:rgba(255,255,255,.03); transition:border-color .2s ease}
+  .pm:hover{border-color:rgba(168,85,247,.45)}
+  .panel ul{list-style:none; display:flex; flex-direction:column; gap:11px; margin-top:14px}
+  .panel li{font-size:14px; color:var(--body); padding-left:24px; position:relative}
+  .panel li::before{content:"✓"; position:absolute; left:0; color:var(--cyan); font-weight:700}
+  .terms li::before{content:"›"; color:var(--muted)}
+  .terms li{color:var(--muted); font-size:13.5px}
+
+  /* ============ CONTACT ============ */
+  .contact{position:relative; overflow:hidden; isolation:isolate; text-align:center; border-radius:24px; padding:52px 44px;
+    background:linear-gradient(180deg,rgba(16,26,46,.66),rgba(10,16,30,.7));
+    border:1px solid rgba(168,85,247,.28);
+    box-shadow:0 0 0 1px rgba(168,85,247,.1), 0 30px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.05);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px)}
+  .contact::before{content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(600px 300px at 82% -12%, rgba(168,85,247,.18), transparent 60%),
+      radial-gradient(520px 260px at 8% 120%, rgba(232,121,249,.12), transparent 60%)}
+  .contact>*{position:relative; z-index:1}
+  .contact h2{font-size:clamp(24px,3vw,34px); margin-bottom:12px}
+  .contact p{color:var(--muted); max-width:52ch; margin:0 auto 26px}
+  .cways{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:26px}
+  .req{font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--muted);
+    border-top:1px solid var(--line); padding-top:20px; margin-top:6px; line-height:1.9}
+  .req b{color:var(--body); font-weight:500}
+
+  /* ============ FOOTER ============ */
+  footer.ft{border-top:1px solid rgba(168,85,247,.1); box-shadow:0 -1px 0 rgba(168,85,247,.05);
+    padding:30px 0; color:var(--muted); font-size:13px; position:relative}
+  footer.ft .row{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center}
+  footer.ft .mono{font-size:12px}
+
+  /* ============ FOCUS ============ */
+  a:focus-visible,.btn:focus-visible,button:focus-visible,.langbtn:focus-visible{
+    outline:2px solid var(--cyan); outline-offset:3px; border-radius:10px;
+    box-shadow:0 0 0 4px rgba(168,85,247,.25)}
+
+  /* ============ HERO ENTRANCE (stays visible; transform only) ============ */
+  @keyframes heroIn{from{opacity:1; transform:translateY(10px)}to{opacity:1; transform:none}}
+  .hero-copy>*{animation:heroIn .6s cubic-bezier(.2,.7,.2,1) both}
+  .hero-copy>*:nth-child(1){animation-delay:.02s}
+  .hero-copy>*:nth-child(2){animation-delay:.09s}
+  .hero-copy>*:nth-child(3){animation-delay:.16s}
+  .hero-copy>*:nth-child(4){animation-delay:.23s}
+  .hero-copy>*:nth-child(5){animation-delay:.30s}
+  .term{animation:heroIn .7s cubic-bezier(.2,.7,.2,1) both, termglow 3.2s ease-in-out infinite}
+
+  /* ============ STACK (added) ============ */
+  .stackgrid{display:flex; flex-wrap:wrap; gap:12px; max-width:880px}
+  .tchip{display:inline-flex; align-items:center; gap:9px;
+    font-family:'JetBrains Mono',monospace; font-size:13.5px; font-weight:500; color:var(--body);
+    border:1px solid var(--line2); border-radius:999px; padding:10px 16px; background:rgba(255,255,255,.02);
+    transition:border-color .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease}
+  .tchip:hover{border-color:rgba(168,85,247,.5); color:var(--ink);
+    box-shadow:0 0 18px rgba(168,85,247,.16); transform:translateY(-2px)}
+  .tchip .td{width:7px; height:7px; border-radius:50%; flex:none;
+    background:linear-gradient(135deg,var(--cyan),var(--cyan2)); box-shadow:0 0 10px rgba(168,85,247,.6)}
+
+  /* ============ FAQ (added) ============ */
+  .faq{display:flex; flex-direction:column; gap:12px; max-width:820px}
+  .faq-item{position:relative; overflow:hidden; isolation:isolate;
+    background:linear-gradient(180deg,rgba(16,25,44,.55),rgba(10,17,31,.6));
+    border:1px solid rgba(255,255,255,.08); border-radius:14px; box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    transition:border-color .22s ease, box-shadow .22s ease}
+  .faq-item.open{border-color:rgba(168,85,247,.45);
+    box-shadow:0 0 0 1px rgba(168,85,247,.2), 0 14px 34px rgba(168,85,247,.1), inset 0 1px 0 rgba(255,255,255,.05)}
+  .faq-h{margin:0; font-size:inherit; line-height:inherit; font-weight:inherit}
+  .faq-q{width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; text-align:left;
+    background:transparent; border:0; cursor:pointer; color:var(--ink); font-family:inherit; font-weight:700;
+    font-size:16px; padding:18px 20px; line-height:1.4; transition:color .2s ease}
+  .faq-q:hover{color:var(--cyan)}
+  .faq-ic{width:20px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:2;
+    stroke-linecap:round; stroke-linejoin:round; color:var(--cyan); transition:transform .25s ease}
+  .faq-q[aria-expanded="true"] .faq-ic{transform:rotate(180deg)}
+  .faq-a{padding:0 20px}
+  .faq-a[hidden]{display:none}
+  .faq-a-in{padding:0 0 18px; color:var(--body); font-size:14.5px; line-height:1.7; max-width:66ch}
+  @keyframes faqReveal{from{transform:translateY(-4px)}to{transform:translateY(0)}}
+  .faq-a:not([hidden]) .faq-a-in{animation:faqReveal .22s ease}
+
+  /* ============ HERO FX (added) ============ */
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    h1.htitle .c{background-size:220% auto; animation:titleSheen 7s ease-in-out infinite}
+  }
+  @keyframes titleSheen{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .hero-badge{animation:badgeFloat 5.5s ease-in-out infinite}
+  @keyframes badgeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  .orbwrap{position:absolute; inset:0; will-change:transform; transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:640px){
+    section{padding:58px 0}
+    .wrap{padding:0 18px}
+    .contact{padding:34px 22px}
+    .shead{margin-bottom:30px}
+  }
+  @media(max-width:600px){.term .body{font-size:11.5px; line-height:1.85}}
+
+  /* ============ REDUCED MOTION ============ */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .bg-grid,.bg-orb,.bg-aurora,.bg-scan,.hb-dot,.term,.term::after,.term .bar .live b,.cursor,.btn.primary::after,.hero-copy>*,h1.htitle .c,.hero-badge,.faq-a-in{animation:none !important}
+    .term::after{display:none}
+    #fx{display:none}
+  }
+</style>
+</head>
+<body>
+
+
+
+<div class="bgfx" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="orbwrap">
+    <div class="bg-orb o1"></div>
+    <div class="bg-orb o2"></div>
+    <div class="bg-orb o3"></div>
+  </div>
+  <div class="bg-aurora"></div>
+  <div class="bg-scan"></div>
+  <canvas id="fx" width="749" height="485"></canvas>
+</div>
+
+<a class="skip" href="#services" data-i18n="skip" data-_uk="Перейти до вмісту">Aller au contenu</a>
+<header class="nav">
+  <div class="wrap row">
+    <a class="logo" href="#top"><span class="mark">DN</span> Nartenko<span class="dot">.</span>QA</a>
+    <nav class="links" id="navLinks">
+      <a href="#services" data-i18n="nav_services" data-_uk="Послуги">Services</a>
+      <a href="#process" data-i18n="nav_process" data-_uk="Як працюємо">Méthode</a>
+      <a href="#pay" data-i18n="nav_pay" data-_uk="Оплата">Paiement</a>
+      <a href="#terms" data-i18n="nav_terms" data-_uk="Оферта">Conditions</a>
+      <a href="#faq" data-i18n="nav_faq" data-_uk="FAQ">FAQ</a>
+      <a href="#contact" data-i18n="nav_contact" data-_uk="Контакти">Contacts</a>
+    </nav>
+    <div class="navactions">
+      <button class="navtoggle" id="navToggle" type="button" aria-label="Меню / Menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+      <div class="langwrap">
+        <button id="langBtn" class="langbtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Мова / Language">FR ▾</button>
+        <div class="langmenu" id="langMenu" role="listbox" aria-label="Language">
+          <button type="button" data-lang="uk" aria-current="false"><span>Українська</span><span class="cd">UA</span></button>
+          <button type="button" data-lang="en" aria-current="false"><span>English</span><span class="cd">EN</span></button>
+          <button type="button" data-lang="pl" aria-current="false"><span>Polski</span><span class="cd">PL</span></button>
+          <button type="button" data-lang="de" aria-current="false"><span>Deutsch</span><span class="cd">DE</span></button>
+          <button type="button" data-lang="es" aria-current="false"><span>Español</span><span class="cd">ES</span></button>
+          <button type="button" data-lang="fr" aria-current="true"><span>Français</span><span class="cd">FR</span></button>
+        </div>
+      </div>
+      <a class="btn primary" href="#contact" data-i18n="nav_order" data-_uk="Замовити">Demander un devis</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap grid2">
+      <div class="hero-copy">
+        <div class="hero-badge">
+          <span class="hb-dot" aria-hidden="true"></span>
+          <span class="eyebrow" data-i18n="hero_eyebrow" data-_uk="ФОП · Game QA &amp;amp; Development">Micro-entrepreneur · QA de jeux &amp; développement</span>
+        </div>
+        <h1 class="htitle display" data-i18n="hero_h1" data-_uk="Розробка, тестування та автоматизація &lt;span class=&quot;c&quot;&gt;для ігор і софту&lt;/span&gt;">Développement, tests et automatisation <span class="c">pour jeux et logiciels</span></h1>
+        <p class="lede" data-i18n="hero_lede" data-_uk="Розробка ботів і скриптів, тестування ігрових механік, автоматизація та цифрові товари — офіційно, з рахунком і документами.">Bots et scripts, tests de mécaniques de jeu, automatisation et produits numériques — officiellement, avec factures et documents.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact" data-i18n="hero_cta1" data-_uk="Замовити послугу">Commander un service</a>
+          <a class="btn ghost" href="#services" data-i18n="hero_cta2" data-_uk="Переглянути послуги">Voir les services</a>
+        </div>
+        <div class="badges">
+          <span class="chip" data-i18n="chip1" data-_uk="ФОП · 3&amp;nbsp;група · &lt;b&gt;без ПДВ&lt;/b&gt;">Micro-entrepreneur · groupe 3 · <b>exonéré de TVA</b></span>
+          <span class="chip" data-i18n="chip2" data-_uk="Оплата &lt;b&gt;карткою&lt;/b&gt;, PayPal, за реквізитами"><b>Carte</b>, PayPal &amp; virement bancaire</span>
+          <span class="chip" data-i18n="chip3" data-_uk="Клієнти &lt;b&gt;по всьому світу&lt;/b&gt;">Clients <b>dans le monde entier</b></span>
+        </div>
+      </div>
+      <div class="term" aria-hidden="true">
+        <div class="bar">
+          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+          <span class="t">qa-runner — nartenko.qa</span>
+          <span class="live"><b></b> LIVE</span>
+        </div>
+        <div class="body">
+          <div class="cmd"><span class="p">$</span> npm run qa --scope=game --coverage</div>
+          <div class="dim">→ loading 128 checks · 6 suites…</div>
+          <div class="ok">✓ scenario · level_load ....... <span class="dim">pass 21ms</span></div>
+          <div class="ok">✓ mechanics · hit_detection ... <span class="dim">pass 34ms</span></div>
+          <div class="ok">✓ economy · reward_payout ..... <span class="dim">pass 18ms</span></div>
+          <div class="ok">✓ network · sync_state ........ <span class="dim">pass 42ms</span></div>
+          <div class="ok">✓ anticheat · integrity ....... <span class="dim">pass 27ms</span></div>
+          <div class="dim">────────────────────────────</div>
+          <div class="sum"><span class="ok">✓ 128 passed</span> <span class="dim">· 0 failed ·</span> <span class="p">cov 97%</span> <span class="dim">· 2.3s</span></div>
+          <div class="cmd"><span class="p">$</span> git push origin main <span class="ok">✓ deployed</span></div>
+          <div class="cmd"><span class="p">$</span><span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="shead">
+        <div class="eyebrow" data-i18n="svc_eyebrow" data-_uk="Послуги">Services</div>
+        <h2 class="display" data-i18n="svc_h2" data-_uk="Що ми робимо">Ce que nous faisons</h2>
+        <p data-i18n="svc_p" data-_uk="Повний цикл — від коду й тестів до цифрових товарів та інфраструктури. Кожна послуга оформлюється офіційно рахунком.">Cycle complet — du code et des tests aux produits numériques et à l'infrastructure. Chaque service est facturé officiellement.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"></path></svg></div>
+          <h3 data-i18n="s1h" data-_uk="Розробка ПЗ">Développement logiciel</h3>
+          <p data-i18n="s1p" data-_uk="Боти, скрипти, моди, плагіни та інтеграції. Розробка й доопрацювання компонентів під вашу задачу.">Bots, scripts, mods, plugins et intégrations. Création et amélioration de composants adaptés à votre besoin.</p>
+          <div class="foot"><span class="kved">КВЕД 62.01</span><span class="price" data-i18n="s1pr" data-_uk="від &lt;b&gt;$39&lt;/b&gt;">à partir de <b>$39</b></span></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6M12 3v4M6.5 9h11l1.5 9a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2z"></path><path d="M9.5 13h5"></path></svg></div>
+          <h3 data-i18n="s2h" data-_uk="Тестування / QA">Tests / QA</h3>
+          <p data-i18n="s2p" data-_uk="Тестування ігрових сценаріїв і механік, пошук та відтворення багів, регрес і звіти.">Tests de scénarios et de mécaniques de jeu, détection et reproduction de bugs, régression et rapports.</p>
+          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s2pr" data-_uk="від &lt;b&gt;$19&lt;/b&gt;">à partir de <b>$19</b></span></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path><circle cx="12" cy="12" r="3.2"></circle></svg></div>
+          <h3 data-i18n="s3h" data-_uk="Автоматизація">Automatisation</h3>
+          <p data-i18n="s3p" data-_uk="Автоматизація рутинних процесів, конфігурація та налаштування цифрових систем «під ключ».">Automatisation des processus routiniers, configuration clé en main et mise en place de systèmes numériques.</p>
+          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s3pr" data-_uk="від &lt;b&gt;$49&lt;/b&gt;">à partir de <b>$49</b></span></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8" cy="15" r="4"></circle><path d="M11 12l8-8M17 4h3v3M15 6l2 2"></path></svg></div>
+          <h3 data-i18n="s4h" data-_uk="Цифрові товари">Produits numériques</h3>
+          <p data-i18n="s4p" data-_uk="Ліцензійні ключі, доступи, віртуальні товари та інформаційні продукти у цифровому форматі.">Clés de licence, accès, biens virtuels et produits d'information au format numérique.</p>
+          <div class="foot"><span class="kved">КВЕД 47.91</span><span class="price" data-i18n="s4pr" data-_uk="від &lt;b&gt;$3&lt;/b&gt;">à partir de <b>$3</b></span></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="7" rx="2"></rect><rect x="3" y="13" width="18" height="7" rx="2"></rect><path d="M7 7.5h.01M7 16.5h.01"></path></svg></div>
+          <h3 data-i18n="s5h" data-_uk="Хостинг та інфраструктура">Hébergement &amp; infrastructure</h3>
+          <p data-i18n="s5p" data-_uk="Оренда серверів, дисковий простір, розміщення й обробка даних, супровід інфраструктури.">Location de serveurs, espace disque, hébergement et traitement de données, support d'infrastructure.</p>
+          <div class="foot"><span class="kved">КВЕД 63.11</span><span class="price" data-i18n="s5pr" data-_uk="від &lt;b&gt;$7&lt;/b&gt;/міс">à partir de <b>$7</b>/mois</span></div>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17l6-6 4 4 6-8"></path><path d="M4 21h16"></path></svg></div>
+          <h3 data-i18n="s6h" data-_uk="Консультації та супровід">Conseil &amp; support</h3>
+          <p data-i18n="s6p" data-_uk="Технічний супровід, моніторинг ігрових систем і консультації з експлуатації.">Support technique, supervision des systèmes de jeu et conseil opérationnel.</p>
+          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s6pr" data-_uk="від &lt;b&gt;$12&lt;/b&gt;">à partir de <b>$12</b></span></div>
+        </div>
+      </div>
+      <p class="note" data-i18n="svc_note" data-_uk="* Ціни орієнтовні; фінальна вартість — за обсягом робіт і фіксується в рахунку.">* Prix indicatifs ; le coût final dépend du périmètre et est fixé dans la facture.</p>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <div class="shead">
+        <div class="eyebrow" data-i18n="stack_eyebrow" data-_uk="Стек">Stack</div>
+        <h2 class="display" data-i18n="stack_h2" data-_uk="Стек та можливості">Stack &amp; compétences</h2>
+        <p data-i18n="stack_p" data-_uk="Технології та інструменти, з якими працюємо щодня — від розробки й автоматизації до тестування ігор.">Technologies et outils que nous utilisons au quotidien — du développement et de l'automatisation à la QA de jeux.</p>
+      </div>
+      <div class="stackgrid">
+        <span class="tchip"><span class="td" aria-hidden="true"></span>Python</span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span>C#/.NET</span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span>JavaScript/TypeScript</span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span>Node.js</span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span>SQL</span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span>Docker</span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span>Git</span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span>REST API</span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span><span data-i18n="stack_c9" data-_uk="автоматизація">automatisation</span></span>
+        <span class="tchip"><span class="td" aria-hidden="true"></span>Game QA</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="shead">
+        <div class="eyebrow" data-i18n="proc_eyebrow" data-_uk="Процес">Processus</div>
+        <h2 class="display" data-i18n="proc_h2" data-_uk="Як ми працюємо">Comment nous travaillons</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n" aria-hidden="true">01</div><h3 data-i18n="p1h" data-_uk="Заявка">Demande</h3><p data-i18n="p1p" data-_uk="Ви описуєте задачу в Telegram або на email — узгоджуємо деталі.">Vous décrivez la tâche via Telegram ou par e-mail — nous convenons des détails.</p></div>
+        <div class="step"><div class="n" aria-hidden="true">02</div><h3 data-i18n="p2h" data-_uk="Оцінка">Estimation</h3><p data-i18n="p2p" data-_uk="Оцінюємо обсяг, строки й вартість, виставляємо рахунок.">Nous évaluons le périmètre, les délais et le coût, puis émettons une facture.</p></div>
+        <div class="step"><div class="n" aria-hidden="true">03</div><h3 data-i18n="p3h" data-_uk="Робота">Réalisation</h3><p data-i18n="p3p" data-_uk="Виконуємо, тестуємо й тримаємо вас у курсі прогресу.">Nous développons, testons et vous tenons informé de l'avancement.</p></div>
+        <div class="step"><div class="n" aria-hidden="true">04</div><h3 data-i18n="p4h" data-_uk="Оплата">Paiement</h3><p data-i18n="p4p" data-_uk="Оплата карткою за QR або переказом за реквізитами. Готово.">Payez par carte via QR ou par virement bancaire. C'est fait.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trust">
+    <div class="wrap">
+      <div class="shead">
+        <div class="eyebrow" data-i18n="tr_eyebrow" data-_uk="Гарантії">Garanties</div>
+        <h2 class="display" data-i18n="tr_h2" data-_uk="Чому нам довіряють">Pourquoi les clients nous font confiance</h2>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="sv">470+</div><div class="sl" data-i18n="st_l1" data-_uk="виконаних замовлень">commandes réalisées</div></div>
+        <div class="stat"><div class="sv">6</div><div class="sl" data-i18n="st_l2" data-_uk="мов підтримки">langues disponibles</div></div>
+        <div class="stat"><div class="sv">100%</div><div class="sl" data-i18n="st_l3" data-_uk="офіційно, з рахунком">officiel, avec facture</div></div>
+      </div>
+      <div class="trust">
+        <div class="titem">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></div>
+          <h3 data-i18n="tr1h" data-_uk="Конфіденційність">Confidentialité</h3>
+          <p data-i18n="tr1p" data-_uk="Ваш код, дані та ідеї лишаються між нами. NDA — за запитом.">Votre code, vos données et vos idées restent entre nous. NDA sur demande.</p>
+        </div>
+        <div class="titem">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+          <h3 data-i18n="tr2h" data-_uk="Гарантія якості">Garantie de qualité</h3>
+          <p data-i18n="tr2p" data-_uk="Доопрацьовуємо до результату; виправлення багів після здачі.">Nous peaufinons jusqu'à ce que tout fonctionne ; corrections des bugs après livraison.</p>
+        </div>
+        <div class="titem">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div>
+          <h3 data-i18n="tr3h" data-_uk="Строки">Délais</h3>
+          <p data-i18n="tr3p" data-_uk="Фіксуємо дедлайни в рахунку й дотримуємось їх.">Nous fixons les délais dans la facture et les respectons.</p>
+        </div>
+        <div class="titem">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v4h4M9.5 13h5M9.5 16.5h5"></path></svg></div>
+          <h3 data-i18n="tr4h" data-_uk="Офіційно">Officiel</h3>
+          <p data-i18n="tr4p" data-_uk="ФОП, рахунок і закривні документи. Прозоро й легально.">Micro-entrepreneur, factures et documents de clôture. Transparent et légal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pay">
+    <div class="wrap two">
+      <div class="panel">
+        <h3 data-i18n="pay_h" data-_uk="Оплата">Paiement</h3>
+        <p class="lead" data-i18n="pay_lead" data-_uk="Зручно й офіційно. У кожному рахунку — QR для миттєвої оплати.">Pratique et officiel. Chaque facture inclut un QR pour un paiement instantané.</p>
+        <div class="pay-methods">
+          <span class="pm">Visa</span><span class="pm">Mastercard</span><span class="pm">Apple&nbsp;Pay</span><span class="pm">Google&nbsp;Pay</span><span class="pm">PayPal</span><span class="pm">IBAN</span>
+        </div>
+        <ul>
+          <li data-i18n="pay1" data-_uk="Оплата карткою онлайн через захищений еквайринг">Paiements par carte en ligne via un système d'acquisition sécurisé</li>
+          <li data-i18n="pay2" data-_uk="PayPal для міжнародних клієнтів (USD / EUR)">PayPal pour les clients internationaux (USD / EUR)</li>
+          <li data-i18n="pay3" data-_uk="Переказ за реквізитами (IBAN) у будь-якому банку">Virement bancaire (IBAN) depuis n'importe quelle banque</li>
+          <li data-i18n="pay4" data-_uk="QR-код у рахунку — оплата за пару хвилин">Code QR dans la facture — payez en quelques minutes</li>
+        </ul>
+        <a class="btn primary" href="https://www.paypal.com/qrcodes/p2pqrc/5ETWW5YGV3PAG" target="_blank" rel="noopener" style="margin-top:20px" data-i18n="pay_btn" data-_uk="Оплатити через PayPal">Payer via PayPal</a>
+      </div>
+      <div class="panel terms" id="terms">
+        <h3 data-i18n="terms_h" data-_uk="Умови (публічна оферта)">Conditions (offre publique)</h3>
+        <ul>
+          <li data-i18n="t1" data-_uk="Послуги та цифрові товари надаються на замовлення за погодженим обсягом і вартістю.">Les services et produits numériques sont fournis sur demande, selon un périmètre et un coût convenus.</li>
+          <li data-i18n="t2" data-_uk="Оплата у гривні (карткою чи за реквізитами) або через PayPal для міжнародних клієнтів — на підставі рахунку.">Paiement en UAH (carte ou virement bancaire) ou via PayPal pour les clients internationaux — sur la base d'une facture.</li>
+          <li data-i18n="t3" data-_uk="Строки виконання узгоджуються індивідуально до початку робіт.">Les délais sont convenus individuellement avant le début des travaux.</li>
+          <li data-i18n="t4" data-_uk="Повернення коштів: за послуги — до початку виконання; за цифрові товари — якщо доступ/товар не було надано.">Remboursements : pour les services — avant le début des travaux ; pour les produits numériques — si l'accès ou les biens n'ont pas été livrés.</li>
+          <li data-i18n="t5" data-_uk="Виконавець — платник єдиного податку 3&amp;nbsp;групи, не платник ПДВ.">Le prestataire relève de l'impôt unique du groupe 3 et n'est pas assujetti à la TVA.</li>
+          <li data-i18n="t6" data-_uk="Конфіденційність гарантована: дані та матеріали замовника не передаються третім особам; NDA — за запитом.">Confidentialité garantie : les données et documents des clients ne sont jamais communiqués à des tiers ; NDA sur demande.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="shead">
+        <div class="eyebrow" data-i18n="faq_eyebrow" data-_uk="FAQ">FAQ</div>
+        <h2 class="display" data-i18n="faq_h2" data-_uk="Часті запитання">Questions fréquentes</h2>
+        <p data-i18n="faq_p" data-_uk="Короткі відповіді на найпоширеніші запитання. Лишились сумніви? Напишіть у Telegram або на email.">Réponses courtes aux questions les plus fréquentes. Encore des doutes ? Écrivez-moi sur Telegram ou par e-mail.</p>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3 class="faq-h">
+            <button type="button" class="faq-q" id="faq-b1" aria-expanded="false" aria-controls="faq-a1">
+              <span data-i18n="faq_q1" data-_uk="Як почати роботу?">Comment commencer ?</span>
+              <svg class="faq-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-b1" hidden="">
+            <div class="faq-a-in"><p data-i18n="faq_a1" data-_uk="Напишіть у Telegram або на email короткий опис задачі. Узгодимо обсяг, строки й вартість, і я виставлю рахунок — після цього починаємо роботу.">Écrivez-moi sur Telegram ou par e-mail avec une brève description de votre tâche. Nous conviendrons du périmètre, des délais et du coût, et j'émettrai une facture — le travail commence ensuite.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-h">
+            <button type="button" class="faq-q" id="faq-b2" aria-expanded="false" aria-controls="faq-a2">
+              <span data-i18n="faq_q2" data-_uk="Які строки виконання?">Qu'en est-il des délais ?</span>
+              <svg class="faq-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-b2" hidden="">
+            <div class="faq-a-in"><p data-i18n="faq_a2" data-_uk="Строки залежать від обсягу й узгоджуються індивідуально до початку робіт. Невеликі задачі — 1–3 дні, більші розбиваємо на етапи та фіксуємо в рахунку.">Les délais dépendent du périmètre et sont convenus individuellement avant le début des travaux. Les petites tâches prennent 1 à 3 jours ; les plus importantes sont divisées en étapes et fixées dans la facture.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-h">
+            <button type="button" class="faq-q" id="faq-b3" aria-expanded="false" aria-controls="faq-a3">
+              <span data-i18n="faq_q3" data-_uk="Як оплатити?">Comment puis-je payer ?</span>
+              <svg class="faq-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-b3" hidden="">
+            <div class="faq-a-in"><p data-i18n="faq_a3" data-_uk="Карткою (Visa/Mastercard, Apple Pay, Google Pay) за QR у рахунку, переказом за реквізитами (IBAN) або через PayPal для міжнародних клієнтів. Усе офіційно — ФОП 3 групи.">Par carte (Visa/Mastercard, Apple Pay, Google Pay) via le QR de la facture, par virement bancaire (IBAN), ou via PayPal pour les clients internationaux. Tout est officiel — micro-entrepreneur du groupe 3.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-h">
+            <button type="button" class="faq-q" id="faq-b4" aria-expanded="false" aria-controls="faq-a4">
+              <span data-i18n="faq_q4" data-_uk="Чи є конфіденційність / NDA?">Y a-t-il une clause de confidentialité / un NDA ?</span>
+              <svg class="faq-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-b4" hidden="">
+            <div class="faq-a-in"><p data-i18n="faq_a4" data-_uk="Так. Ваш код, дані та ідеї лишаються між нами й не передаються третім особам. NDA підпишемо за запитом ще до початку робіт.">Oui. Votre code, vos données et vos idées restent entre nous et ne sont jamais communiqués à des tiers. Un NDA peut être signé sur demande avant le début des travaux.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-h">
+            <button type="button" class="faq-q" id="faq-b5" aria-expanded="false" aria-controls="faq-a5">
+              <span data-i18n="faq_q5" data-_uk="Чи працюєте з іноземними клієнтами?">Travaillez-vous avec des clients internationaux ?</span>
+              <svg class="faq-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-b5" hidden="">
+            <div class="faq-a-in"><p data-i18n="faq_a5" data-_uk="Так, працюю з клієнтами по всьому світу. Спілкування українською чи англійською, оплата через PayPal (USD/EUR) або міжнародним переказом.">Oui, je travaille avec des clients du monde entier. Communication en ukrainien ou en anglais, paiement via PayPal (USD/EUR) ou virement international.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-h">
+            <button type="button" class="faq-q" id="faq-b6" aria-expanded="false" aria-controls="faq-a6">
+              <span data-i18n="faq_q6" data-_uk="Що з правками та гарантією?">Qu'en est-il des révisions et de la garantie ?</span>
+              <svg class="faq-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-b6" hidden="">
+            <div class="faq-a-in"><p data-i18n="faq_a6" data-_uk="Доопрацьовуємо до узгодженого результату й виправляємо баги після здачі. Повернення: за послуги — до початку робіт, за цифрові товари — якщо доступ/товар не було надано.">Nous peaufinons jusqu'au résultat convenu et corrigeons les bugs après livraison. Remboursements : pour les services — avant le début des travaux ; pour les produits numériques — si l'accès ou les biens n'ont pas été livrés.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:20px">
+    <div class="wrap">
+      <div class="contact">
+        <div class="eyebrow" style="margin-bottom:8px" data-i18n="contact_eyebrow" data-_uk="Контакти">Contacts</div>
+        <h2 class="display" data-i18n="contact_h" data-_uk="Обговоримо ваш проєкт">Discutons de votre projet</h2>
+        <p data-i18n="contact_p" data-_uk="Напишіть у Telegram або на email — відповім щодо задачі, строків і вартості, виставлю рахунок.">Écrivez-moi sur Telegram ou par e-mail — je vous répondrai concernant la tâche, les délais et le coût, et j'émettrai une facture.</p>
+        <div class="cways">
+          <a class="btn primary" href="https://t.me/DamnGiveMeMoney" target="_blank" rel="noopener">Telegram: @DamnGiveMeMoney</a>
+          <a class="btn ghost" href="mailto:dimanartenko00@gmail.com">Email: dimanartenko00@gmail.com</a>
+          <button class="btn ghost" id="nqc-discord" type="button" data-nick="benjamin_willson" title="Скопіювати нік">Discord: benjamin_willson</button>
+          <a class="btn ghost" href="https://wa.me/380770770203" target="_blank" rel="noopener">WhatsApp: +380 77 077 0203</a>
+          <a class="btn ghost" href="tel:+380770770203">Tel: +380 77 077 0203</a>
+        </div>
+        <div class="req" data-i18n="contact_req" data-_uk="
+          &lt;b&gt;ФОП Нартенко Дмитро Миколайович&lt;/b&gt;&lt;br&gt;
+          м.&amp;nbsp;Ромни, Україна · Платник єдиного податку 3&amp;nbsp;групи
+        "><b>Micro-entrepreneur Dmytro Nartenko</b><br>Romny, Ukraine · impôt unique du groupe 3</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap row">
+    <span data-i18n="ft_left" data-_uk="© 2026 Nartenko.QA — ФОП Нартенко Д.&amp;nbsp;М.">© 2026 Nartenko.QA — Micro-entrepreneur D.&nbsp;Nartenko</span>
+    <span class="mono" data-i18n="ft_right" data-_uk="Розробка · Тестування · Автоматизація">Développement · Tests · Automatisation</span>
+  </div>
+</footer>
+
+<script>
+  const EN = {
+    nav_services:"Services", nav_process:"How we work", nav_pay:"Payment", nav_terms:"Terms", nav_contact:"Contacts", nav_order:"Get a quote",
+    hero_eyebrow:"Sole Proprietor · Game QA &amp; Development",
+    hero_h1:'Development, testing and automation <span class="c">for games and software</span>',
+    hero_lede:"Bots and scripts, game mechanics testing, automation and digital goods — officially, with invoices and documents.",
+    hero_cta1:"Order a service", hero_cta2:"View services",
+    chip1:'FOP · Group 3 · <b>VAT-exempt</b>', chip2:'<b>Card</b>, PayPal &amp; bank transfer', chip3:'Clients <b>worldwide</b>',
+    svc_eyebrow:"Services", svc_h2:"What we do",
+    svc_p:"Full cycle — from code and tests to digital goods and infrastructure. Every service is invoiced officially.",
+    s1h:"Software Development", s1p:"Bots, scripts, mods, plugins and integrations. Building and improving components for your task.", s1pr:'from <b>$39</b>',
+    s2h:"Testing / QA", s2p:"Testing of game scenarios and mechanics, finding and reproducing bugs, regression and reports.", s2pr:'from <b>$19</b>',
+    s3h:"Automation", s3p:"Automating routine processes, turnkey configuration and setup of digital systems.", s3pr:'from <b>$49</b>',
+    s4h:"Digital Goods", s4p:"License keys, access, virtual goods and information products in digital format.", s4pr:'from <b>$3</b>',
+    s5h:"Hosting &amp; Infrastructure", s5p:"Server rental, disk space, data hosting and processing, infrastructure support.", s5pr:'from <b>$7</b>/mo',
+    s6h:"Consulting &amp; Support", s6p:"Technical support, monitoring of game systems and operational consulting.", s6pr:'from <b>$12</b>',
+    svc_note:"* Indicative prices; the final cost depends on scope and is fixed in the invoice.",
+    proc_eyebrow:"Process", proc_h2:"How we work",
+    p1h:"Request", p1p:"You describe the task via Telegram or email — we agree on the details.",
+    p2h:"Estimate", p2p:"We assess scope, timeline and cost, and issue an invoice.",
+    p3h:"Work", p3p:"We build, test and keep you posted on progress.",
+    p4h:"Payment", p4p:"Pay by card via QR or by bank transfer. Done.",
+    tr_eyebrow:"Guarantees", tr_h2:"Why clients trust us",
+    tr1h:"Confidentiality", tr1p:"Your code, data and ideas stay between us. NDA on request.",
+    tr2h:"Quality guarantee", tr2p:"We refine until it works; bug fixes after delivery.",
+    tr3h:"Deadlines", tr3p:"We fix deadlines in the invoice and meet them.",
+    tr4h:"Official", tr4p:"Sole proprietor, invoices and closing documents. Transparent and legal.",
+    pay_h:"Payment", pay_lead:"Convenient and official. Every invoice includes a QR for instant payment.",
+    pay1:"Online card payments via secure acquiring", pay2:"PayPal for international clients (USD / EUR)",
+    pay3:"Bank transfer (IBAN) from any bank", pay4:"QR code in the invoice — pay in a couple of minutes", pay_btn:"Pay via PayPal",
+    terms_h:"Terms (public offer)",
+    t1:"Services and digital goods are provided on request at an agreed scope and cost.",
+    t2:"Payment in UAH (card or bank transfer) or via PayPal for international clients — based on an invoice.",
+    t3:"Timelines are agreed individually before the work begins.",
+    t4:"Refunds: for services — before work starts; for digital goods — if access/goods were not delivered.",
+    t5:"The provider is a Group 3 single-tax payer, not a VAT payer.",
+    t6:"Confidentiality guaranteed: client data and materials are never shared with third parties; NDA on request.",
+    contact_eyebrow:"Contacts", contact_h:"Let's discuss your project",
+    contact_p:"Message me on Telegram or email — I'll reply about the task, timeline and cost, and issue an invoice.",
+    contact_req:'<b>Sole Proprietor Dmytro Nartenko</b><br>Romny, Ukraine · Group 3 single-tax payer',
+    ft_left:"© 2026 Nartenko.QA — Sole Proprietor D.&nbsp;Nartenko", ft_right:"Development · Testing · Automation",
+    nav_faq:"FAQ",
+    stack_eyebrow:"Stack", stack_h2:"Stack &amp; capabilities",
+    stack_p:"Technologies and tools we work with day to day — from development and automation to game QA.",
+    stack_c9:"automation",
+    faq_eyebrow:"FAQ", faq_h2:"Frequently asked questions",
+    faq_p:"Short answers to the most common questions. Still unsure? Message me on Telegram or by email.",
+    faq_q1:"How do we get started?",
+    faq_a1:"Message me on Telegram or by email with a short description of your task. We'll agree on the scope, timeline and cost, and I'll issue an invoice — work starts after that.",
+    faq_q2:"What about timelines?",
+    faq_a2:"Timelines depend on scope and are agreed individually before the work begins. Small tasks take 1–3 days; larger ones are split into stages and fixed in the invoice.",
+    faq_q3:"How can I pay?",
+    faq_a3:"By card (Visa/Mastercard, Apple Pay, Google Pay) via the QR in the invoice, by bank transfer (IBAN), or via PayPal for international clients. Everything is official — Group 3 sole proprietor.",
+    faq_q4:"Is there confidentiality / an NDA?",
+    faq_a4:"Yes. Your code, data and ideas stay between us and are never shared with third parties. An NDA can be signed on request before the work begins.",
+    faq_q5:"Do you work with international clients?",
+    faq_a5:"Yes, I work with clients worldwide. Communication in Ukrainian or English, payment via PayPal (USD/EUR) or international transfer.",
+    faq_q6:"What about revisions and warranty?",
+    faq_a6:"We refine to the agreed result and fix bugs after delivery. Refunds: for services — before work starts; for digital goods — if access/goods were not delivered."
+  };
+  const PL = {"nav_services":"Usługi","nav_process":"Jak pracujemy","nav_pay":"Płatność","nav_terms":"Warunki","nav_contact":"Kontakt","nav_order":"Zamów wycenę","hero_eyebrow":"Jednoosobowa działalność · Game QA &amp; development","hero_h1":"Tworzenie, testowanie i automatyzacja <span class=\"c\">gier i oprogramowania</span>","hero_lede":"Boty i skrypty, testowanie mechanik gier, automatyzacja i towary cyfrowe — oficjalnie, z fakturami i dokumentami.","hero_cta1":"Zamów usługę","hero_cta2":"Zobacz usługi","chip1":"Jednoosobowa działalność · grupa 3 · <b>bez VAT</b>","chip2":"<b>Karta</b>, PayPal &amp; przelew bankowy","chip3":"Klienci <b>na całym świecie</b>","svc_eyebrow":"Usługi","svc_h2":"Czym się zajmujemy","svc_p":"Pełen cykl — od kodu i testów po towary cyfrowe i infrastrukturę. Każda usługa jest fakturowana oficjalnie.","s1h":"Tworzenie oprogramowania","s1p":"Boty, skrypty, mody, wtyczki i integracje. Tworzenie i ulepszanie komponentów pod Twoje zadanie.","s1pr":"od <b>$39</b>","s2h":"Testowanie / QA","s2p":"Testowanie scenariuszy i mechanik gier, wykrywanie i odtwarzanie błędów, regresja i raporty.","s2pr":"od <b>$19</b>","s3h":"Automatyzacja","s3p":"Automatyzacja rutynowych procesów, konfiguracja i wdrożenie systemów cyfrowych pod klucz.","s3pr":"od <b>$49</b>","s4h":"Towary cyfrowe","s4p":"Klucze licencyjne, dostępy, towary wirtualne i produkty informacyjne w formacie cyfrowym.","s4pr":"od <b>$3</b>","s5h":"Hosting &amp; infrastruktura","s5p":"Wynajem serwerów, przestrzeń dyskowa, hosting i przetwarzanie danych, wsparcie infrastruktury.","s5pr":"od <b>$7</b>/mies.","s6h":"Konsultacje &amp; wsparcie","s6p":"Wsparcie techniczne, monitoring systemów gier i konsultacje operacyjne.","s6pr":"od <b>$12</b>","svc_note":"* Ceny orientacyjne; koszt końcowy zależy od zakresu i jest ustalany na fakturze.","proc_eyebrow":"Proces","proc_h2":"Jak pracujemy","p1h":"Zgłoszenie","p1p":"Opisujesz zadanie przez Telegram lub e-mail — ustalamy szczegóły.","p2h":"Wycena","p2p":"Oceniamy zakres, termin i koszt oraz wystawiamy fakturę.","p3h":"Realizacja","p3p":"Tworzymy, testujemy i informujemy Cię o postępach.","p4h":"Płatność","p4p":"Płacisz kartą przez QR lub przelewem bankowym. Gotowe.","tr_eyebrow":"Gwarancje","tr_h2":"Dlaczego klienci nam ufają","tr1h":"Poufność","tr1p":"Twój kod, dane i pomysły zostają między nami. NDA na życzenie.","tr2h":"Gwarancja jakości","tr2p":"Dopracowujemy, aż działa; poprawki błędów po realizacji.","tr3h":"Terminy","tr3p":"Ustalamy terminy na fakturze i ich dotrzymujemy.","tr4h":"Oficjalnie","tr4p":"Jednoosobowa działalność, faktury i dokumenty rozliczeniowe. Przejrzyście i legalnie.","pay_h":"Płatność","pay_lead":"Wygodnie i oficjalnie. Każda faktura zawiera QR do natychmiastowej płatności.","pay1":"Płatności kartą online przez bezpieczną bramkę płatniczą","pay2":"PayPal dla klientów międzynarodowych (USD / EUR)","pay3":"Przelew bankowy (IBAN) z dowolnego banku","pay4":"Kod QR na fakturze — zapłać w kilka minut","pay_btn":"Zapłać przez PayPal","terms_h":"Warunki (oferta publiczna)","t1":"Usługi i towary cyfrowe świadczone są na zamówienie w uzgodnionym zakresie i za uzgodniony koszt.","t2":"Płatność w UAH (karta lub przelew bankowy) albo przez PayPal dla klientów międzynarodowych — na podstawie faktury.","t3":"Terminy ustalane są indywidualnie przed rozpoczęciem prac.","t4":"Zwroty: za usługi — przed rozpoczęciem prac; za towary cyfrowe — jeśli dostęp/towar nie został dostarczony.","t5":"Usługodawca jest płatnikiem jednolitego podatku grupy 3, nie jest płatnikiem VAT.","t6":"Gwarantowana poufność: dane i materiały klienta nigdy nie są udostępniane osobom trzecim; NDA na życzenie.","contact_eyebrow":"Kontakt","contact_h":"Porozmawiajmy o Twoim projekcie","contact_p":"Napisz do mnie na Telegramie lub e-mailem — odpowiem w sprawie zadania, terminu i kosztu oraz wystawię fakturę.","contact_req":"<b>Jednoosobowa działalność Dmytro Nartenko</b><br>Romny, Ukraina · płatnik jednolitego podatku grupy 3","ft_left":"© 2026 Nartenko.QA — jednoosobowa działalność D.&nbsp;Nartenko","ft_right":"Tworzenie · Testowanie · Automatyzacja","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; możliwości","stack_p":"Technologie i narzędzia, z którymi pracujemy na co dzień — od tworzenia oprogramowania i automatyzacji po QA gier.","stack_c9":"automatyzacja","faq_eyebrow":"FAQ","faq_h2":"Najczęściej zadawane pytania","faq_p":"Krótkie odpowiedzi na najczęstsze pytania. Masz wątpliwości? Napisz do mnie na Telegramie lub e-mailem.","faq_q1":"Jak zaczynamy?","faq_a1":"Napisz do mnie na Telegramie lub e-mailem z krótkim opisem zadania. Ustalimy zakres, termin i koszt, a ja wystawię fakturę — prace ruszają zaraz potem.","faq_q2":"Jak wyglądają terminy?","faq_a2":"Terminy zależą od zakresu i są ustalane indywidualnie przed rozpoczęciem prac. Małe zadania zajmują 1–3 dni; większe dzielimy na etapy i zapisujemy na fakturze.","faq_q3":"Jak mogę zapłacić?","faq_a3":"Kartą (Visa/Mastercard, Apple Pay, Google Pay) przez QR na fakturze, przelewem bankowym (IBAN) lub przez PayPal dla klientów międzynarodowych. Wszystko oficjalnie — jednoosobowa działalność, grupa 3.","faq_q4":"Czy jest poufność / NDA?","faq_a4":"Tak. Twój kod, dane i pomysły zostają między nami i nigdy nie są udostępniane osobom trzecim. NDA można podpisać na życzenie przed rozpoczęciem prac.","faq_q5":"Czy pracujesz z klientami międzynarodowymi?","faq_a5":"Tak, pracuję z klientami na całym świecie. Komunikacja po ukraińsku lub angielsku, płatność przez PayPal (USD/EUR) lub przelewem międzynarodowym.","faq_q6":"A co z poprawkami i gwarancją?","faq_a6":"Dopracowujemy do uzgodnionego rezultatu i poprawiamy błędy po realizacji. Zwroty: za usługi — przed rozpoczęciem prac; za towary cyfrowe — jeśli dostęp/towar nie został dostarczony."};
+  const DE = {"nav_services":"Leistungen","nav_process":"Ablauf","nav_pay":"Zahlung","nav_terms":"Bedingungen","nav_contact":"Kontakt","nav_order":"Angebot anfordern","hero_eyebrow":"Einzelunternehmer · Game-QA &amp; Entwicklung","hero_h1":"Entwicklung, Testing und Automatisierung <span class=\"c\">für Games und Software</span>","hero_lede":"Bots und Skripte, Test von Spielmechaniken, Automatisierung und digitale Produkte — offiziell, mit Rechnungen und Belegen.","hero_cta1":"Leistung anfragen","hero_cta2":"Leistungen ansehen","chip1":"Einzelunternehmer · Gruppe 3 · <b>USt.-befreit</b>","chip2":"<b>Karte</b>, PayPal &amp; Überweisung","chip3":"Kunden <b>weltweit</b>","svc_eyebrow":"Leistungen","svc_h2":"Was wir tun","svc_p":"Kompletter Zyklus — von Code und Tests bis zu digitalen Produkten und Infrastruktur. Jede Leistung wird offiziell in Rechnung gestellt.","s1h":"Softwareentwicklung","s1p":"Bots, Skripte, Mods, Plugins und Integrationen. Wir entwickeln und optimieren Komponenten für Ihre Aufgabe.","s1pr":"ab <b>$39</b>","s2h":"Testing / QA","s2p":"Test von Spielszenarien und -mechaniken, Finden und Reproduzieren von Bugs, Regression und Reports.","s2pr":"ab <b>$19</b>","s3h":"Automatisierung","s3p":"Automatisierung von Routineprozessen, schlüsselfertige Konfiguration und Einrichtung digitaler Systeme.","s3pr":"ab <b>$49</b>","s4h":"Digitale Produkte","s4p":"Lizenzschlüssel, Zugänge, virtuelle Güter und Informationsprodukte in digitalem Format.","s4pr":"ab <b>$3</b>","s5h":"Hosting &amp; Infrastruktur","s5p":"Servermiete, Speicherplatz, Datenhosting und -verarbeitung, Infrastruktur-Support.","s5pr":"ab <b>$7</b>/Mon.","s6h":"Beratung &amp; Support","s6p":"Technischer Support, Monitoring von Spielsystemen und laufende Beratung.","s6pr":"ab <b>$12</b>","svc_note":"* Richtpreise; der Endpreis hängt vom Umfang ab und wird in der Rechnung festgelegt.","proc_eyebrow":"Ablauf","proc_h2":"So arbeiten wir","p1h":"Anfrage","p1p":"Sie beschreiben die Aufgabe per Telegram oder E-Mail — wir klären die Details.","p2h":"Kalkulation","p2p":"Wir schätzen Umfang, Zeitplan und Kosten ein und stellen eine Rechnung aus.","p3h":"Umsetzung","p3p":"Wir entwickeln, testen und halten Sie über den Fortschritt auf dem Laufenden.","p4h":"Zahlung","p4p":"Zahlung per Karte über QR oder per Überweisung. Fertig.","tr_eyebrow":"Garantien","tr_h2":"Warum Kunden uns vertrauen","tr1h":"Vertraulichkeit","tr1p":"Ihr Code, Ihre Daten und Ideen bleiben unter uns. NDA auf Anfrage.","tr2h":"Qualitätsgarantie","tr2p":"Wir arbeiten nach, bis es funktioniert; Bugfixes nach der Übergabe.","tr3h":"Termine","tr3p":"Wir legen Termine in der Rechnung fest und halten sie ein.","tr4h":"Offiziell","tr4p":"Einzelunternehmer, Rechnungen und Abschlussdokumente. Transparent und rechtssicher.","pay_h":"Zahlung","pay_lead":"Bequem und offiziell. Jede Rechnung enthält einen QR für die sofortige Zahlung.","pay1":"Online-Kartenzahlung über sicheres Acquiring","pay2":"PayPal für internationale Kunden (USD / EUR)","pay3":"Überweisung (IBAN) von jeder Bank","pay4":"QR-Code in der Rechnung — Zahlung in wenigen Minuten","pay_btn":"Mit PayPal bezahlen","terms_h":"Bedingungen (öffentliches Angebot)","t1":"Leistungen und digitale Produkte werden auf Anfrage in vereinbartem Umfang und zu vereinbarten Kosten erbracht.","t2":"Zahlung in UAH (Karte oder Überweisung) oder per PayPal für internationale Kunden — auf Rechnungsbasis.","t3":"Die Zeitpläne werden vor Arbeitsbeginn individuell vereinbart.","t4":"Rückerstattung: bei Leistungen — vor Arbeitsbeginn; bei digitalen Produkten — wenn Zugang/Ware nicht geliefert wurde.","t5":"Der Anbieter ist Einheitssteuerzahler der Gruppe 3 und kein Umsatzsteuerzahler.","t6":"Vertraulichkeit garantiert: Kundendaten und Materialien werden niemals an Dritte weitergegeben; NDA auf Anfrage.","contact_eyebrow":"Kontakt","contact_h":"Lassen Sie uns Ihr Projekt besprechen","contact_p":"Schreiben Sie mir über Telegram oder E-Mail — ich antworte zu Aufgabe, Zeitplan und Kosten und stelle eine Rechnung aus.","contact_req":"<b>Einzelunternehmer Dmytro Nartenko</b><br>Romny, Ukraine · Einheitssteuerzahler Gruppe 3","ft_left":"© 2026 Nartenko.QA — Einzelunternehmer D.&nbsp;Nartenko","ft_right":"Entwicklung · Testing · Automatisierung","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; Fähigkeiten","stack_p":"Technologien und Tools, mit denen wir täglich arbeiten — von Entwicklung und Automatisierung bis zu Game-QA.","stack_c9":"Automatisierung","faq_eyebrow":"FAQ","faq_h2":"Häufig gestellte Fragen","faq_p":"Kurze Antworten auf die häufigsten Fragen. Noch unsicher? Schreiben Sie mir über Telegram oder per E-Mail.","faq_q1":"Wie fangen wir an?","faq_a1":"Schreiben Sie mir über Telegram oder per E-Mail mit einer kurzen Beschreibung Ihrer Aufgabe. Wir vereinbaren Umfang, Zeitplan und Kosten, und ich stelle eine Rechnung aus — danach beginnt die Arbeit.","faq_q2":"Wie sieht es mit den Zeitplänen aus?","faq_a2":"Die Zeitpläne hängen vom Umfang ab und werden vor Arbeitsbeginn individuell vereinbart. Kleine Aufgaben dauern 1–3 Tage; größere werden in Etappen unterteilt und in der Rechnung festgelegt.","faq_q3":"Wie kann ich bezahlen?","faq_a3":"Per Karte (Visa/Mastercard, Apple Pay, Google Pay) über den QR in der Rechnung, per Überweisung (IBAN) oder per PayPal für internationale Kunden. Alles offiziell — Einzelunternehmer der Gruppe 3.","faq_q4":"Gibt es Vertraulichkeit / ein NDA?","faq_a4":"Ja. Ihr Code, Ihre Daten und Ideen bleiben unter uns und werden niemals an Dritte weitergegeben. Ein NDA kann auf Anfrage vor Arbeitsbeginn unterzeichnet werden.","faq_q5":"Arbeiten Sie mit internationalen Kunden?","faq_a5":"Ja, ich arbeite mit Kunden weltweit. Kommunikation auf Ukrainisch oder Englisch, Zahlung per PayPal (USD/EUR) oder internationale Überweisung.","faq_q6":"Wie sieht es mit Überarbeitungen und Gewährleistung aus?","faq_a6":"Wir arbeiten bis zum vereinbarten Ergebnis nach und beheben Bugs nach der Übergabe. Rückerstattung: bei Leistungen — vor Arbeitsbeginn; bei digitalen Produkten — wenn Zugang/Ware nicht geliefert wurde."};
+  const ES = {"nav_services":"Servicios","nav_process":"Cómo trabajamos","nav_pay":"Pago","nav_terms":"Condiciones","nav_contact":"Contacto","nav_order":"Solicitar presupuesto","hero_eyebrow":"Autónomo · QA de juegos &amp; desarrollo","hero_h1":"Desarrollo, pruebas y automatización <span class=\"c\">para juegos y software</span>","hero_lede":"Bots y scripts, pruebas de mecánicas de juego, automatización y productos digitales — de forma oficial, con facturas y documentos.","hero_cta1":"Solicitar un servicio","hero_cta2":"Ver servicios","chip1":"Autónomo · Grupo 3 · <b>exento de IVA</b>","chip2":"<b>Tarjeta</b>, PayPal &amp; transferencia bancaria","chip3":"Clientes <b>en todo el mundo</b>","svc_eyebrow":"Servicios","svc_h2":"Lo que hacemos","svc_p":"Ciclo completo — desde el código y las pruebas hasta los productos digitales y la infraestructura. Cada servicio se factura de forma oficial.","s1h":"Desarrollo de software","s1p":"Bots, scripts, mods, plugins e integraciones. Creamos y mejoramos componentes para tu tarea.","s1pr":"desde <b>$39</b>","s2h":"Pruebas / QA","s2p":"Pruebas de escenarios y mecánicas de juego, detección y reproducción de bugs, regresión e informes.","s2pr":"desde <b>$19</b>","s3h":"Automatización","s3p":"Automatización de procesos rutinarios, configuración llave en mano e implementación de sistemas digitales.","s3pr":"desde <b>$49</b>","s4h":"Productos digitales","s4p":"Claves de licencia, accesos, bienes virtuales y productos de información en formato digital.","s4pr":"desde <b>$3</b>","s5h":"Hosting &amp; infraestructura","s5p":"Alquiler de servidores, espacio en disco, alojamiento y procesamiento de datos, soporte de infraestructura.","s5pr":"desde <b>$7</b>/mes","s6h":"Consultoría &amp; soporte","s6p":"Soporte técnico, monitoreo de sistemas de juego y consultoría operativa.","s6pr":"desde <b>$12</b>","svc_note":"* Precios orientativos; el costo final depende del alcance y queda fijado en la factura.","proc_eyebrow":"Proceso","proc_h2":"Cómo trabajamos","p1h":"Solicitud","p1p":"Describes la tarea por Telegram o correo — acordamos los detalles.","p2h":"Presupuesto","p2p":"Evaluamos el alcance, los plazos y el costo, y emitimos una factura.","p3h":"Trabajo","p3p":"Desarrollamos, probamos y te mantenemos al tanto del progreso.","p4h":"Pago","p4p":"Paga con tarjeta mediante QR o por transferencia bancaria. Listo.","tr_eyebrow":"Garantías","tr_h2":"Por qué los clientes confían en nosotros","tr1h":"Confidencialidad","tr1p":"Tu código, datos e ideas quedan entre nosotros. NDA a petición.","tr2h":"Garantía de calidad","tr2p":"Perfeccionamos hasta que funcione; corrección de errores tras la entrega.","tr3h":"Plazos","tr3p":"Fijamos los plazos en la factura y los cumplimos.","tr4h":"Oficial","tr4p":"Autónomo, facturas y documentos de cierre. Transparente y legal.","pay_h":"Pago","pay_lead":"Cómodo y oficial. Cada factura incluye un QR para el pago instantáneo.","pay1":"Pagos con tarjeta en línea mediante adquirencia segura","pay2":"PayPal para clientes internacionales (USD / EUR)","pay3":"Transferencia bancaria (IBAN) desde cualquier banco","pay4":"Código QR en la factura — paga en un par de minutos","pay_btn":"Pagar con PayPal","terms_h":"Condiciones (oferta pública)","t1":"Los servicios y productos digitales se prestan bajo solicitud, con un alcance y costo acordados.","t2":"Pago en UAH (tarjeta o transferencia bancaria) o mediante PayPal para clientes internacionales — con base en una factura.","t3":"Los plazos se acuerdan de forma individual antes de iniciar el trabajo.","t4":"Reembolsos: para servicios — antes de iniciar el trabajo; para productos digitales — si no se entregaron los accesos/bienes.","t5":"El prestador es contribuyente del impuesto único del Grupo 3, no contribuyente del IVA.","t6":"Confidencialidad garantizada: los datos y materiales del cliente nunca se comparten con terceros; NDA a petición.","contact_eyebrow":"Contacto","contact_h":"Hablemos de tu proyecto","contact_p":"Escríbeme por Telegram o correo — te responderé sobre la tarea, los plazos y el costo, y emitiré una factura.","contact_req":"<b>Autónomo Dmytro Nartenko</b><br>Romny, Ucrania · contribuyente del impuesto único del Grupo 3","ft_left":"© 2026 Nartenko.QA — Autónomo D.&nbsp;Nartenko","ft_right":"Desarrollo · Pruebas · Automatización","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; capacidades","stack_p":"Tecnologías y herramientas con las que trabajamos a diario — desde el desarrollo y la automatización hasta el QA de juegos.","stack_c9":"automatización","faq_eyebrow":"FAQ","faq_h2":"Preguntas frecuentes","faq_p":"Respuestas breves a las preguntas más comunes. ¿Todavía tienes dudas? Escríbeme por Telegram o correo.","faq_q1":"¿Cómo empezamos?","faq_a1":"Escríbeme por Telegram o correo con una breve descripción de tu tarea. Acordaremos el alcance, los plazos y el costo, y emitiré una factura — el trabajo comienza después de eso.","faq_q2":"¿Qué hay de los plazos?","faq_a2":"Los plazos dependen del alcance y se acuerdan de forma individual antes de iniciar el trabajo. Las tareas pequeñas llevan de 1 a 3 días; las más grandes se dividen en etapas y se fijan en la factura.","faq_q3":"¿Cómo puedo pagar?","faq_a3":"Con tarjeta (Visa/Mastercard, Apple Pay, Google Pay) mediante el QR de la factura, por transferencia bancaria (IBAN) o con PayPal para clientes internacionales. Todo es oficial — autónomo del Grupo 3.","faq_q4":"¿Hay confidencialidad / un NDA?","faq_a4":"Sí. Tu código, datos e ideas quedan entre nosotros y nunca se comparten con terceros. Se puede firmar un NDA a petición antes de iniciar el trabajo.","faq_q5":"¿Trabajas con clientes internacionales?","faq_a5":"Sí, trabajo con clientes de todo el mundo. Comunicación en ucraniano o inglés, pago con PayPal (USD/EUR) o transferencia internacional.","faq_q6":"¿Qué hay de las revisiones y la garantía?","faq_a6":"Perfeccionamos hasta el resultado acordado y corregimos errores tras la entrega. Reembolsos: para servicios — antes de iniciar el trabajo; para productos digitales — si no se entregaron los accesos/bienes."};
+  const FR = {"nav_services":"Services","nav_process":"Méthode","nav_pay":"Paiement","nav_terms":"Conditions","nav_contact":"Contacts","nav_order":"Demander un devis","hero_eyebrow":"Micro-entrepreneur · QA de jeux &amp; développement","hero_h1":"Développement, tests et automatisation <span class=\"c\">pour jeux et logiciels</span>","hero_lede":"Bots et scripts, tests de mécaniques de jeu, automatisation et produits numériques — officiellement, avec factures et documents.","hero_cta1":"Commander un service","hero_cta2":"Voir les services","chip1":"Micro-entrepreneur · groupe 3 · <b>exonéré de TVA</b>","chip2":"<b>Carte</b>, PayPal &amp; virement bancaire","chip3":"Clients <b>dans le monde entier</b>","svc_eyebrow":"Services","svc_h2":"Ce que nous faisons","svc_p":"Cycle complet — du code et des tests aux produits numériques et à l'infrastructure. Chaque service est facturé officiellement.","s1h":"Développement logiciel","s1p":"Bots, scripts, mods, plugins et intégrations. Création et amélioration de composants adaptés à votre besoin.","s1pr":"à partir de <b>$39</b>","s2h":"Tests / QA","s2p":"Tests de scénarios et de mécaniques de jeu, détection et reproduction de bugs, régression et rapports.","s2pr":"à partir de <b>$19</b>","s3h":"Automatisation","s3p":"Automatisation des processus routiniers, configuration clé en main et mise en place de systèmes numériques.","s3pr":"à partir de <b>$49</b>","s4h":"Produits numériques","s4p":"Clés de licence, accès, biens virtuels et produits d'information au format numérique.","s4pr":"à partir de <b>$3</b>","s5h":"Hébergement &amp; infrastructure","s5p":"Location de serveurs, espace disque, hébergement et traitement de données, support d'infrastructure.","s5pr":"à partir de <b>$7</b>/mois","s6h":"Conseil &amp; support","s6p":"Support technique, supervision des systèmes de jeu et conseil opérationnel.","s6pr":"à partir de <b>$12</b>","svc_note":"* Prix indicatifs ; le coût final dépend du périmètre et est fixé dans la facture.","proc_eyebrow":"Processus","proc_h2":"Comment nous travaillons","p1h":"Demande","p1p":"Vous décrivez la tâche via Telegram ou par e-mail — nous convenons des détails.","p2h":"Estimation","p2p":"Nous évaluons le périmètre, les délais et le coût, puis émettons une facture.","p3h":"Réalisation","p3p":"Nous développons, testons et vous tenons informé de l'avancement.","p4h":"Paiement","p4p":"Payez par carte via QR ou par virement bancaire. C'est fait.","tr_eyebrow":"Garanties","tr_h2":"Pourquoi les clients nous font confiance","tr1h":"Confidentialité","tr1p":"Votre code, vos données et vos idées restent entre nous. NDA sur demande.","tr2h":"Garantie de qualité","tr2p":"Nous peaufinons jusqu'à ce que tout fonctionne ; corrections des bugs après livraison.","tr3h":"Délais","tr3p":"Nous fixons les délais dans la facture et les respectons.","tr4h":"Officiel","tr4p":"Micro-entrepreneur, factures et documents de clôture. Transparent et légal.","pay_h":"Paiement","pay_lead":"Pratique et officiel. Chaque facture inclut un QR pour un paiement instantané.","pay1":"Paiements par carte en ligne via un système d'acquisition sécurisé","pay2":"PayPal pour les clients internationaux (USD / EUR)","pay3":"Virement bancaire (IBAN) depuis n'importe quelle banque","pay4":"Code QR dans la facture — payez en quelques minutes","pay_btn":"Payer via PayPal","terms_h":"Conditions (offre publique)","t1":"Les services et produits numériques sont fournis sur demande, selon un périmètre et un coût convenus.","t2":"Paiement en UAH (carte ou virement bancaire) ou via PayPal pour les clients internationaux — sur la base d'une facture.","t3":"Les délais sont convenus individuellement avant le début des travaux.","t4":"Remboursements : pour les services — avant le début des travaux ; pour les produits numériques — si l'accès ou les biens n'ont pas été livrés.","t5":"Le prestataire relève de l'impôt unique du groupe 3 et n'est pas assujetti à la TVA.","t6":"Confidentialité garantie : les données et documents des clients ne sont jamais communiqués à des tiers ; NDA sur demande.","contact_eyebrow":"Contacts","contact_h":"Discutons de votre projet","contact_p":"Écrivez-moi sur Telegram ou par e-mail — je vous répondrai concernant la tâche, les délais et le coût, et j'émettrai une facture.","contact_req":"<b>Micro-entrepreneur Dmytro Nartenko</b><br>Romny, Ukraine · impôt unique du groupe 3","ft_left":"© 2026 Nartenko.QA — Micro-entrepreneur D.&nbsp;Nartenko","ft_right":"Développement · Tests · Automatisation","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; compétences","stack_p":"Technologies et outils que nous utilisons au quotidien — du développement et de l'automatisation à la QA de jeux.","stack_c9":"automatisation","faq_eyebrow":"FAQ","faq_h2":"Questions fréquentes","faq_p":"Réponses courtes aux questions les plus fréquentes. Encore des doutes ? Écrivez-moi sur Telegram ou par e-mail.","faq_q1":"Comment commencer ?","faq_a1":"Écrivez-moi sur Telegram ou par e-mail avec une brève description de votre tâche. Nous conviendrons du périmètre, des délais et du coût, et j'émettrai une facture — le travail commence ensuite.","faq_q2":"Qu'en est-il des délais ?","faq_a2":"Les délais dépendent du périmètre et sont convenus individuellement avant le début des travaux. Les petites tâches prennent 1 à 3 jours ; les plus importantes sont divisées en étapes et fixées dans la facture.","faq_q3":"Comment puis-je payer ?","faq_a3":"Par carte (Visa/Mastercard, Apple Pay, Google Pay) via le QR de la facture, par virement bancaire (IBAN), ou via PayPal pour les clients internationaux. Tout est officiel — micro-entrepreneur du groupe 3.","faq_q4":"Y a-t-il une clause de confidentialité / un NDA ?","faq_a4":"Oui. Votre code, vos données et vos idées restent entre nous et ne sont jamais communiqués à des tiers. Un NDA peut être signé sur demande avant le début des travaux.","faq_q5":"Travaillez-vous avec des clients internationaux ?","faq_a5":"Oui, je travaille avec des clients du monde entier. Communication en ukrainien ou en anglais, paiement via PayPal (USD/EUR) ou virement international.","faq_q6":"Qu'en est-il des révisions et de la garantie ?","faq_a6":"Nous peaufinons jusqu'au résultat convenu et corrigeons les bugs après livraison. Remboursements : pour les services — avant le début des travaux ; pour les produits numériques — si l'accès ou les biens n'ont pas été livrés."};
+  (function(){
+    const els = document.querySelectorAll('[data-i18n]');
+    els.forEach(el => { if(el.dataset._uk == null) el.dataset._uk = el.innerHTML; });
+    const DICTS = { en:EN, pl:PL, de:DE, es:ES, fr:FR };
+    // stat-strip labels (UK stays as page markup)
+    Object.assign(EN, {st_l1:"orders delivered", st_l2:"supported languages", st_l3:"official, with invoice", skip:"Skip to content"});
+    Object.assign(PL, {st_l1:"zrealizowanych zamówień", st_l2:"obsługiwane języki", st_l3:"oficjalnie, z fakturą", skip:"Przejdź do treści"});
+    Object.assign(DE, {st_l1:"erledigte Aufträge", st_l2:"unterstützte Sprachen", st_l3:"offiziell, mit Rechnung", skip:"Zum Inhalt springen"});
+    Object.assign(ES, {st_l1:"pedidos completados", st_l2:"idiomas disponibles", st_l3:"oficial, con factura", skip:"Ir al contenido"});
+    Object.assign(FR, {st_l1:"commandes réalisées", st_l2:"langues disponibles", st_l3:"officiel, avec facture", skip:"Aller au contenu"});
+    const SUP = ['uk','en','pl','de','es','fr'];
+    const CODE = { uk:'UA', en:'EN', pl:'PL', de:'DE', es:'ES', fr:'FR' };
+    const btn = document.getElementById('langBtn');
+    const menu = document.getElementById('langMenu');
+    function apply(lang){
+      if (SUP.indexOf(lang) < 0) lang = 'en';
+      document.body.dataset.lang = lang;
+      document.documentElement.lang = lang;
+      const dict = DICTS[lang];
+      els.forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        el.innerHTML = (dict && dict[k] != null) ? dict[k] : el.dataset._uk;
+      });
+      if (btn) btn.textContent = (CODE[lang] || 'UA') + ' ▾';
+      if (menu) menu.querySelectorAll('button').forEach(b =>
+        b.setAttribute('aria-current', b.getAttribute('data-lang') === lang ? 'true' : 'false'));
+      try { localStorage.setItem('nq_lang', lang); } catch(e){}
+    }
+    function closeMenu(){ var had = menu && menu.contains(document.activeElement); if (menu) menu.classList.remove('open'); if (btn){ btn.setAttribute('aria-expanded','false'); if(had){ try{ btn.focus(); }catch(e){} } } }
+    function openMenu(){ if (menu) menu.classList.add('open'); if (btn) btn.setAttribute('aria-expanded','true'); }
+    if (btn) btn.addEventListener('click', function(e){ e.stopPropagation(); (menu && menu.classList.contains('open')) ? closeMenu() : openMenu(); });
+    if (menu) menu.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); closeMenu(); });
+    });
+    document.addEventListener('click', function(e){ if (menu && !menu.contains(e.target) && e.target !== btn) closeMenu(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Esc') closeMenu(); });
+
+    let init = null;
+    try {
+      var pm = location.pathname.match(/\/(uk|en|pl|de|es|fr)(\/|$)/);
+      var qp = new URLSearchParams(location.search).get('lang');
+      if (pm && SUP.indexOf(pm[1]) > -1) init = pm[1];
+      else if (SUP.indexOf(qp) > -1) init = qp;
+      else init = localStorage.getItem('nq_lang');
+    } catch(e){}
+    if (SUP.indexOf(init) < 0) {
+      // немає збереженого вибору → беремо мови браузера У ПОРЯДКУ пріоритету, перша підтримувана; інакше EN
+      var langs = [];
+      try { langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || '']; } catch(e){ langs = ['']; }
+      init = 'en';
+      for (var li = 0; li < langs.length; li++) {
+        var code = String(langs[li] || '').toLowerCase().slice(0,2);
+        if (SUP.indexOf(code) > -1) { init = code; break; }
+      }
+    }
+    apply(init);
+  })();
+
+  /* ambient particle field — soft rising motes (disabled for reduced-motion) */
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cvs = document.getElementById('fx');
+    if(!cvs || reduce) return;
+    var ctx = cvs.getContext('2d');
+    if(!ctx) return;
+    var w=0, h=0, dpr=1, parts=[], raf=null, running=true;
+    function size(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = cvs.clientWidth; h = cvs.clientHeight;
+      cvs.width = Math.max(1, Math.floor(w*dpr));
+      cvs.height = Math.max(1, Math.floor(h*dpr));
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    function make(){
+      var count = Math.round(Math.min(64, (w*h)/24000));
+      parts = [];
+      for(var i=0;i<count;i++){
+        parts.push({
+          x:Math.random()*w, y:Math.random()*h,
+          r:Math.random()*1.5+0.4,
+          vx:(Math.random()-.5)*0.1, vy:-(Math.random()*0.24+0.05),
+          a:Math.random()*0.45+0.15, tw:Math.random()*0.018+0.005, tp:Math.random()*Math.PI*2
+        });
+      }
+    }
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      for(var i=0;i<parts.length;i++){
+        var p=parts[i];
+        p.x+=p.vx; p.y+=p.vy; p.tp+=p.tw;
+        if(p.y < -12){ p.y = h+12; p.x = Math.random()*w; }
+        if(p.x < -12) p.x = w+12; else if(p.x > w+12) p.x = -12;
+        var alpha = p.a * (0.6 + 0.4*Math.sin(p.tp));
+        var rad = p.r*4;
+        var g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,rad);
+        g.addColorStop(0,'rgba(192,132,252,'+alpha+')');
+        g.addColorStop(1,'rgba(192,132,252,0)');
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(p.x,p.y,rad,0,Math.PI*2); ctx.fill();
+      }
+      raf = requestAnimationFrame(draw);
+    }
+    function start(){ if(running && !raf) raf = requestAnimationFrame(draw); }
+    function stop(){ if(raf){ cancelAnimationFrame(raf); raf=null; } }
+    try{
+      size(); make(); start();
+      var rt;
+      window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(function(){ size(); make(); }, 180); });
+      document.addEventListener('visibilitychange', function(){
+        if(document.hidden){ running=false; stop(); } else { running=true; start(); }
+      });
+    }catch(e){}
+  })();
+
+  /* cursor-following spotlight on service & trust cards */
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce) return;
+    var cards = document.querySelectorAll('.card, .titem');
+    for(var i=0;i<cards.length;i++){
+      (function(c){
+        c.addEventListener('pointermove', function(e){
+          var r = c.getBoundingClientRect();
+          c.style.setProperty('--mx', ((e.clientX - r.left)/r.width*100) + '%');
+          c.style.setProperty('--my', ((e.clientY - r.top)/r.height*100) + '%');
+        });
+      })(cards[i]);
+    }
+  })();
+
+  /* FAQ accordion — accessible aria-expanded toggling (works with i18n toggle) */
+  (function(){
+    var qs = document.querySelectorAll('.faq-q');
+    for(var i=0;i<qs.length;i++){
+      (function(btn){
+        btn.addEventListener('click', function(){
+          var panel = document.getElementById(btn.getAttribute('aria-controls'));
+          var open = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+          if(panel) panel.hidden = open;
+          var item = btn.closest('.faq-item');
+          if(item) item.classList.toggle('open', !open);
+        });
+      })(qs[i]);
+    }
+  })();
+
+  /* gentle orb parallax reacting to pointer + scroll (disabled for reduced-motion) */
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var wrap = document.querySelector('.orbwrap');
+    if(!wrap || reduce) return;
+    var mx=0, my=0, sy=0, raf=null;
+    function apply(){
+      raf=null;
+      wrap.style.transform = 'translate3d(' + mx.toFixed(1) + 'px,' + (my + sy).toFixed(1) + 'px,0)';
+    }
+    function schedule(){ if(!raf) raf = requestAnimationFrame(apply); }
+    window.addEventListener('pointermove', function(e){
+      mx = ((e.clientX / window.innerWidth) - 0.5) * 26;
+      my = ((e.clientY / window.innerHeight) - 0.5) * 26;
+      schedule();
+    }, {passive:true});
+    window.addEventListener('scroll', function(){
+      sy = -(window.scrollY || window.pageYOffset || 0) * 0.03;
+      schedule();
+    }, {passive:true});
+  })();
+</script>
+
+<!-- ============ AI CONSULTANT CHAT WIDGET (self-contained, 100% client-side) ============ -->
+<style>
+  #nqchat{position:fixed; z-index:9999; right:22px; bottom:22px;
+    font-family:'Manrope','Segoe UI',system-ui,sans-serif}
+  #nqchat *{box-sizing:border-box}
+  .nqc-fab{position:relative; width:60px; height:60px; border-radius:50%; border:0; cursor:pointer;
+    display:grid; place-items:center; color:#04121a;
+    background:linear-gradient(135deg,var(--cyan,#A855F7),var(--cyan2,#E879F9));
+    box-shadow:0 10px 30px rgba(168,85,247,.45), inset 0 1px 0 rgba(255,255,255,.5);
+    transition:transform .2s ease, box-shadow .2s ease}
+  .nqc-fab:hover{transform:translateY(-2px) scale(1.04); box-shadow:0 16px 40px rgba(168,85,247,.6)}
+  .nqc-fab svg{width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:2;
+    stroke-linecap:round; stroke-linejoin:round}
+  .nqc-fab::after{content:""; position:absolute; inset:0; border-radius:50%; pointer-events:none;
+    box-shadow:0 0 0 0 rgba(168,85,247,.5); animation:nqcPulse 2.4s ease-out infinite}
+  @keyframes nqcPulse{0%{box-shadow:0 0 0 0 rgba(168,85,247,.5)}
+    70%{box-shadow:0 0 0 16px rgba(168,85,247,0)}100%{box-shadow:0 0 0 0 rgba(168,85,247,0)}}
+  .nqc-fab .ic-close{display:none}
+  #nqchat.open .nqc-fab .ic-open{display:none}
+  #nqchat.open .nqc-fab .ic-close{display:block}
+  #nqchat.open .nqc-fab::after{animation:none}
+
+  .nqc-panel{position:absolute; right:0; bottom:74px; width:360px; max-width:calc(100vw - 44px);
+    height:520px; max-height:calc(100vh - 120px); display:flex; flex-direction:column; overflow:hidden;
+    border-radius:18px; border:1px solid rgba(168,85,247,.4);
+    background:linear-gradient(180deg,rgba(16,25,44,.96),rgba(9,14,26,.97));
+    -webkit-backdrop-filter:blur(14px) saturate(130%); backdrop-filter:blur(14px) saturate(130%);
+    box-shadow:0 0 0 1px rgba(168,85,247,.16), 0 30px 70px rgba(0,0,0,.6), 0 0 40px rgba(168,85,247,.14);
+    color:#EAF2FF}
+  .nqc-panel[hidden]{display:none}
+
+  .nqc-head{display:flex; align-items:center; gap:11px; padding:14px;
+    border-bottom:1px solid rgba(168,85,247,.16); background:rgba(168,85,247,.05)}
+  .nqc-ava{width:38px; height:38px; border-radius:11px; flex:none; display:grid; place-items:center;
+    color:#04121a; font-weight:800; font-size:14px; font-family:'Unbounded','Manrope',sans-serif;
+    background:linear-gradient(135deg,var(--cyan,#A855F7),var(--cyan2,#E879F9)); box-shadow:0 6px 16px rgba(168,85,247,.4)}
+  .nqc-htext{min-width:0}
+  .nqc-title{font-weight:800; font-size:14.5px; color:#EAF2FF; line-height:1.2}
+  .nqc-status{font-size:11.5px; color:#7C89A6; display:flex; align-items:center; gap:6px; margin-top:2px}
+  .nqc-status b{width:7px; height:7px; border-radius:50%; flex:none; background:#34D399; box-shadow:0 0 8px #34D399}
+  .nqc-x{margin-left:auto; width:32px; height:32px; flex:none; border-radius:9px;
+    border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.03); color:#AEBBD4; cursor:pointer;
+    display:grid; place-items:center; transition:.18s ease}
+  .nqc-x:hover{color:#EAF2FF; border-color:rgba(168,85,247,.5)}
+  .nqc-x svg{width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round}
+
+  .nqc-log{flex:1; overflow-y:auto; padding:16px 14px; display:flex; flex-direction:column; gap:10px; scroll-behavior:smooth}
+  .nqc-msg{max-width:84%; padding:10px 13px; border-radius:14px; font-size:13.5px; line-height:1.55;
+    white-space:pre-wrap; word-wrap:break-word; overflow-wrap:anywhere}
+  .nqc-bot{align-self:flex-start; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+    color:#D6E2F5; border-bottom-left-radius:5px}
+  .nqc-user{align-self:flex-end; color:#04121a; font-weight:600; border-bottom-right-radius:5px;
+    background:linear-gradient(135deg,rgba(168,85,247,.92),rgba(232,121,249,.92))}
+  .nqc-quick{display:flex; flex-wrap:wrap; gap:7px; align-self:flex-start; max-width:100%}
+  .nqc-chip{font-family:'JetBrains Mono',monospace; font-size:12px; color:#C084FC;
+    background:rgba(168,85,247,.08); border:1px solid rgba(168,85,247,.35); border-radius:999px;
+    padding:6px 11px; cursor:pointer; transition:.16s ease}
+  .nqc-chip:hover{background:rgba(168,85,247,.16); color:#EAF2FF; border-color:rgba(168,85,247,.6)}
+  .nqc-typing{align-self:flex-start; display:inline-flex; gap:4px; padding:12px 14px;
+    background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+    border-radius:14px; border-bottom-left-radius:5px}
+  .nqc-typing i{width:6px; height:6px; border-radius:50%; background:var(--cyan,#A855F7); opacity:.5;
+    animation:nqcType 1.2s infinite ease-in-out}
+  .nqc-typing i:nth-child(2){animation-delay:.18s}
+  .nqc-typing i:nth-child(3){animation-delay:.36s}
+  @keyframes nqcType{0%,60%,100%{transform:translateY(0); opacity:.35}30%{transform:translateY(-4px); opacity:1}}
+
+  .nqc-cta{padding:10px 12px; border-top:1px solid rgba(255,255,255,.07); display:flex; flex-direction:column; gap:7px}
+  .nqc-tg{display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;
+    font-weight:700; font-size:13.5px; padding:10px 14px; border-radius:11px; color:#04121a;
+    background:linear-gradient(135deg,var(--cyan,#A855F7),var(--cyan2,#E879F9)); box-shadow:0 8px 20px rgba(168,85,247,.3);
+    transition:transform .16s ease, box-shadow .16s ease}
+  .nqc-tg:hover{transform:translateY(-1px); box-shadow:0 12px 26px rgba(168,85,247,.45)}
+  .nqc-tg svg{width:17px; height:17px; flex:none}
+  .nqc-email{text-align:center; font-size:11.5px; color:#7C89A6}
+  .nqc-email a{color:var(--cyan,#A855F7)}
+
+  .nqc-form{display:flex; gap:8px; padding:12px 12px 14px; border-top:1px solid rgba(168,85,247,.16);
+    background:rgba(255,255,255,.02)}
+  .nqc-input{flex:1; min-width:0; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14);
+    color:#EAF2FF; border-radius:11px; padding:11px 13px; font-family:inherit; font-size:13.5px; outline:none;
+    transition:border-color .18s ease, box-shadow .18s ease}
+  .nqc-input::placeholder{color:#7C89A6}
+  .nqc-input:focus{border-color:var(--cyan,#A855F7); box-shadow:0 0 0 3px rgba(168,85,247,.2)}
+  .nqc-send{flex:none; width:44px; border-radius:11px; border:0; cursor:pointer; color:#04121a;
+    background:linear-gradient(135deg,var(--cyan,#A855F7),var(--cyan2,#E879F9)); display:grid; place-items:center;
+    transition:transform .16s ease}
+  .nqc-send:hover{transform:translateY(-1px)}
+  .nqc-send svg{width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+
+  .nqc-log::-webkit-scrollbar{width:8px}
+  .nqc-log::-webkit-scrollbar-thumb{background:rgba(168,85,247,.25); border-radius:8px}
+
+  .nqc-fab:focus-visible,.nqc-x:focus-visible,.nqc-chip:focus-visible,.nqc-send:focus-visible,
+  .nqc-input:focus-visible,.nqc-tg:focus-visible{outline:2px solid var(--cyan,#A855F7); outline-offset:3px;
+    box-shadow:0 0 0 4px rgba(168,85,247,.25)}
+
+  @media(max-width:480px){
+    #nqchat{right:14px; bottom:14px}
+    .nqc-panel{position:fixed; right:12px; left:12px; bottom:82px; top:auto; width:auto; max-width:none;
+      height:auto; max-height:calc(100vh - 104px)}
+    .nqc-fab{width:54px; height:54px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .nqc-fab::after,.nqc-typing i{animation:none !important}
+    .nqc-log{scroll-behavior:auto}
+  }
+</style>
+
+<div id="nqchat" class="open">
+  <div class="nqc-panel" id="nqc-panel" role="dialog" aria-modal="false" aria-label="Чат з консультантом Nartenko.QA">
+    <div class="nqc-head">
+      <div class="nqc-ava" aria-hidden="true">N</div>
+      <div class="nqc-htext">
+        <div class="nqc-title" id="nqc-title">Consultant Nartenko.QA</div>
+        <div class="nqc-status"><b aria-hidden="true"></b><span id="nqc-status">Répond généralement vite</span></div>
+      </div>
+      <button type="button" class="nqc-x" id="nqc-close" aria-label="Fermer le chat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+      </button>
+    </div>
+    <div class="nqc-log" id="nqc-log" role="log" aria-live="polite" aria-atomic="false"><div class="nqc-msg nqc-bot">Bonjour ! Je suis le consultant de Nartenko.QA. Comment puis-je aider ? Choisissez un sujet ci-dessous ou posez votre question.</div><div class="nqc-quick" data-nqc-quick="1"><button type="button" class="nqc-chip" data-topic="services">Services</button><button type="button" class="nqc-chip" data-topic="price">Tarifs</button><button type="button" class="nqc-chip" data-topic="pay">Paiement</button><button type="button" class="nqc-chip" data-topic="deadline">Délais</button><button type="button" class="nqc-chip" data-topic="guarantee">Garanties</button><button type="button" class="nqc-chip" data-topic="contact">Contact</button></div></div>
+    <div class="nqc-cta">
+      <a class="nqc-tg" id="nqc-tg" href="https://t.me/DamnGiveMeMoney" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3l-3.1 14.7c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.35-4.95 9-8.1c.4-.35-.1-.55-.6-.2L6.4 13.2l-4.7-1.5c-1-.3-1-1 .2-1.5L20.6 2.9c.85-.3 1.6.2 1.3 1.4z"></path></svg>
+        <span id="nqc-tg-t">Écrire sur Telegram</span>
+      </a>
+      <div class="nqc-email"><span id="nqc-email-t">ou e-mail :</span> <a href="mailto:dimanartenko00@gmail.com">dimanartenko00@gmail.com</a></div>
+    </div>
+    <form class="nqc-form" id="nqc-form">
+      <input class="nqc-input" id="nqc-input" type="text" autocomplete="off" placeholder="Posez votre question…" aria-label="Posez votre question au consultant">
+      <button class="nqc-send" type="submit" aria-label="Надіслати">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg>
+      </button>
+    </form>
+  </div>
+  <button type="button" class="nqc-fab" id="nqc-fab" aria-label="Fermer le chat" aria-expanded="true" aria-controls="nqc-panel" aria-haspopup="dialog">
+    <svg class="ic-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9.5h8M8 12.5h5"></path></svg>
+    <svg class="ic-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+  </button>
+</div>
+
+<script>
+  (function(){
+    var root = document.getElementById('nqchat');
+    var fab = document.getElementById('nqc-fab');
+    var panel = document.getElementById('nqc-panel');
+    var closeBtn = document.getElementById('nqc-close');
+    var log = document.getElementById('nqc-log');
+    var form = document.getElementById('nqc-form');
+    var input = document.getElementById('nqc-input');
+    if(!root || !fab || !panel || !closeBtn || !log || !form || !input) return;
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var T = {
+      uk:{
+        fabOpen:"Відкрити чат з консультантом", fabClose:"Закрити чат", close:"Закрити чат",
+        title:"Консультант Nartenko.QA", status:"Зазвичай відповідає швидко",
+        placeholder:"Напишіть запитання…", inputAria:"Напишіть запитання консультанту",
+        tg:"Написати в Telegram", email:"або email:", typing:"Друкує…",
+        greeting:"Вітаю! Я консультант Nartenko.QA. Чим можу допомогти? Оберіть тему нижче або напишіть запитання.",
+        chips:[["services","Послуги"],["price","Ціни"],["pay","Оплата"],["deadline","Строки"],["guarantee","Гарантії"],["contact","Написати"]],
+        a:{
+          services:"Розробка ботів, скриптів і модів, тестування ігор (QA), автоматизація, цифрові товари та хостинг. Що саме вас цікавить?",
+          price:"Орієнтовно: розробка від $39, QA від $19, автоматизація від $49, цифрові товари від $3, хостинг від $7/міс. Точна вартість — за обсягом і фіксується в рахунку.",
+          pay:"Оплата карткою (Visa/Mastercard, Apple/Google Pay) за QR у рахунку, переказом за реквізитами (IBAN) або через PayPal для міжнародних клієнтів. Усе офіційно, ФОП 3 групи.",
+          deadline:"Строки залежать від обсягу й узгоджуються до початку робіт. Невеликі задачі — 1–3 дні, більші розбиваємо на етапи та фіксуємо в рахунку.",
+          guarantee:"Доопрацьовуємо до узгодженого результату й виправляємо баги після здачі. Повернення: за послуги — до початку робіт, за цифрові товари — якщо доступ не було надано.",
+          nda:"Так, ваш код, дані та ідеї лишаються конфіденційними й не передаються третім особам. NDA підпишемо за запитом ще до старту.",
+          international:"Так, працюю з клієнтами по всьому світу. Спілкування українською чи англійською, оплата через PayPal (USD/EUR) або міжнародним переказом.",
+          contact:"Найшвидше — Telegram @DamnGiveMeMoney або email dimanartenko00@gmail.com. Опишіть задачу — відповім щодо строків і вартості та виставлю рахунок.",
+          greet:"Вітаю! 👋 Я консультант Nartenko.QA. Можу розповісти про послуги, ціни, оплату, строки чи гарантії — оберіть тему нижче або напишіть питання. А найшвидше — Telegram @DamnGiveMeMoney.",
+          thanks:"Будь ласка! 🙌 Звертайтесь будь-коли — Telegram @DamnGiveMeMoney або email dimanartenko00@gmail.com.",
+          goods:"Так, працюємо з цифровими та ігровими товарами — ключі, доступи, віртуальні предмети й ресурси. Ціна залежить від позиції та обсягу, тому напишіть у Telegram @DamnGiveMeMoney — підберемо й назвемо точну ціну.",
+          ack:"Чудово! 🙌 Якщо виникнуть питання — я тут. А щоб почати, напишіть у Telegram @DamnGiveMeMoney або на email — обговоримо задачу й ціну.",
+          defer:"Стандартно оплата йде за рахунком (карткою/QR або за реквізитами). Щодо відстрочки чи оплати частинами — це індивідуально: напишіть у Telegram @DamnGiveMeMoney, домовимось 🙂",
+          slava:"Героям Слава! 🇺🇦💛💙"
+        },
+        fallback:"Не впевнений, що правильно зрозумів. Найкраще напишіть у Telegram @DamnGiveMeMoney або на email dimanartenko00@gmail.com — відповім особисто. Також можу розповісти про послуги, ціни, оплату, строки чи гарантії."
+      },
+      en:{
+        fabOpen:"Open chat with consultant", fabClose:"Close chat", close:"Close chat",
+        title:"Nartenko.QA Consultant", status:"Usually replies quickly",
+        placeholder:"Type your question…", inputAria:"Type your question to the consultant",
+        tg:"Message on Telegram", email:"or email:", typing:"Typing…",
+        greeting:"Hi! I'm the Nartenko.QA consultant. How can I help? Pick a topic below or type your question.",
+        chips:[["services","Services"],["price","Prices"],["pay","Payment"],["deadline","Timelines"],["guarantee","Guarantees"],["contact","Contact"]],
+        a:{
+          services:"Development of bots, scripts and mods, game testing (QA), automation, digital goods and hosting. What exactly are you interested in?",
+          price:"Indicative: development from $39, QA from $19, automation from $49, digital goods from $3, hosting from $7/mo. The exact cost depends on scope and is fixed in the invoice.",
+          pay:"Pay by card (Visa/Mastercard, Apple/Google Pay) via the QR in the invoice, by bank transfer (IBAN), or via PayPal for international clients. Everything is official — Group 3 sole proprietor.",
+          deadline:"Timelines depend on scope and are agreed before work begins. Small tasks take 1–3 days; larger ones are split into stages and fixed in the invoice.",
+          guarantee:"We refine to the agreed result and fix bugs after delivery. Refunds: for services — before work starts; for digital goods — if access was not provided.",
+          nda:"Yes — your code, data and ideas stay confidential and are never shared with third parties. An NDA can be signed on request before we start.",
+          international:"Yes, I work with clients worldwide. Communication in Ukrainian or English, payment via PayPal (USD/EUR) or international transfer.",
+          contact:"Fastest is Telegram @DamnGiveMeMoney or email dimanartenko00@gmail.com. Describe your task and I'll reply about timeline and cost and issue an invoice.",
+          greet:"Hi there! 👋 I'm the Nartenko.QA consultant. I can tell you about services, prices, payment, timelines or guarantees — pick a topic below or ask a question. Fastest is Telegram @DamnGiveMeMoney.",
+          thanks:"You're welcome! 🙌 Reach out any time — Telegram @DamnGiveMeMoney or email dimanartenko00@gmail.com.",
+          goods:"Yes, we deal in digital and in-game goods — keys, access, virtual items and resources. Pricing depends on the item and volume, so message Telegram @DamnGiveMeMoney and we'll find the best option and quote you.",
+          ack:"Great! 🙌 I'm here if anything comes up. To get started, message Telegram @DamnGiveMeMoney or email and we'll discuss your task and pricing.",
+          defer:"Normally payment is per invoice (card/QR or bank transfer). Deferred payment or installments can be arranged case by case — message Telegram @DamnGiveMeMoney and we'll work it out.",
+          slava:"Героям Слава! 🇺🇦 Glory to the Heroes!"
+        },
+        fallback:"I'm not sure I got that right. Best to message me on Telegram @DamnGiveMeMoney or email dimanartenko00@gmail.com and I'll reply personally. I can also tell you about services, prices, payment, timelines or guarantees."
+      },
+      pl:{
+        fabOpen:"Otwórz czat z konsultantem", fabClose:"Zamknij czat", close:"Zamknij czat",
+        title:"Konsultant Nartenko.QA", status:"Zwykle odpowiada szybko",
+        placeholder:"Napisz pytanie…", inputAria:"Napisz pytanie do konsultanta",
+        tg:"Napisz na Telegramie", email:"lub e-mail:", typing:"Pisze…",
+        greeting:"Cześć! Jestem konsultantem Nartenko.QA. W czym mogę pomóc? Wybierz temat poniżej lub napisz pytanie.",
+        chips:[["services","Usługi"],["price","Ceny"],["pay","Płatność"],["deadline","Terminy"],["guarantee","Gwarancje"],["contact","Napisz"]],
+        fallback:"Nie jestem pewien, czy dobrze zrozumiałem. Najlepiej napisz na Telegramie @DamnGiveMeMoney lub na e-mail dimanartenko00@gmail.com — odpowiem osobiście. Mogę też opowiedzieć o usługach, cenach, płatności, terminach i gwarancjach."
+      },
+      de:{
+        fabOpen:"Chat mit Berater öffnen", fabClose:"Chat schließen", close:"Chat schließen",
+        title:"Nartenko.QA Berater", status:"Antwortet meist schnell",
+        placeholder:"Frage eingeben…", inputAria:"Ihre Frage an den Berater",
+        tg:"Auf Telegram schreiben", email:"oder E-Mail:", typing:"Schreibt…",
+        greeting:"Hallo! Ich bin der Berater von Nartenko.QA. Wie kann ich helfen? Wählen Sie unten ein Thema oder stellen Sie eine Frage.",
+        chips:[["services","Leistungen"],["price","Preise"],["pay","Zahlung"],["deadline","Termine"],["guarantee","Garantien"],["contact","Kontakt"]],
+        fallback:"Ich bin nicht sicher, ob ich das richtig verstanden habe. Am besten schreiben Sie auf Telegram @DamnGiveMeMoney oder per E-Mail dimanartenko00@gmail.com — ich antworte persönlich. Ich kann auch über Leistungen, Preise, Zahlung, Termine und Garantien informieren."
+      },
+      es:{
+        fabOpen:"Abrir chat con el consultor", fabClose:"Cerrar chat", close:"Cerrar chat",
+        title:"Consultor Nartenko.QA", status:"Suele responder rápido",
+        placeholder:"Escribe tu pregunta…", inputAria:"Escribe tu pregunta al consultor",
+        tg:"Escribir por Telegram", email:"o correo:", typing:"Escribiendo…",
+        greeting:"¡Hola! Soy el consultor de Nartenko.QA. ¿En qué puedo ayudarte? Elige un tema abajo o escribe tu pregunta.",
+        chips:[["services","Servicios"],["price","Precios"],["pay","Pago"],["deadline","Plazos"],["guarantee","Garantías"],["contact","Contacto"]],
+        fallback:"No estoy seguro de haberlo entendido bien. Lo mejor es escribirme por Telegram @DamnGiveMeMoney o al correo dimanartenko00@gmail.com — te responderé personalmente. También puedo contarte sobre servicios, precios, pago, plazos y garantías."
+      },
+      fr:{
+        fabOpen:"Ouvrir le chat avec le consultant", fabClose:"Fermer le chat", close:"Fermer le chat",
+        title:"Consultant Nartenko.QA", status:"Répond généralement vite",
+        placeholder:"Posez votre question…", inputAria:"Posez votre question au consultant",
+        tg:"Écrire sur Telegram", email:"ou e-mail :", typing:"Écrit…",
+        greeting:"Bonjour ! Je suis le consultant de Nartenko.QA. Comment puis-je aider ? Choisissez un sujet ci-dessous ou posez votre question.",
+        chips:[["services","Services"],["price","Tarifs"],["pay","Paiement"],["deadline","Délais"],["guarantee","Garanties"],["contact","Contact"]],
+        fallback:"Je ne suis pas sûr d'avoir bien compris. Le mieux est de m'écrire sur Telegram @DamnGiveMeMoney ou par e-mail dimanartenko00@gmail.com — je répondrai personnellement. Je peux aussi présenter les services, tarifs, paiement, délais et garanties."
+      }
+    };
+
+    function lang(){ var s = document.body.dataset.lang; return T[s] ? s : 'en'; }
+    function siteLang(){ return document.body.dataset.lang || 'uk'; }
+
+    var RULES = [
+      {t:'slava', k:['слава україн','слава украін','slava ukrain','glory to ukraine']},
+      {t:'defer', k:['відстроч','розстроч','розтермін','частинами','installment','пізніше заплат','у борг','в борг','поступово','later payment']},
+      {t:'goods', k:['срібло','silver','ресурс','resource','голд','gold','валют','currency','акаунт','account','предмет','item','віртуал','virtual','ключ','key','буст','boost','фарм','farm','прокач']},
+      {t:'pay', k:['оплат','плат','pay','карт','card','paypal','iban','рахун','invoice','кошт','money','переказ','transfer']},
+      {t:'price', k:['цін','варт','скільк','price','cost','how much','бюджет','budget']},
+      {t:'deadline', k:['строк','термін','дедлайн','коли','deadline','timeline','how long','when','швидк']},
+      {t:'nda', k:['конфіден','nda','приват','privacy','confiden','secret','таєм']},
+      {t:'guarantee', k:['гаранті','правк','warrant','revision','refund','поверн','баг','bug','fix','якіст','quality']},
+      {t:'international', k:['інозем','міжнар','worldwide','international','english','англ','країн','countr','abroad','usd','eur']},
+      {t:'contact', k:['контакт','звяз','напиш','написат','telegram','телеграм','email','пошт','contact','reach','mail']},
+      {t:'services', k:['послуг','service','do you','можлив','що ви','пропон','offer','бот','script','скрипт','тест','qa','автомат','automat','хостинг','hosting','мод']},
+      {t:'ack', k:['зрозум','гаразд','ясно','зрозуміло','окей','okay','got it','sounds good','круто','супер','чудово','noted']},
+      {t:'thanks', k:['дяку','спасиб','вдячн','thank','thx']},
+      {t:'greet', k:['привіт','вітаю','вітання','добрий','доброго','здоров','hello','hey','howdy','good morning','good afternoon']}
+    ];
+    function match(text){
+      var raw = (text || '').toLowerCase();
+      var padded = ' ' + raw.replace(/[^0-9a-zа-яіїєґ'’]+/gi, ' ').trim() + ' ';
+      for(var i=0;i<RULES.length;i++){
+        for(var j=0;j<RULES[i].k.length;j++){
+          var k = RULES[i].k[j];
+          // Latin tokens → whole-word match (avoids 'key' in "Turkey", 'hey' in "they", 'eur' in "Europe");
+          // Cyrillic stems → substring/prefix match (e.g. 'цін' → 'ціна'/'ціни').
+          if(/^[a-z0-9 ]+$/.test(k)){ if(padded.indexOf(' ' + k + ' ') > -1) return RULES[i].t; }
+          else if(raw.indexOf(k) > -1){ return RULES[i].t; }
+        }
+      }
+      return null;
+    }
+
+    var interacted = false, pendingTimer = null, curTyping = null, curAbort = null;
+
+    function scrollDown(){ log.scrollTop = log.scrollHeight; }
+    function bubble(text, who){
+      var d = document.createElement('div');
+      d.className = 'nqc-msg ' + (who === 'user' ? 'nqc-user' : 'nqc-bot');
+      d.textContent = text;
+      log.appendChild(d); scrollDown(); return d;
+    }
+    function addQuick(){
+      var L = T[lang()];
+      var wrap = document.createElement('div');
+      wrap.className = 'nqc-quick'; wrap.setAttribute('data-nqc-quick','1');
+      L.chips.forEach(function(c){
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'nqc-chip';
+        b.textContent = c[1]; b.setAttribute('data-topic', c[0]);
+        b.addEventListener('click', function(){ ask(b.textContent, b.getAttribute('data-topic')); });
+        wrap.appendChild(b);
+      });
+      log.appendChild(wrap); scrollDown();
+    }
+    function typingEl(){
+      var d = document.createElement('div');
+      d.className = 'nqc-typing'; d.setAttribute('role','status');
+      d.setAttribute('aria-label', T[lang()].typing);
+      d.innerHTML = '<i></i><i></i><i></i>';
+      log.appendChild(d); scrollDown(); return d;
+    }
+    function answerFor(topic){
+      var L = T[lang()];
+      return (topic && L.a[topic]) ? L.a[topic] : L.fallback;
+    }
+    function respond(topic){
+      if(pendingTimer){ clearTimeout(pendingTimer); pendingTimer = null; }
+      if(curTyping && curTyping.parentNode){ curTyping.parentNode.removeChild(curTyping); }
+      curTyping = null;
+      var delay = reduce ? 220 : (600 + Math.random()*450);
+      var tp = reduce ? null : typingEl();
+      curTyping = tp;
+      pendingTimer = setTimeout(function(){
+        pendingTimer = null;
+        if(tp && tp.parentNode) tp.parentNode.removeChild(tp);
+        if(curTyping === tp) curTyping = null;
+        bubble(answerFor(topic), 'bot');
+      }, delay);
+    }
+    function ask(userText, forcedTopic){
+      interacted = true;
+      bubble(userText, 'user');
+      var L = T[lang()];
+      if(L && L.a){
+        var topic = forcedTopic || match(userText);
+        if(topic && L.a[topic]){ respond(topic); return; }
+      }
+      aiRespond(userText);
+    }
+    var WORKER_URL = "https://nartenkoqa-ai.dimanartenko79.workers.dev";  /* Cloudflare Worker (Claude AI) */
+    function aiRespond(userText){
+      if(pendingTimer){ clearTimeout(pendingTimer); pendingTimer = null; }
+      if(curTyping && curTyping.parentNode){ curTyping.parentNode.removeChild(curTyping); }
+      var tp = typingEl(); curTyping = tp;
+      var L = T[lang()];
+      function done(txt){
+        if(tp && tp.parentNode) tp.parentNode.removeChild(tp);
+        if(curTyping === tp) curTyping = null;
+        bubble((txt && String(txt).trim()) ? String(txt).trim() : L.fallback, 'bot');
+      }
+      if(!WORKER_URL){ done(L.fallback); return; }
+      var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+      curAbort = ctrl;
+      var to = setTimeout(function(){ if(ctrl){ try{ ctrl.abort(); }catch(e){} } }, 20000);
+      function fin(txt){ clearTimeout(to); if(curAbort === ctrl) curAbort = null; done(txt); }
+      fetch(WORKER_URL, { method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ q:userText, lang:siteLang() }), signal: ctrl ? ctrl.signal : undefined })
+        .then(function(r){ return r.json(); })
+        .then(function(d){ fin(d && d.reply); })
+        .catch(function(){ fin(L.fallback); });
+    }
+    function renderGreeting(){
+      log.innerHTML = '';
+      bubble(T[lang()].greeting, 'bot');
+      addQuick();
+    }
+
+    function applyLang(){
+      var L = T[lang()];
+      document.getElementById('nqc-title').textContent = L.title;
+      document.getElementById('nqc-status').textContent = L.status;
+      document.getElementById('nqc-tg-t').textContent = L.tg;
+      document.getElementById('nqc-email-t').textContent = L.email;
+      input.placeholder = L.placeholder;
+      input.setAttribute('aria-label', L.inputAria);
+      closeBtn.setAttribute('aria-label', L.close);
+      fab.setAttribute('aria-label', isOpen() ? L.fabClose : L.fabOpen);
+      if(!interacted){
+        if(log.children.length) renderGreeting();
+      } else {
+        var q = log.querySelector('[data-nqc-quick]');
+        if(q){
+          var bs = q.querySelectorAll('.nqc-chip');
+          for(var i=0;i<bs.length && i<L.chips.length;i++){ bs[i].textContent = L.chips[i][1]; }
+        }
+      }
+    }
+
+    function isOpen(){ return root.classList.contains('open'); }
+    function openChat(skipFocus, noPersist){
+      root.classList.add('open');
+      panel.hidden = false;
+      fab.setAttribute('aria-expanded','true');
+      fab.setAttribute('aria-label', T[lang()].fabClose);
+      if(!log.children.length) renderGreeting();
+      if(!noPersist){ try{ localStorage.setItem('nq_chat_open','1'); }catch(e){} }
+      if(!skipFocus) setTimeout(function(){ try{ input.focus(); }catch(e){} }, 60);
+    }
+    function closeChat(returnFocus){
+      root.classList.remove('open');
+      panel.hidden = true;
+      fab.setAttribute('aria-expanded','false');
+      fab.setAttribute('aria-label', T[lang()].fabOpen);
+      if(pendingTimer){ clearTimeout(pendingTimer); pendingTimer = null; }
+      if(curTyping && curTyping.parentNode){ curTyping.parentNode.removeChild(curTyping); }
+      curTyping = null;
+      if(curAbort){ try{ curAbort.abort(); }catch(e){} curAbort = null; }
+      try{ localStorage.setItem('nq_chat_open','0'); }catch(e){}
+      if(returnFocus){ try{ fab.focus(); }catch(e){} }
+    }
+
+    fab.addEventListener('click', function(){ isOpen() ? closeChat(true) : openChat(); });
+    closeBtn.addEventListener('click', function(){ closeChat(true); });
+    (function(){ var db = document.getElementById('nqc-discord'); if(!db) return;
+      db.addEventListener('click', function(){
+        var nick = db.getAttribute('data-nick') || '';
+        var orig = db.textContent;
+        function ok(){ db.textContent = (siteLang()==='uk'?'Скопійовано ✓':'Copied ✓'); setTimeout(function(){ db.textContent = orig; }, 1400); }
+        function fb(){ try{ var ta=document.createElement('textarea'); ta.value=nick; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); ok(); }catch(e){} }
+        try{ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(nick).then(ok, fb); } else { fb(); } }catch(e){ fb(); }
+      });
+    })();
+    (function(){ var t = document.getElementById('navToggle'), h = document.querySelector('header.nav'), lk = document.getElementById('navLinks'); if(!t||!h) return;
+      function setOpen(o){ h.classList.toggle('menu-open', o); t.setAttribute('aria-expanded', o?'true':'false'); }
+      t.addEventListener('click', function(e){ e.stopPropagation(); setOpen(!h.classList.contains('menu-open')); });
+      if(lk) lk.addEventListener('click', function(e){ if(e.target && e.target.tagName === 'A') setOpen(false); });
+      document.addEventListener('click', function(e){ if(h.classList.contains('menu-open') && !h.contains(e.target)) setOpen(false); });
+      document.addEventListener('keydown', function(e){ if((e.key === 'Escape' || e.key === 'Esc') && h.classList.contains('menu-open')) setOpen(false); });
+    })();
+    try{ document.querySelectorAll('.card .ico svg, .titem .ico svg, .step .n').forEach(function(s){ s.setAttribute('aria-hidden','true'); if(s.tagName.toLowerCase()==='svg') s.setAttribute('focusable','false'); }); }catch(e){}
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = input.value.trim();
+      if(!v) return;
+      input.value = '';
+      ask(v, null);
+    });
+    document.addEventListener('keydown', function(e){
+      if((e.key === 'Escape' || e.key === 'Esc') && isOpen()) closeChat(true);
+    });
+
+    applyLang();
+    try{
+      var mo = new MutationObserver(function(muts){
+        for(var i=0;i<muts.length;i++){ if(muts[i].attributeName === 'data-lang'){ applyLang(); break; } }
+      });
+      mo.observe(document.body, {attributes:true, attributeFilter:['data-lang']});
+    }catch(e){}
+
+    var openState = '0';
+    try{ openState = localStorage.getItem('nq_chat_open') || '0'; }catch(e){}
+    if(openState === '1'){
+      openChat(true);
+    } else {
+      // авто-відкриття: чат сам визирає один раз за сесію, коли хтось заходить на сайт
+      var autoDone = '0';
+      try{ autoDone = sessionStorage.getItem('nq_chat_auto') || '0'; }catch(e){}
+      if(autoDone !== '1'){
+        try{ sessionStorage.setItem('nq_chat_auto','1'); }catch(e){}
+        setTimeout(function(){ if(!isOpen()) openChat(true, true); }, 2200);
+      }
+    }
+  })();
+</script>
+
+
+
+
+</body>
+</html>

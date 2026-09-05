@@ -3,31 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <meta name="google-site-verification" content="7C3EFuLxFGKMMxpXnV8WymMvuYQ6ezsJT_MShJPUJbQ">
-<meta name="x-build" content="20260905-024608">
+<meta name="x-build" content="20260905-041125">
+<title>Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор</title>
 <meta name="description" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор. Послуги, ціни, оплата карткою/PayPal, контакти. ФОП, офіційно з рахунком.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://nartenkoqa.com/">
+<link rel="alternate" hreflang="uk" href="https://nartenkoqa.com/">
+<link rel="alternate" hreflang="en" href="https://nartenkoqa.com/en/">
+<link rel="alternate" hreflang="pl" href="https://nartenkoqa.com/pl/">
+<link rel="alternate" hreflang="de" href="https://nartenkoqa.com/de/">
+<link rel="alternate" hreflang="es" href="https://nartenkoqa.com/es/">
+<link rel="alternate" hreflang="fr" href="https://nartenkoqa.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://nartenkoqa.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nartenkoqa.com/">
-<meta property="og:title" content="Nartenko.QA — development, testing and automation">
-<meta property="og:description" content="Development, testing and automation for games and software.">
+<meta property="og:title" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор">
+<meta property="og:description" content="Розробка, тестування та автоматизація для ігор і софту.">
 <meta property="og:site_name" content="Nartenko.QA">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="uk_UA">
 <meta property="og:image" content="https://nartenkoqa.com/og.png">
-<meta property="og:image:secure_url" content="https://nartenkoqa.com/og.png">
-<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nartenko.QA — development, testing and automation for games and software">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nartenko.QA — development, testing and automation">
-<meta name="twitter:description" content="Development, testing and automation for games and software.">
+<meta name="twitter:title" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор">
+<meta name="twitter:description" content="Розробка, тестування та автоматизація для ігор і софту.">
 <meta name="twitter:image" content="https://nartenkoqa.com/og.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nartenko.QA","description":"Розробка, тестування та автоматизація програмного забезпечення й ігор, цифрові товари, хостинг.","url":"https://nartenkoqa.com/","email":"dimanartenko00@gmail.com","telephone":"+380770770203","areaServed":"Worldwide","founder":{"@type":"Person","name":"Dmytro Nartenko"},"address":{"@type":"PostalAddress","addressLocality":"Romny","addressCountry":"UA"},"sameAs":["https://t.me/DamnGiveMeMoney"],"knowsAbout":["Software development","Game QA","Test automation","Digital goods","Hosting"]}</script>
-<title>Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nartenko.QA","description":"Розробка, тестування та автоматизація для ігор і софту.","url":"https://nartenkoqa.com/","image":"https://nartenkoqa.com/og.png","email":"dimanartenko00@gmail.com","telephone":"+380770770203","priceRange":"$3–$49","areaServed":"Worldwide","availableLanguage":["uk","en","pl","de","es","fr"],"founder":{"@type":"Person","name":"Dmytro Nartenko"},"address":{"@type":"PostalAddress","addressLocality":"Romny","addressCountry":"UA"},"sameAs":["https://t.me/DamnGiveMeMoney"],"knowsAbout":["Software development","Game QA","Test automation","Digital goods","Hosting"]}</script>
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+  /* fonts loaded via <link rel=preconnect/stylesheet> in <head> (build_index.py) for faster render */
 
   :root{
     --bg:#06090F; --bg2:#080C16; --surface:#101A2E; --surface2:#0B1320;
@@ -122,7 +132,36 @@
     color:#9a92b0; letter-spacing:.09em}
   .langmenu button[aria-current="true"]{color:var(--cyan)}
   .langmenu button[aria-current="true"] .cd{color:var(--cyan)}
-  @media(max-width:760px){nav.links{display:none}}
+  .nav .btn{white-space:nowrap}
+  .navtoggle{display:none; align-items:center; justify-content:center; width:42px; height:42px; border-radius:10px;
+    background:rgba(255,255,255,.02); border:1px solid var(--line2); color:var(--ink); cursor:pointer; transition:.18s ease}
+  .navtoggle svg{width:20px; height:20px; stroke:currentColor; stroke-width:2; fill:none}
+  .navtoggle:hover{border-color:var(--cyan); color:var(--cyan)}
+  @media(max-width:900px){
+    nav.links{position:absolute; top:calc(100% + 6px); right:12px; left:12px; margin:0; z-index:60;
+      flex-direction:column; align-items:stretch; gap:2px; display:none;
+      background:#0f0b1a; border:1px solid var(--line2); border-radius:14px; padding:8px;
+      box-shadow:0 22px 55px rgba(0,0,0,.55)}
+    header.nav.menu-open nav.links{display:flex}
+    nav.links a{padding:12px; border-radius:9px; font-size:15px; color:var(--ink)}
+    nav.links a:hover{background:rgba(168,85,247,.14)}
+    nav.links a::after{display:none}
+    .navtoggle{display:inline-flex}
+  }
+  @media(max-width:640px){.nav .btn.primary{padding:10px 14px; font-size:13.5px}}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 32px}
+  .stat{text-align:center; padding:22px 14px; border:1px solid var(--line2); border-radius:16px;
+    background:linear-gradient(180deg,rgba(168,85,247,.09),rgba(168,85,247,.02))}
+  .stat .sv{font-family:'Unbounded',sans-serif; font-weight:800; font-size:36px; line-height:1;
+    background:linear-gradient(100deg,var(--cyan),var(--cyan2)); -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:var(--cyan)}
+  .stat .sl{margin-top:9px; font-size:13px; color:var(--body); letter-spacing:.01em}
+  @media(max-width:560px){ .stats{grid-template-columns:1fr; gap:10px}
+    .stat{display:flex; align-items:center; justify-content:center; gap:12px; padding:15px 16px}
+    .stat .sv{font-size:27px} .stat .sl{margin-top:0; text-align:left} }
+  .skip{position:absolute; left:-9999px; top:0; z-index:200; background:var(--cyan); color:#0b0912;
+    padding:10px 16px; border-radius:0 0 12px 0; font-weight:700; text-decoration:none}
+  .skip:focus{left:0}
 
   /* ============ BUTTONS ============ */
   .btn{position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:8px; font-family:inherit;
@@ -170,7 +209,7 @@
   @supports ((-webkit-background-clip:text) or (background-clip:text)){
     h1.htitle{background:linear-gradient(180deg,#F4FBFF 0%,#BFEAFB 100%);
       -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent}
-    h1.htitle .c{background:linear-gradient(105deg,var(--cyan) 0%,var(--cyan2) 55%,#7DD3FC 100%);
+    h1.htitle .c{background:linear-gradient(105deg,var(--cyan) 0%,var(--cyan2) 55%,#C4B5FD 100%);
       -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent;
       filter:drop-shadow(0 0 20px rgba(168,85,247,.38))}
     h2.display{background:linear-gradient(180deg,#EEF6FF,#CDE9FB);
@@ -410,10 +449,11 @@
   <canvas id="fx"></canvas>
 </div>
 
+<a class="skip" href="#services" data-i18n="skip">Перейти до вмісту</a>
 <header class="nav">
   <div class="wrap row">
     <a class="logo" href="#top"><span class="mark">DN</span> Nartenko<span class="dot">.</span>QA</a>
-    <nav class="links">
+    <nav class="links" id="navLinks">
       <a href="#services" data-i18n="nav_services">Послуги</a>
       <a href="#process" data-i18n="nav_process">Як працюємо</a>
       <a href="#pay" data-i18n="nav_pay">Оплата</a>
@@ -422,6 +462,9 @@
       <a href="#contact" data-i18n="nav_contact">Контакти</a>
     </nav>
     <div class="navactions">
+      <button class="navtoggle" id="navToggle" type="button" aria-label="Меню / Menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
       <div class="langwrap">
         <button id="langBtn" class="langbtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Мова / Language">UA ▾</button>
         <div class="langmenu" id="langMenu" role="listbox" aria-label="Language">
@@ -494,37 +537,37 @@
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></div>
           <h3 data-i18n="s1h">Розробка ПЗ</h3>
           <p data-i18n="s1p">Боти, скрипти, моди, плагіни та інтеграції. Розробка й доопрацювання компонентів під вашу задачу.</p>
-          <div class="foot"><span class="kved">КВЕД 62.01</span><span class="price" data-i18n="s1pr">від <b>1 500&nbsp;₴</b></span></div>
+          <div class="foot"><span class="kved">КВЕД 62.01</span><span class="price" data-i18n="s1pr">від <b>$39</b></span></div>
         </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3h6M12 3v4M6.5 9h11l1.5 9a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2z"/><path d="M9.5 13h5"/></svg></div>
           <h3 data-i18n="s2h">Тестування / QA</h3>
           <p data-i18n="s2p">Тестування ігрових сценаріїв і механік, пошук та відтворення багів, регрес і звіти.</p>
-          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s2pr">від <b>800&nbsp;₴</b></span></div>
+          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s2pr">від <b>$19</b></span></div>
         </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
           <h3 data-i18n="s3h">Автоматизація</h3>
           <p data-i18n="s3p">Автоматизація рутинних процесів, конфігурація та налаштування цифрових систем «під ключ».</p>
-          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s3pr">від <b>2 000&nbsp;₴</b></span></div>
+          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s3pr">від <b>$49</b></span></div>
         </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M17 4h3v3M15 6l2 2"/></svg></div>
           <h3 data-i18n="s4h">Цифрові товари</h3>
           <p data-i18n="s4p">Ліцензійні ключі, доступи, віртуальні товари та інформаційні продукти у цифровому форматі.</p>
-          <div class="foot"><span class="kved">КВЕД 47.91</span><span class="price" data-i18n="s4pr">від <b>100&nbsp;₴</b></span></div>
+          <div class="foot"><span class="kved">КВЕД 47.91</span><span class="price" data-i18n="s4pr">від <b>$3</b></span></div>
         </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></div>
           <h3 data-i18n="s5h">Хостинг та інфраструктура</h3>
           <p data-i18n="s5p">Оренда серверів, дисковий простір, розміщення й обробка даних, супровід інфраструктури.</p>
-          <div class="foot"><span class="kved">КВЕД 63.11</span><span class="price" data-i18n="s5pr">від <b>300&nbsp;₴</b>/міс</span></div>
+          <div class="foot"><span class="kved">КВЕД 63.11</span><span class="price" data-i18n="s5pr">від <b>$7</b>/міс</span></div>
         </div>
         <div class="card">
           <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"/><path d="M4 21h16"/></svg></div>
           <h3 data-i18n="s6h">Консультації та супровід</h3>
           <p data-i18n="s6p">Технічний супровід, моніторинг ігрових систем і консультації з експлуатації.</p>
-          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s6pr">від <b>500&nbsp;₴</b></span></div>
+          <div class="foot"><span class="kved">КВЕД 62.09</span><span class="price" data-i18n="s6pr">від <b>$12</b></span></div>
         </div>
       </div>
       <p class="note" data-i18n="svc_note">* Ціни орієнтовні; фінальна вартість — за обсягом робіт і фіксується в рахунку.</p>
@@ -573,6 +616,11 @@
       <div class="shead">
         <div class="eyebrow" data-i18n="tr_eyebrow">Гарантії</div>
         <h2 class="display" data-i18n="tr_h2">Чому нам довіряють</h2>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="sv">470+</div><div class="sl" data-i18n="st_l1">виконаних замовлень</div></div>
+        <div class="stat"><div class="sv">6</div><div class="sl" data-i18n="st_l2">мов підтримки</div></div>
+        <div class="stat"><div class="sv">100%</div><div class="sl" data-i18n="st_l3">офіційно, з рахунком</div></div>
       </div>
       <div class="trust">
         <div class="titem">
@@ -716,7 +764,7 @@
         <div class="cways">
           <a class="btn primary" href="https://t.me/DamnGiveMeMoney" target="_blank" rel="noopener">Telegram: @DamnGiveMeMoney</a>
           <a class="btn ghost" href="mailto:dimanartenko00@gmail.com">Email: dimanartenko00@gmail.com</a>
-          <button class="btn ghost" type="button" onclick="navigator.clipboard&amp;&amp;navigator.clipboard.writeText('benjamin_willson')" title="Скопіювати нік">Discord: benjamin_willson</button>
+          <button class="btn ghost" id="nqc-discord" type="button" data-nick="benjamin_willson" title="Скопіювати нік">Discord: benjamin_willson</button>
           <a class="btn ghost" href="https://wa.me/380770770203" target="_blank" rel="noopener">WhatsApp: +380 77 077 0203</a>
           <a class="btn ghost" href="tel:+380770770203">Tel: +380 77 077 0203</a>
         </div>
@@ -746,12 +794,12 @@
     chip1:'FOP · Group 3 · <b>VAT-exempt</b>', chip2:'<b>Card</b>, PayPal &amp; bank transfer', chip3:'Clients <b>worldwide</b>',
     svc_eyebrow:"Services", svc_h2:"What we do",
     svc_p:"Full cycle — from code and tests to digital goods and infrastructure. Every service is invoiced officially.",
-    s1h:"Software Development", s1p:"Bots, scripts, mods, plugins and integrations. Building and improving components for your task.", s1pr:'from <b>1 500&nbsp;₴</b>',
-    s2h:"Testing / QA", s2p:"Testing of game scenarios and mechanics, finding and reproducing bugs, regression and reports.", s2pr:'from <b>800&nbsp;₴</b>',
-    s3h:"Automation", s3p:"Automating routine processes, turnkey configuration and setup of digital systems.", s3pr:'from <b>2 000&nbsp;₴</b>',
-    s4h:"Digital Goods", s4p:"License keys, access, virtual goods and information products in digital format.", s4pr:'from <b>100&nbsp;₴</b>',
-    s5h:"Hosting &amp; Infrastructure", s5p:"Server rental, disk space, data hosting and processing, infrastructure support.", s5pr:'from <b>300&nbsp;₴</b>/mo',
-    s6h:"Consulting &amp; Support", s6p:"Technical support, monitoring of game systems and operational consulting.", s6pr:'from <b>500&nbsp;₴</b>',
+    s1h:"Software Development", s1p:"Bots, scripts, mods, plugins and integrations. Building and improving components for your task.", s1pr:'from <b>$39</b>',
+    s2h:"Testing / QA", s2p:"Testing of game scenarios and mechanics, finding and reproducing bugs, regression and reports.", s2pr:'from <b>$19</b>',
+    s3h:"Automation", s3p:"Automating routine processes, turnkey configuration and setup of digital systems.", s3pr:'from <b>$49</b>',
+    s4h:"Digital Goods", s4p:"License keys, access, virtual goods and information products in digital format.", s4pr:'from <b>$3</b>',
+    s5h:"Hosting &amp; Infrastructure", s5p:"Server rental, disk space, data hosting and processing, infrastructure support.", s5pr:'from <b>$7</b>/mo',
+    s6h:"Consulting &amp; Support", s6p:"Technical support, monitoring of game systems and operational consulting.", s6pr:'from <b>$12</b>',
     svc_note:"* Indicative prices; the final cost depends on scope and is fixed in the invoice.",
     proc_eyebrow:"Process", proc_h2:"How we work",
     p1h:"Request", p1p:"You describe the task via Telegram or email — we agree on the details.",
@@ -796,14 +844,20 @@
     faq_q6:"What about revisions and warranty?",
     faq_a6:"We refine to the agreed result and fix bugs after delivery. Refunds: for services — before work starts; for digital goods — if access/goods were not delivered."
   };
-  const PL = {"nav_services":"Usługi","nav_process":"Jak pracujemy","nav_pay":"Płatność","nav_terms":"Warunki","nav_contact":"Kontakt","nav_order":"Zamów wycenę","hero_eyebrow":"Jednoosobowa działalność · Game QA &amp; development","hero_h1":"Tworzenie, testowanie i automatyzacja <span class=\"c\">gier i oprogramowania</span>","hero_lede":"Boty i skrypty, testowanie mechanik gier, automatyzacja i towary cyfrowe — oficjalnie, z fakturami i dokumentami.","hero_cta1":"Zamów usługę","hero_cta2":"Zobacz usługi","chip1":"Jednoosobowa działalność · grupa 3 · <b>bez VAT</b>","chip2":"<b>Karta</b>, PayPal &amp; przelew bankowy","chip3":"Klienci <b>na całym świecie</b>","svc_eyebrow":"Usługi","svc_h2":"Czym się zajmujemy","svc_p":"Pełen cykl — od kodu i testów po towary cyfrowe i infrastrukturę. Każda usługa jest fakturowana oficjalnie.","s1h":"Tworzenie oprogramowania","s1p":"Boty, skrypty, mody, wtyczki i integracje. Tworzenie i ulepszanie komponentów pod Twoje zadanie.","s1pr":"od <b>1 500&nbsp;₴</b>","s2h":"Testowanie / QA","s2p":"Testowanie scenariuszy i mechanik gier, wykrywanie i odtwarzanie błędów, regresja i raporty.","s2pr":"od <b>800&nbsp;₴</b>","s3h":"Automatyzacja","s3p":"Automatyzacja rutynowych procesów, konfiguracja i wdrożenie systemów cyfrowych pod klucz.","s3pr":"od <b>2 000&nbsp;₴</b>","s4h":"Towary cyfrowe","s4p":"Klucze licencyjne, dostępy, towary wirtualne i produkty informacyjne w formacie cyfrowym.","s4pr":"od <b>100&nbsp;₴</b>","s5h":"Hosting &amp; infrastruktura","s5p":"Wynajem serwerów, przestrzeń dyskowa, hosting i przetwarzanie danych, wsparcie infrastruktury.","s5pr":"od <b>300&nbsp;₴</b>/mies.","s6h":"Konsultacje &amp; wsparcie","s6p":"Wsparcie techniczne, monitoring systemów gier i konsultacje operacyjne.","s6pr":"od <b>500&nbsp;₴</b>","svc_note":"* Ceny orientacyjne; koszt końcowy zależy od zakresu i jest ustalany na fakturze.","proc_eyebrow":"Proces","proc_h2":"Jak pracujemy","p1h":"Zgłoszenie","p1p":"Opisujesz zadanie przez Telegram lub e-mail — ustalamy szczegóły.","p2h":"Wycena","p2p":"Oceniamy zakres, termin i koszt oraz wystawiamy fakturę.","p3h":"Realizacja","p3p":"Tworzymy, testujemy i informujemy Cię o postępach.","p4h":"Płatność","p4p":"Płacisz kartą przez QR lub przelewem bankowym. Gotowe.","tr_eyebrow":"Gwarancje","tr_h2":"Dlaczego klienci nam ufają","tr1h":"Poufność","tr1p":"Twój kod, dane i pomysły zostają między nami. NDA na życzenie.","tr2h":"Gwarancja jakości","tr2p":"Dopracowujemy, aż działa; poprawki błędów po realizacji.","tr3h":"Terminy","tr3p":"Ustalamy terminy na fakturze i ich dotrzymujemy.","tr4h":"Oficjalnie","tr4p":"Jednoosobowa działalność, faktury i dokumenty rozliczeniowe. Przejrzyście i legalnie.","pay_h":"Płatność","pay_lead":"Wygodnie i oficjalnie. Każda faktura zawiera QR do natychmiastowej płatności.","pay1":"Płatności kartą online przez bezpieczną bramkę płatniczą","pay2":"PayPal dla klientów międzynarodowych (USD / EUR)","pay3":"Przelew bankowy (IBAN) z dowolnego banku","pay4":"Kod QR na fakturze — zapłać w kilka minut","pay_btn":"Zapłać przez PayPal","terms_h":"Warunki (oferta publiczna)","t1":"Usługi i towary cyfrowe świadczone są na zamówienie w uzgodnionym zakresie i za uzgodniony koszt.","t2":"Płatność w UAH (karta lub przelew bankowy) albo przez PayPal dla klientów międzynarodowych — na podstawie faktury.","t3":"Terminy ustalane są indywidualnie przed rozpoczęciem prac.","t4":"Zwroty: za usługi — przed rozpoczęciem prac; za towary cyfrowe — jeśli dostęp/towar nie został dostarczony.","t5":"Usługodawca jest płatnikiem jednolitego podatku grupy 3, nie jest płatnikiem VAT.","t6":"Gwarantowana poufność: dane i materiały klienta nigdy nie są udostępniane osobom trzecim; NDA na życzenie.","contact_eyebrow":"Kontakt","contact_h":"Porozmawiajmy o Twoim projekcie","contact_p":"Napisz do mnie na Telegramie lub e-mailem — odpowiem w sprawie zadania, terminu i kosztu oraz wystawię fakturę.","contact_req":"<b>Jednoosobowa działalność Dmytro Nartenko</b><br>Romny, Ukraina · płatnik jednolitego podatku grupy 3","ft_left":"© 2026 Nartenko.QA — jednoosobowa działalność D.&nbsp;Nartenko","ft_right":"Tworzenie · Testowanie · Automatyzacja","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; możliwości","stack_p":"Technologie i narzędzia, z którymi pracujemy na co dzień — od tworzenia oprogramowania i automatyzacji po QA gier.","stack_c9":"automatyzacja","faq_eyebrow":"FAQ","faq_h2":"Najczęściej zadawane pytania","faq_p":"Krótkie odpowiedzi na najczęstsze pytania. Masz wątpliwości? Napisz do mnie na Telegramie lub e-mailem.","faq_q1":"Jak zaczynamy?","faq_a1":"Napisz do mnie na Telegramie lub e-mailem z krótkim opisem zadania. Ustalimy zakres, termin i koszt, a ja wystawię fakturę — prace ruszają zaraz potem.","faq_q2":"Jak wyglądają terminy?","faq_a2":"Terminy zależą od zakresu i są ustalane indywidualnie przed rozpoczęciem prac. Małe zadania zajmują 1–3 dni; większe dzielimy na etapy i zapisujemy na fakturze.","faq_q3":"Jak mogę zapłacić?","faq_a3":"Kartą (Visa/Mastercard, Apple Pay, Google Pay) przez QR na fakturze, przelewem bankowym (IBAN) lub przez PayPal dla klientów międzynarodowych. Wszystko oficjalnie — jednoosobowa działalność, grupa 3.","faq_q4":"Czy jest poufność / NDA?","faq_a4":"Tak. Twój kod, dane i pomysły zostają między nami i nigdy nie są udostępniane osobom trzecim. NDA można podpisać na życzenie przed rozpoczęciem prac.","faq_q5":"Czy pracujesz z klientami międzynarodowymi?","faq_a5":"Tak, pracuję z klientami na całym świecie. Komunikacja po ukraińsku lub angielsku, płatność przez PayPal (USD/EUR) lub przelewem międzynarodowym.","faq_q6":"A co z poprawkami i gwarancją?","faq_a6":"Dopracowujemy do uzgodnionego rezultatu i poprawiamy błędy po realizacji. Zwroty: za usługi — przed rozpoczęciem prac; za towary cyfrowe — jeśli dostęp/towar nie został dostarczony."};
-  const DE = {"nav_services":"Leistungen","nav_process":"Ablauf","nav_pay":"Zahlung","nav_terms":"Bedingungen","nav_contact":"Kontakt","nav_order":"Angebot anfordern","hero_eyebrow":"Einzelunternehmer · Game-QA &amp; Entwicklung","hero_h1":"Entwicklung, Testing und Automatisierung <span class=\"c\">für Games und Software</span>","hero_lede":"Bots und Skripte, Test von Spielmechaniken, Automatisierung und digitale Produkte — offiziell, mit Rechnungen und Belegen.","hero_cta1":"Leistung anfragen","hero_cta2":"Leistungen ansehen","chip1":"Einzelunternehmer · Gruppe 3 · <b>USt.-befreit</b>","chip2":"<b>Karte</b>, PayPal &amp; Überweisung","chip3":"Kunden <b>weltweit</b>","svc_eyebrow":"Leistungen","svc_h2":"Was wir tun","svc_p":"Kompletter Zyklus — von Code und Tests bis zu digitalen Produkten und Infrastruktur. Jede Leistung wird offiziell in Rechnung gestellt.","s1h":"Softwareentwicklung","s1p":"Bots, Skripte, Mods, Plugins und Integrationen. Wir entwickeln und optimieren Komponenten für Ihre Aufgabe.","s1pr":"ab <b>1 500&nbsp;₴</b>","s2h":"Testing / QA","s2p":"Test von Spielszenarien und -mechaniken, Finden und Reproduzieren von Bugs, Regression und Reports.","s2pr":"ab <b>800&nbsp;₴</b>","s3h":"Automatisierung","s3p":"Automatisierung von Routineprozessen, schlüsselfertige Konfiguration und Einrichtung digitaler Systeme.","s3pr":"ab <b>2 000&nbsp;₴</b>","s4h":"Digitale Produkte","s4p":"Lizenzschlüssel, Zugänge, virtuelle Güter und Informationsprodukte in digitalem Format.","s4pr":"ab <b>100&nbsp;₴</b>","s5h":"Hosting &amp; Infrastruktur","s5p":"Servermiete, Speicherplatz, Datenhosting und -verarbeitung, Infrastruktur-Support.","s5pr":"ab <b>300&nbsp;₴</b>/Mon.","s6h":"Beratung &amp; Support","s6p":"Technischer Support, Monitoring von Spielsystemen und laufende Beratung.","s6pr":"ab <b>500&nbsp;₴</b>","svc_note":"* Richtpreise; der Endpreis hängt vom Umfang ab und wird in der Rechnung festgelegt.","proc_eyebrow":"Ablauf","proc_h2":"So arbeiten wir","p1h":"Anfrage","p1p":"Sie beschreiben die Aufgabe per Telegram oder E-Mail — wir klären die Details.","p2h":"Kalkulation","p2p":"Wir schätzen Umfang, Zeitplan und Kosten ein und stellen eine Rechnung aus.","p3h":"Umsetzung","p3p":"Wir entwickeln, testen und halten Sie über den Fortschritt auf dem Laufenden.","p4h":"Zahlung","p4p":"Zahlung per Karte über QR oder per Überweisung. Fertig.","tr_eyebrow":"Garantien","tr_h2":"Warum Kunden uns vertrauen","tr1h":"Vertraulichkeit","tr1p":"Ihr Code, Ihre Daten und Ideen bleiben unter uns. NDA auf Anfrage.","tr2h":"Qualitätsgarantie","tr2p":"Wir arbeiten nach, bis es funktioniert; Bugfixes nach der Übergabe.","tr3h":"Termine","tr3p":"Wir legen Termine in der Rechnung fest und halten sie ein.","tr4h":"Offiziell","tr4p":"Einzelunternehmer, Rechnungen und Abschlussdokumente. Transparent und rechtssicher.","pay_h":"Zahlung","pay_lead":"Bequem und offiziell. Jede Rechnung enthält einen QR für die sofortige Zahlung.","pay1":"Online-Kartenzahlung über sicheres Acquiring","pay2":"PayPal für internationale Kunden (USD / EUR)","pay3":"Überweisung (IBAN) von jeder Bank","pay4":"QR-Code in der Rechnung — Zahlung in wenigen Minuten","pay_btn":"Mit PayPal bezahlen","terms_h":"Bedingungen (öffentliches Angebot)","t1":"Leistungen und digitale Produkte werden auf Anfrage in vereinbartem Umfang und zu vereinbarten Kosten erbracht.","t2":"Zahlung in UAH (Karte oder Überweisung) oder per PayPal für internationale Kunden — auf Rechnungsbasis.","t3":"Die Zeitpläne werden vor Arbeitsbeginn individuell vereinbart.","t4":"Rückerstattung: bei Leistungen — vor Arbeitsbeginn; bei digitalen Produkten — wenn Zugang/Ware nicht geliefert wurde.","t5":"Der Anbieter ist Einheitssteuerzahler der Gruppe 3 und kein Umsatzsteuerzahler.","t6":"Vertraulichkeit garantiert: Kundendaten und Materialien werden niemals an Dritte weitergegeben; NDA auf Anfrage.","contact_eyebrow":"Kontakt","contact_h":"Lassen Sie uns Ihr Projekt besprechen","contact_p":"Schreiben Sie mir über Telegram oder E-Mail — ich antworte zu Aufgabe, Zeitplan und Kosten und stelle eine Rechnung aus.","contact_req":"<b>Einzelunternehmer Dmytro Nartenko</b><br>Romny, Ukraine · Einheitssteuerzahler Gruppe 3","ft_left":"© 2026 Nartenko.QA — Einzelunternehmer D.&nbsp;Nartenko","ft_right":"Entwicklung · Testing · Automatisierung","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; Fähigkeiten","stack_p":"Technologien und Tools, mit denen wir täglich arbeiten — von Entwicklung und Automatisierung bis zu Game-QA.","stack_c9":"Automatisierung","faq_eyebrow":"FAQ","faq_h2":"Häufig gestellte Fragen","faq_p":"Kurze Antworten auf die häufigsten Fragen. Noch unsicher? Schreiben Sie mir über Telegram oder per E-Mail.","faq_q1":"Wie fangen wir an?","faq_a1":"Schreiben Sie mir über Telegram oder per E-Mail mit einer kurzen Beschreibung Ihrer Aufgabe. Wir vereinbaren Umfang, Zeitplan und Kosten, und ich stelle eine Rechnung aus — danach beginnt die Arbeit.","faq_q2":"Wie sieht es mit den Zeitplänen aus?","faq_a2":"Die Zeitpläne hängen vom Umfang ab und werden vor Arbeitsbeginn individuell vereinbart. Kleine Aufgaben dauern 1–3 Tage; größere werden in Etappen unterteilt und in der Rechnung festgelegt.","faq_q3":"Wie kann ich bezahlen?","faq_a3":"Per Karte (Visa/Mastercard, Apple Pay, Google Pay) über den QR in der Rechnung, per Überweisung (IBAN) oder per PayPal für internationale Kunden. Alles offiziell — Einzelunternehmer der Gruppe 3.","faq_q4":"Gibt es Vertraulichkeit / ein NDA?","faq_a4":"Ja. Ihr Code, Ihre Daten und Ideen bleiben unter uns und werden niemals an Dritte weitergegeben. Ein NDA kann auf Anfrage vor Arbeitsbeginn unterzeichnet werden.","faq_q5":"Arbeiten Sie mit internationalen Kunden?","faq_a5":"Ja, ich arbeite mit Kunden weltweit. Kommunikation auf Ukrainisch oder Englisch, Zahlung per PayPal (USD/EUR) oder internationale Überweisung.","faq_q6":"Wie sieht es mit Überarbeitungen und Gewährleistung aus?","faq_a6":"Wir arbeiten bis zum vereinbarten Ergebnis nach und beheben Bugs nach der Übergabe. Rückerstattung: bei Leistungen — vor Arbeitsbeginn; bei digitalen Produkten — wenn Zugang/Ware nicht geliefert wurde."};
-  const ES = {"nav_services":"Servicios","nav_process":"Cómo trabajamos","nav_pay":"Pago","nav_terms":"Condiciones","nav_contact":"Contacto","nav_order":"Solicitar presupuesto","hero_eyebrow":"Autónomo · QA de juegos &amp; desarrollo","hero_h1":"Desarrollo, pruebas y automatización <span class=\"c\">para juegos y software</span>","hero_lede":"Bots y scripts, pruebas de mecánicas de juego, automatización y productos digitales — de forma oficial, con facturas y documentos.","hero_cta1":"Solicitar un servicio","hero_cta2":"Ver servicios","chip1":"Autónomo · Grupo 3 · <b>exento de IVA</b>","chip2":"<b>Tarjeta</b>, PayPal &amp; transferencia bancaria","chip3":"Clientes <b>en todo el mundo</b>","svc_eyebrow":"Servicios","svc_h2":"Lo que hacemos","svc_p":"Ciclo completo — desde el código y las pruebas hasta los productos digitales y la infraestructura. Cada servicio se factura de forma oficial.","s1h":"Desarrollo de software","s1p":"Bots, scripts, mods, plugins e integraciones. Creamos y mejoramos componentes para tu tarea.","s1pr":"desde <b>1 500&nbsp;₴</b>","s2h":"Pruebas / QA","s2p":"Pruebas de escenarios y mecánicas de juego, detección y reproducción de bugs, regresión e informes.","s2pr":"desde <b>800&nbsp;₴</b>","s3h":"Automatización","s3p":"Automatización de procesos rutinarios, configuración llave en mano e implementación de sistemas digitales.","s3pr":"desde <b>2 000&nbsp;₴</b>","s4h":"Productos digitales","s4p":"Claves de licencia, accesos, bienes virtuales y productos de información en formato digital.","s4pr":"desde <b>100&nbsp;₴</b>","s5h":"Hosting &amp; infraestructura","s5p":"Alquiler de servidores, espacio en disco, alojamiento y procesamiento de datos, soporte de infraestructura.","s5pr":"desde <b>300&nbsp;₴</b>/mes","s6h":"Consultoría &amp; soporte","s6p":"Soporte técnico, monitoreo de sistemas de juego y consultoría operativa.","s6pr":"desde <b>500&nbsp;₴</b>","svc_note":"* Precios orientativos; el costo final depende del alcance y queda fijado en la factura.","proc_eyebrow":"Proceso","proc_h2":"Cómo trabajamos","p1h":"Solicitud","p1p":"Describes la tarea por Telegram o correo — acordamos los detalles.","p2h":"Presupuesto","p2p":"Evaluamos el alcance, los plazos y el costo, y emitimos una factura.","p3h":"Trabajo","p3p":"Desarrollamos, probamos y te mantenemos al tanto del progreso.","p4h":"Pago","p4p":"Paga con tarjeta mediante QR o por transferencia bancaria. Listo.","tr_eyebrow":"Garantías","tr_h2":"Por qué los clientes confían en nosotros","tr1h":"Confidencialidad","tr1p":"Tu código, datos e ideas quedan entre nosotros. NDA a petición.","tr2h":"Garantía de calidad","tr2p":"Perfeccionamos hasta que funcione; corrección de errores tras la entrega.","tr3h":"Plazos","tr3p":"Fijamos los plazos en la factura y los cumplimos.","tr4h":"Oficial","tr4p":"Autónomo, facturas y documentos de cierre. Transparente y legal.","pay_h":"Pago","pay_lead":"Cómodo y oficial. Cada factura incluye un QR para el pago instantáneo.","pay1":"Pagos con tarjeta en línea mediante adquirencia segura","pay2":"PayPal para clientes internacionales (USD / EUR)","pay3":"Transferencia bancaria (IBAN) desde cualquier banco","pay4":"Código QR en la factura — paga en un par de minutos","pay_btn":"Pagar con PayPal","terms_h":"Condiciones (oferta pública)","t1":"Los servicios y productos digitales se prestan bajo solicitud, con un alcance y costo acordados.","t2":"Pago en UAH (tarjeta o transferencia bancaria) o mediante PayPal para clientes internacionales — con base en una factura.","t3":"Los plazos se acuerdan de forma individual antes de iniciar el trabajo.","t4":"Reembolsos: para servicios — antes de iniciar el trabajo; para productos digitales — si no se entregaron los accesos/bienes.","t5":"El prestador es contribuyente del impuesto único del Grupo 3, no contribuyente del IVA.","t6":"Confidencialidad garantizada: los datos y materiales del cliente nunca se comparten con terceros; NDA a petición.","contact_eyebrow":"Contacto","contact_h":"Hablemos de tu proyecto","contact_p":"Escríbeme por Telegram o correo — te responderé sobre la tarea, los plazos y el costo, y emitiré una factura.","contact_req":"<b>Autónomo Dmytro Nartenko</b><br>Romny, Ucrania · contribuyente del impuesto único del Grupo 3","ft_left":"© 2026 Nartenko.QA — Autónomo D.&nbsp;Nartenko","ft_right":"Desarrollo · Pruebas · Automatización","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; capacidades","stack_p":"Tecnologías y herramientas con las que trabajamos a diario — desde el desarrollo y la automatización hasta el QA de juegos.","stack_c9":"automatización","faq_eyebrow":"FAQ","faq_h2":"Preguntas frecuentes","faq_p":"Respuestas breves a las preguntas más comunes. ¿Todavía tienes dudas? Escríbeme por Telegram o correo.","faq_q1":"¿Cómo empezamos?","faq_a1":"Escríbeme por Telegram o correo con una breve descripción de tu tarea. Acordaremos el alcance, los plazos y el costo, y emitiré una factura — el trabajo comienza después de eso.","faq_q2":"¿Qué hay de los plazos?","faq_a2":"Los plazos dependen del alcance y se acuerdan de forma individual antes de iniciar el trabajo. Las tareas pequeñas llevan de 1 a 3 días; las más grandes se dividen en etapas y se fijan en la factura.","faq_q3":"¿Cómo puedo pagar?","faq_a3":"Con tarjeta (Visa/Mastercard, Apple Pay, Google Pay) mediante el QR de la factura, por transferencia bancaria (IBAN) o con PayPal para clientes internacionales. Todo es oficial — autónomo del Grupo 3.","faq_q4":"¿Hay confidencialidad / un NDA?","faq_a4":"Sí. Tu código, datos e ideas quedan entre nosotros y nunca se comparten con terceros. Se puede firmar un NDA a petición antes de iniciar el trabajo.","faq_q5":"¿Trabajas con clientes internacionales?","faq_a5":"Sí, trabajo con clientes de todo el mundo. Comunicación en ucraniano o inglés, pago con PayPal (USD/EUR) o transferencia internacional.","faq_q6":"¿Qué hay de las revisiones y la garantía?","faq_a6":"Perfeccionamos hasta el resultado acordado y corregimos errores tras la entrega. Reembolsos: para servicios — antes de iniciar el trabajo; para productos digitales — si no se entregaron los accesos/bienes."};
-  const FR = {"nav_services":"Services","nav_process":"Méthode","nav_pay":"Paiement","nav_terms":"Conditions","nav_contact":"Contacts","nav_order":"Demander un devis","hero_eyebrow":"Micro-entrepreneur · QA de jeux &amp; développement","hero_h1":"Développement, tests et automatisation <span class=\"c\">pour jeux et logiciels</span>","hero_lede":"Bots et scripts, tests de mécaniques de jeu, automatisation et produits numériques — officiellement, avec factures et documents.","hero_cta1":"Commander un service","hero_cta2":"Voir les services","chip1":"Micro-entrepreneur · groupe 3 · <b>exonéré de TVA</b>","chip2":"<b>Carte</b>, PayPal &amp; virement bancaire","chip3":"Clients <b>dans le monde entier</b>","svc_eyebrow":"Services","svc_h2":"Ce que nous faisons","svc_p":"Cycle complet — du code et des tests aux produits numériques et à l'infrastructure. Chaque service est facturé officiellement.","s1h":"Développement logiciel","s1p":"Bots, scripts, mods, plugins et intégrations. Création et amélioration de composants adaptés à votre besoin.","s1pr":"à partir de <b>1 500&nbsp;₴</b>","s2h":"Tests / QA","s2p":"Tests de scénarios et de mécaniques de jeu, détection et reproduction de bugs, régression et rapports.","s2pr":"à partir de <b>800&nbsp;₴</b>","s3h":"Automatisation","s3p":"Automatisation des processus routiniers, configuration clé en main et mise en place de systèmes numériques.","s3pr":"à partir de <b>2 000&nbsp;₴</b>","s4h":"Produits numériques","s4p":"Clés de licence, accès, biens virtuels et produits d'information au format numérique.","s4pr":"à partir de <b>100&nbsp;₴</b>","s5h":"Hébergement &amp; infrastructure","s5p":"Location de serveurs, espace disque, hébergement et traitement de données, support d'infrastructure.","s5pr":"à partir de <b>300&nbsp;₴</b>/mois","s6h":"Conseil &amp; support","s6p":"Support technique, supervision des systèmes de jeu et conseil opérationnel.","s6pr":"à partir de <b>500&nbsp;₴</b>","svc_note":"* Prix indicatifs ; le coût final dépend du périmètre et est fixé dans la facture.","proc_eyebrow":"Processus","proc_h2":"Comment nous travaillons","p1h":"Demande","p1p":"Vous décrivez la tâche via Telegram ou par e-mail — nous convenons des détails.","p2h":"Estimation","p2p":"Nous évaluons le périmètre, les délais et le coût, puis émettons une facture.","p3h":"Réalisation","p3p":"Nous développons, testons et vous tenons informé de l'avancement.","p4h":"Paiement","p4p":"Payez par carte via QR ou par virement bancaire. C'est fait.","tr_eyebrow":"Garanties","tr_h2":"Pourquoi les clients nous font confiance","tr1h":"Confidentialité","tr1p":"Votre code, vos données et vos idées restent entre nous. NDA sur demande.","tr2h":"Garantie de qualité","tr2p":"Nous peaufinons jusqu'à ce que tout fonctionne ; corrections des bugs après livraison.","tr3h":"Délais","tr3p":"Nous fixons les délais dans la facture et les respectons.","tr4h":"Officiel","tr4p":"Micro-entrepreneur, factures et documents de clôture. Transparent et légal.","pay_h":"Paiement","pay_lead":"Pratique et officiel. Chaque facture inclut un QR pour un paiement instantané.","pay1":"Paiements par carte en ligne via un système d'acquisition sécurisé","pay2":"PayPal pour les clients internationaux (USD / EUR)","pay3":"Virement bancaire (IBAN) depuis n'importe quelle banque","pay4":"Code QR dans la facture — payez en quelques minutes","pay_btn":"Payer via PayPal","terms_h":"Conditions (offre publique)","t1":"Les services et produits numériques sont fournis sur demande, selon un périmètre et un coût convenus.","t2":"Paiement en UAH (carte ou virement bancaire) ou via PayPal pour les clients internationaux — sur la base d'une facture.","t3":"Les délais sont convenus individuellement avant le début des travaux.","t4":"Remboursements : pour les services — avant le début des travaux ; pour les produits numériques — si l'accès ou les biens n'ont pas été livrés.","t5":"Le prestataire relève de l'impôt unique du groupe 3 et n'est pas assujetti à la TVA.","t6":"Confidentialité garantie : les données et documents des clients ne sont jamais communiqués à des tiers ; NDA sur demande.","contact_eyebrow":"Contacts","contact_h":"Discutons de votre projet","contact_p":"Écrivez-moi sur Telegram ou par e-mail — je vous répondrai concernant la tâche, les délais et le coût, et j'émettrai une facture.","contact_req":"<b>Micro-entrepreneur Dmytro Nartenko</b><br>Romny, Ukraine · impôt unique du groupe 3","ft_left":"© 2026 Nartenko.QA — Micro-entrepreneur D.&nbsp;Nartenko","ft_right":"Développement · Tests · Automatisation","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; compétences","stack_p":"Technologies et outils que nous utilisons au quotidien — du développement et de l'automatisation à la QA de jeux.","stack_c9":"automatisation","faq_eyebrow":"FAQ","faq_h2":"Questions fréquentes","faq_p":"Réponses courtes aux questions les plus fréquentes. Encore des doutes ? Écrivez-moi sur Telegram ou par e-mail.","faq_q1":"Comment commencer ?","faq_a1":"Écrivez-moi sur Telegram ou par e-mail avec une brève description de votre tâche. Nous conviendrons du périmètre, des délais et du coût, et j'émettrai une facture — le travail commence ensuite.","faq_q2":"Qu'en est-il des délais ?","faq_a2":"Les délais dépendent du périmètre et sont convenus individuellement avant le début des travaux. Les petites tâches prennent 1 à 3 jours ; les plus importantes sont divisées en étapes et fixées dans la facture.","faq_q3":"Comment puis-je payer ?","faq_a3":"Par carte (Visa/Mastercard, Apple Pay, Google Pay) via le QR de la facture, par virement bancaire (IBAN), ou via PayPal pour les clients internationaux. Tout est officiel — micro-entrepreneur du groupe 3.","faq_q4":"Y a-t-il une clause de confidentialité / un NDA ?","faq_a4":"Oui. Votre code, vos données et vos idées restent entre nous et ne sont jamais communiqués à des tiers. Un NDA peut être signé sur demande avant le début des travaux.","faq_q5":"Travaillez-vous avec des clients internationaux ?","faq_a5":"Oui, je travaille avec des clients du monde entier. Communication en ukrainien ou en anglais, paiement via PayPal (USD/EUR) ou virement international.","faq_q6":"Qu'en est-il des révisions et de la garantie ?","faq_a6":"Nous peaufinons jusqu'au résultat convenu et corrigeons les bugs après livraison. Remboursements : pour les services — avant le début des travaux ; pour les produits numériques — si l'accès ou les biens n'ont pas été livrés."};
+  const PL = {"nav_services":"Usługi","nav_process":"Jak pracujemy","nav_pay":"Płatność","nav_terms":"Warunki","nav_contact":"Kontakt","nav_order":"Zamów wycenę","hero_eyebrow":"Jednoosobowa działalność · Game QA &amp; development","hero_h1":"Tworzenie, testowanie i automatyzacja <span class=\"c\">gier i oprogramowania</span>","hero_lede":"Boty i skrypty, testowanie mechanik gier, automatyzacja i towary cyfrowe — oficjalnie, z fakturami i dokumentami.","hero_cta1":"Zamów usługę","hero_cta2":"Zobacz usługi","chip1":"Jednoosobowa działalność · grupa 3 · <b>bez VAT</b>","chip2":"<b>Karta</b>, PayPal &amp; przelew bankowy","chip3":"Klienci <b>na całym świecie</b>","svc_eyebrow":"Usługi","svc_h2":"Czym się zajmujemy","svc_p":"Pełen cykl — od kodu i testów po towary cyfrowe i infrastrukturę. Każda usługa jest fakturowana oficjalnie.","s1h":"Tworzenie oprogramowania","s1p":"Boty, skrypty, mody, wtyczki i integracje. Tworzenie i ulepszanie komponentów pod Twoje zadanie.","s1pr":"od <b>$39</b>","s2h":"Testowanie / QA","s2p":"Testowanie scenariuszy i mechanik gier, wykrywanie i odtwarzanie błędów, regresja i raporty.","s2pr":"od <b>$19</b>","s3h":"Automatyzacja","s3p":"Automatyzacja rutynowych procesów, konfiguracja i wdrożenie systemów cyfrowych pod klucz.","s3pr":"od <b>$49</b>","s4h":"Towary cyfrowe","s4p":"Klucze licencyjne, dostępy, towary wirtualne i produkty informacyjne w formacie cyfrowym.","s4pr":"od <b>$3</b>","s5h":"Hosting &amp; infrastruktura","s5p":"Wynajem serwerów, przestrzeń dyskowa, hosting i przetwarzanie danych, wsparcie infrastruktury.","s5pr":"od <b>$7</b>/mies.","s6h":"Konsultacje &amp; wsparcie","s6p":"Wsparcie techniczne, monitoring systemów gier i konsultacje operacyjne.","s6pr":"od <b>$12</b>","svc_note":"* Ceny orientacyjne; koszt końcowy zależy od zakresu i jest ustalany na fakturze.","proc_eyebrow":"Proces","proc_h2":"Jak pracujemy","p1h":"Zgłoszenie","p1p":"Opisujesz zadanie przez Telegram lub e-mail — ustalamy szczegóły.","p2h":"Wycena","p2p":"Oceniamy zakres, termin i koszt oraz wystawiamy fakturę.","p3h":"Realizacja","p3p":"Tworzymy, testujemy i informujemy Cię o postępach.","p4h":"Płatność","p4p":"Płacisz kartą przez QR lub przelewem bankowym. Gotowe.","tr_eyebrow":"Gwarancje","tr_h2":"Dlaczego klienci nam ufają","tr1h":"Poufność","tr1p":"Twój kod, dane i pomysły zostają między nami. NDA na życzenie.","tr2h":"Gwarancja jakości","tr2p":"Dopracowujemy, aż działa; poprawki błędów po realizacji.","tr3h":"Terminy","tr3p":"Ustalamy terminy na fakturze i ich dotrzymujemy.","tr4h":"Oficjalnie","tr4p":"Jednoosobowa działalność, faktury i dokumenty rozliczeniowe. Przejrzyście i legalnie.","pay_h":"Płatność","pay_lead":"Wygodnie i oficjalnie. Każda faktura zawiera QR do natychmiastowej płatności.","pay1":"Płatności kartą online przez bezpieczną bramkę płatniczą","pay2":"PayPal dla klientów międzynarodowych (USD / EUR)","pay3":"Przelew bankowy (IBAN) z dowolnego banku","pay4":"Kod QR na fakturze — zapłać w kilka minut","pay_btn":"Zapłać przez PayPal","terms_h":"Warunki (oferta publiczna)","t1":"Usługi i towary cyfrowe świadczone są na zamówienie w uzgodnionym zakresie i za uzgodniony koszt.","t2":"Płatność w UAH (karta lub przelew bankowy) albo przez PayPal dla klientów międzynarodowych — na podstawie faktury.","t3":"Terminy ustalane są indywidualnie przed rozpoczęciem prac.","t4":"Zwroty: za usługi — przed rozpoczęciem prac; za towary cyfrowe — jeśli dostęp/towar nie został dostarczony.","t5":"Usługodawca jest płatnikiem jednolitego podatku grupy 3, nie jest płatnikiem VAT.","t6":"Gwarantowana poufność: dane i materiały klienta nigdy nie są udostępniane osobom trzecim; NDA na życzenie.","contact_eyebrow":"Kontakt","contact_h":"Porozmawiajmy o Twoim projekcie","contact_p":"Napisz do mnie na Telegramie lub e-mailem — odpowiem w sprawie zadania, terminu i kosztu oraz wystawię fakturę.","contact_req":"<b>Jednoosobowa działalność Dmytro Nartenko</b><br>Romny, Ukraina · płatnik jednolitego podatku grupy 3","ft_left":"© 2026 Nartenko.QA — jednoosobowa działalność D.&nbsp;Nartenko","ft_right":"Tworzenie · Testowanie · Automatyzacja","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; możliwości","stack_p":"Technologie i narzędzia, z którymi pracujemy na co dzień — od tworzenia oprogramowania i automatyzacji po QA gier.","stack_c9":"automatyzacja","faq_eyebrow":"FAQ","faq_h2":"Najczęściej zadawane pytania","faq_p":"Krótkie odpowiedzi na najczęstsze pytania. Masz wątpliwości? Napisz do mnie na Telegramie lub e-mailem.","faq_q1":"Jak zaczynamy?","faq_a1":"Napisz do mnie na Telegramie lub e-mailem z krótkim opisem zadania. Ustalimy zakres, termin i koszt, a ja wystawię fakturę — prace ruszają zaraz potem.","faq_q2":"Jak wyglądają terminy?","faq_a2":"Terminy zależą od zakresu i są ustalane indywidualnie przed rozpoczęciem prac. Małe zadania zajmują 1–3 dni; większe dzielimy na etapy i zapisujemy na fakturze.","faq_q3":"Jak mogę zapłacić?","faq_a3":"Kartą (Visa/Mastercard, Apple Pay, Google Pay) przez QR na fakturze, przelewem bankowym (IBAN) lub przez PayPal dla klientów międzynarodowych. Wszystko oficjalnie — jednoosobowa działalność, grupa 3.","faq_q4":"Czy jest poufność / NDA?","faq_a4":"Tak. Twój kod, dane i pomysły zostają między nami i nigdy nie są udostępniane osobom trzecim. NDA można podpisać na życzenie przed rozpoczęciem prac.","faq_q5":"Czy pracujesz z klientami międzynarodowymi?","faq_a5":"Tak, pracuję z klientami na całym świecie. Komunikacja po ukraińsku lub angielsku, płatność przez PayPal (USD/EUR) lub przelewem międzynarodowym.","faq_q6":"A co z poprawkami i gwarancją?","faq_a6":"Dopracowujemy do uzgodnionego rezultatu i poprawiamy błędy po realizacji. Zwroty: za usługi — przed rozpoczęciem prac; za towary cyfrowe — jeśli dostęp/towar nie został dostarczony."};
+  const DE = {"nav_services":"Leistungen","nav_process":"Ablauf","nav_pay":"Zahlung","nav_terms":"Bedingungen","nav_contact":"Kontakt","nav_order":"Angebot anfordern","hero_eyebrow":"Einzelunternehmer · Game-QA &amp; Entwicklung","hero_h1":"Entwicklung, Testing und Automatisierung <span class=\"c\">für Games und Software</span>","hero_lede":"Bots und Skripte, Test von Spielmechaniken, Automatisierung und digitale Produkte — offiziell, mit Rechnungen und Belegen.","hero_cta1":"Leistung anfragen","hero_cta2":"Leistungen ansehen","chip1":"Einzelunternehmer · Gruppe 3 · <b>USt.-befreit</b>","chip2":"<b>Karte</b>, PayPal &amp; Überweisung","chip3":"Kunden <b>weltweit</b>","svc_eyebrow":"Leistungen","svc_h2":"Was wir tun","svc_p":"Kompletter Zyklus — von Code und Tests bis zu digitalen Produkten und Infrastruktur. Jede Leistung wird offiziell in Rechnung gestellt.","s1h":"Softwareentwicklung","s1p":"Bots, Skripte, Mods, Plugins und Integrationen. Wir entwickeln und optimieren Komponenten für Ihre Aufgabe.","s1pr":"ab <b>$39</b>","s2h":"Testing / QA","s2p":"Test von Spielszenarien und -mechaniken, Finden und Reproduzieren von Bugs, Regression und Reports.","s2pr":"ab <b>$19</b>","s3h":"Automatisierung","s3p":"Automatisierung von Routineprozessen, schlüsselfertige Konfiguration und Einrichtung digitaler Systeme.","s3pr":"ab <b>$49</b>","s4h":"Digitale Produkte","s4p":"Lizenzschlüssel, Zugänge, virtuelle Güter und Informationsprodukte in digitalem Format.","s4pr":"ab <b>$3</b>","s5h":"Hosting &amp; Infrastruktur","s5p":"Servermiete, Speicherplatz, Datenhosting und -verarbeitung, Infrastruktur-Support.","s5pr":"ab <b>$7</b>/Mon.","s6h":"Beratung &amp; Support","s6p":"Technischer Support, Monitoring von Spielsystemen und laufende Beratung.","s6pr":"ab <b>$12</b>","svc_note":"* Richtpreise; der Endpreis hängt vom Umfang ab und wird in der Rechnung festgelegt.","proc_eyebrow":"Ablauf","proc_h2":"So arbeiten wir","p1h":"Anfrage","p1p":"Sie beschreiben die Aufgabe per Telegram oder E-Mail — wir klären die Details.","p2h":"Kalkulation","p2p":"Wir schätzen Umfang, Zeitplan und Kosten ein und stellen eine Rechnung aus.","p3h":"Umsetzung","p3p":"Wir entwickeln, testen und halten Sie über den Fortschritt auf dem Laufenden.","p4h":"Zahlung","p4p":"Zahlung per Karte über QR oder per Überweisung. Fertig.","tr_eyebrow":"Garantien","tr_h2":"Warum Kunden uns vertrauen","tr1h":"Vertraulichkeit","tr1p":"Ihr Code, Ihre Daten und Ideen bleiben unter uns. NDA auf Anfrage.","tr2h":"Qualitätsgarantie","tr2p":"Wir arbeiten nach, bis es funktioniert; Bugfixes nach der Übergabe.","tr3h":"Termine","tr3p":"Wir legen Termine in der Rechnung fest und halten sie ein.","tr4h":"Offiziell","tr4p":"Einzelunternehmer, Rechnungen und Abschlussdokumente. Transparent und rechtssicher.","pay_h":"Zahlung","pay_lead":"Bequem und offiziell. Jede Rechnung enthält einen QR für die sofortige Zahlung.","pay1":"Online-Kartenzahlung über sicheres Acquiring","pay2":"PayPal für internationale Kunden (USD / EUR)","pay3":"Überweisung (IBAN) von jeder Bank","pay4":"QR-Code in der Rechnung — Zahlung in wenigen Minuten","pay_btn":"Mit PayPal bezahlen","terms_h":"Bedingungen (öffentliches Angebot)","t1":"Leistungen und digitale Produkte werden auf Anfrage in vereinbartem Umfang und zu vereinbarten Kosten erbracht.","t2":"Zahlung in UAH (Karte oder Überweisung) oder per PayPal für internationale Kunden — auf Rechnungsbasis.","t3":"Die Zeitpläne werden vor Arbeitsbeginn individuell vereinbart.","t4":"Rückerstattung: bei Leistungen — vor Arbeitsbeginn; bei digitalen Produkten — wenn Zugang/Ware nicht geliefert wurde.","t5":"Der Anbieter ist Einheitssteuerzahler der Gruppe 3 und kein Umsatzsteuerzahler.","t6":"Vertraulichkeit garantiert: Kundendaten und Materialien werden niemals an Dritte weitergegeben; NDA auf Anfrage.","contact_eyebrow":"Kontakt","contact_h":"Lassen Sie uns Ihr Projekt besprechen","contact_p":"Schreiben Sie mir über Telegram oder E-Mail — ich antworte zu Aufgabe, Zeitplan und Kosten und stelle eine Rechnung aus.","contact_req":"<b>Einzelunternehmer Dmytro Nartenko</b><br>Romny, Ukraine · Einheitssteuerzahler Gruppe 3","ft_left":"© 2026 Nartenko.QA — Einzelunternehmer D.&nbsp;Nartenko","ft_right":"Entwicklung · Testing · Automatisierung","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; Fähigkeiten","stack_p":"Technologien und Tools, mit denen wir täglich arbeiten — von Entwicklung und Automatisierung bis zu Game-QA.","stack_c9":"Automatisierung","faq_eyebrow":"FAQ","faq_h2":"Häufig gestellte Fragen","faq_p":"Kurze Antworten auf die häufigsten Fragen. Noch unsicher? Schreiben Sie mir über Telegram oder per E-Mail.","faq_q1":"Wie fangen wir an?","faq_a1":"Schreiben Sie mir über Telegram oder per E-Mail mit einer kurzen Beschreibung Ihrer Aufgabe. Wir vereinbaren Umfang, Zeitplan und Kosten, und ich stelle eine Rechnung aus — danach beginnt die Arbeit.","faq_q2":"Wie sieht es mit den Zeitplänen aus?","faq_a2":"Die Zeitpläne hängen vom Umfang ab und werden vor Arbeitsbeginn individuell vereinbart. Kleine Aufgaben dauern 1–3 Tage; größere werden in Etappen unterteilt und in der Rechnung festgelegt.","faq_q3":"Wie kann ich bezahlen?","faq_a3":"Per Karte (Visa/Mastercard, Apple Pay, Google Pay) über den QR in der Rechnung, per Überweisung (IBAN) oder per PayPal für internationale Kunden. Alles offiziell — Einzelunternehmer der Gruppe 3.","faq_q4":"Gibt es Vertraulichkeit / ein NDA?","faq_a4":"Ja. Ihr Code, Ihre Daten und Ideen bleiben unter uns und werden niemals an Dritte weitergegeben. Ein NDA kann auf Anfrage vor Arbeitsbeginn unterzeichnet werden.","faq_q5":"Arbeiten Sie mit internationalen Kunden?","faq_a5":"Ja, ich arbeite mit Kunden weltweit. Kommunikation auf Ukrainisch oder Englisch, Zahlung per PayPal (USD/EUR) oder internationale Überweisung.","faq_q6":"Wie sieht es mit Überarbeitungen und Gewährleistung aus?","faq_a6":"Wir arbeiten bis zum vereinbarten Ergebnis nach und beheben Bugs nach der Übergabe. Rückerstattung: bei Leistungen — vor Arbeitsbeginn; bei digitalen Produkten — wenn Zugang/Ware nicht geliefert wurde."};
+  const ES = {"nav_services":"Servicios","nav_process":"Cómo trabajamos","nav_pay":"Pago","nav_terms":"Condiciones","nav_contact":"Contacto","nav_order":"Solicitar presupuesto","hero_eyebrow":"Autónomo · QA de juegos &amp; desarrollo","hero_h1":"Desarrollo, pruebas y automatización <span class=\"c\">para juegos y software</span>","hero_lede":"Bots y scripts, pruebas de mecánicas de juego, automatización y productos digitales — de forma oficial, con facturas y documentos.","hero_cta1":"Solicitar un servicio","hero_cta2":"Ver servicios","chip1":"Autónomo · Grupo 3 · <b>exento de IVA</b>","chip2":"<b>Tarjeta</b>, PayPal &amp; transferencia bancaria","chip3":"Clientes <b>en todo el mundo</b>","svc_eyebrow":"Servicios","svc_h2":"Lo que hacemos","svc_p":"Ciclo completo — desde el código y las pruebas hasta los productos digitales y la infraestructura. Cada servicio se factura de forma oficial.","s1h":"Desarrollo de software","s1p":"Bots, scripts, mods, plugins e integraciones. Creamos y mejoramos componentes para tu tarea.","s1pr":"desde <b>$39</b>","s2h":"Pruebas / QA","s2p":"Pruebas de escenarios y mecánicas de juego, detección y reproducción de bugs, regresión e informes.","s2pr":"desde <b>$19</b>","s3h":"Automatización","s3p":"Automatización de procesos rutinarios, configuración llave en mano e implementación de sistemas digitales.","s3pr":"desde <b>$49</b>","s4h":"Productos digitales","s4p":"Claves de licencia, accesos, bienes virtuales y productos de información en formato digital.","s4pr":"desde <b>$3</b>","s5h":"Hosting &amp; infraestructura","s5p":"Alquiler de servidores, espacio en disco, alojamiento y procesamiento de datos, soporte de infraestructura.","s5pr":"desde <b>$7</b>/mes","s6h":"Consultoría &amp; soporte","s6p":"Soporte técnico, monitoreo de sistemas de juego y consultoría operativa.","s6pr":"desde <b>$12</b>","svc_note":"* Precios orientativos; el costo final depende del alcance y queda fijado en la factura.","proc_eyebrow":"Proceso","proc_h2":"Cómo trabajamos","p1h":"Solicitud","p1p":"Describes la tarea por Telegram o correo — acordamos los detalles.","p2h":"Presupuesto","p2p":"Evaluamos el alcance, los plazos y el costo, y emitimos una factura.","p3h":"Trabajo","p3p":"Desarrollamos, probamos y te mantenemos al tanto del progreso.","p4h":"Pago","p4p":"Paga con tarjeta mediante QR o por transferencia bancaria. Listo.","tr_eyebrow":"Garantías","tr_h2":"Por qué los clientes confían en nosotros","tr1h":"Confidencialidad","tr1p":"Tu código, datos e ideas quedan entre nosotros. NDA a petición.","tr2h":"Garantía de calidad","tr2p":"Perfeccionamos hasta que funcione; corrección de errores tras la entrega.","tr3h":"Plazos","tr3p":"Fijamos los plazos en la factura y los cumplimos.","tr4h":"Oficial","tr4p":"Autónomo, facturas y documentos de cierre. Transparente y legal.","pay_h":"Pago","pay_lead":"Cómodo y oficial. Cada factura incluye un QR para el pago instantáneo.","pay1":"Pagos con tarjeta en línea mediante adquirencia segura","pay2":"PayPal para clientes internacionales (USD / EUR)","pay3":"Transferencia bancaria (IBAN) desde cualquier banco","pay4":"Código QR en la factura — paga en un par de minutos","pay_btn":"Pagar con PayPal","terms_h":"Condiciones (oferta pública)","t1":"Los servicios y productos digitales se prestan bajo solicitud, con un alcance y costo acordados.","t2":"Pago en UAH (tarjeta o transferencia bancaria) o mediante PayPal para clientes internacionales — con base en una factura.","t3":"Los plazos se acuerdan de forma individual antes de iniciar el trabajo.","t4":"Reembolsos: para servicios — antes de iniciar el trabajo; para productos digitales — si no se entregaron los accesos/bienes.","t5":"El prestador es contribuyente del impuesto único del Grupo 3, no contribuyente del IVA.","t6":"Confidencialidad garantizada: los datos y materiales del cliente nunca se comparten con terceros; NDA a petición.","contact_eyebrow":"Contacto","contact_h":"Hablemos de tu proyecto","contact_p":"Escríbeme por Telegram o correo — te responderé sobre la tarea, los plazos y el costo, y emitiré una factura.","contact_req":"<b>Autónomo Dmytro Nartenko</b><br>Romny, Ucrania · contribuyente del impuesto único del Grupo 3","ft_left":"© 2026 Nartenko.QA — Autónomo D.&nbsp;Nartenko","ft_right":"Desarrollo · Pruebas · Automatización","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; capacidades","stack_p":"Tecnologías y herramientas con las que trabajamos a diario — desde el desarrollo y la automatización hasta el QA de juegos.","stack_c9":"automatización","faq_eyebrow":"FAQ","faq_h2":"Preguntas frecuentes","faq_p":"Respuestas breves a las preguntas más comunes. ¿Todavía tienes dudas? Escríbeme por Telegram o correo.","faq_q1":"¿Cómo empezamos?","faq_a1":"Escríbeme por Telegram o correo con una breve descripción de tu tarea. Acordaremos el alcance, los plazos y el costo, y emitiré una factura — el trabajo comienza después de eso.","faq_q2":"¿Qué hay de los plazos?","faq_a2":"Los plazos dependen del alcance y se acuerdan de forma individual antes de iniciar el trabajo. Las tareas pequeñas llevan de 1 a 3 días; las más grandes se dividen en etapas y se fijan en la factura.","faq_q3":"¿Cómo puedo pagar?","faq_a3":"Con tarjeta (Visa/Mastercard, Apple Pay, Google Pay) mediante el QR de la factura, por transferencia bancaria (IBAN) o con PayPal para clientes internacionales. Todo es oficial — autónomo del Grupo 3.","faq_q4":"¿Hay confidencialidad / un NDA?","faq_a4":"Sí. Tu código, datos e ideas quedan entre nosotros y nunca se comparten con terceros. Se puede firmar un NDA a petición antes de iniciar el trabajo.","faq_q5":"¿Trabajas con clientes internacionales?","faq_a5":"Sí, trabajo con clientes de todo el mundo. Comunicación en ucraniano o inglés, pago con PayPal (USD/EUR) o transferencia internacional.","faq_q6":"¿Qué hay de las revisiones y la garantía?","faq_a6":"Perfeccionamos hasta el resultado acordado y corregimos errores tras la entrega. Reembolsos: para servicios — antes de iniciar el trabajo; para productos digitales — si no se entregaron los accesos/bienes."};
+  const FR = {"nav_services":"Services","nav_process":"Méthode","nav_pay":"Paiement","nav_terms":"Conditions","nav_contact":"Contacts","nav_order":"Demander un devis","hero_eyebrow":"Micro-entrepreneur · QA de jeux &amp; développement","hero_h1":"Développement, tests et automatisation <span class=\"c\">pour jeux et logiciels</span>","hero_lede":"Bots et scripts, tests de mécaniques de jeu, automatisation et produits numériques — officiellement, avec factures et documents.","hero_cta1":"Commander un service","hero_cta2":"Voir les services","chip1":"Micro-entrepreneur · groupe 3 · <b>exonéré de TVA</b>","chip2":"<b>Carte</b>, PayPal &amp; virement bancaire","chip3":"Clients <b>dans le monde entier</b>","svc_eyebrow":"Services","svc_h2":"Ce que nous faisons","svc_p":"Cycle complet — du code et des tests aux produits numériques et à l'infrastructure. Chaque service est facturé officiellement.","s1h":"Développement logiciel","s1p":"Bots, scripts, mods, plugins et intégrations. Création et amélioration de composants adaptés à votre besoin.","s1pr":"à partir de <b>$39</b>","s2h":"Tests / QA","s2p":"Tests de scénarios et de mécaniques de jeu, détection et reproduction de bugs, régression et rapports.","s2pr":"à partir de <b>$19</b>","s3h":"Automatisation","s3p":"Automatisation des processus routiniers, configuration clé en main et mise en place de systèmes numériques.","s3pr":"à partir de <b>$49</b>","s4h":"Produits numériques","s4p":"Clés de licence, accès, biens virtuels et produits d'information au format numérique.","s4pr":"à partir de <b>$3</b>","s5h":"Hébergement &amp; infrastructure","s5p":"Location de serveurs, espace disque, hébergement et traitement de données, support d'infrastructure.","s5pr":"à partir de <b>$7</b>/mois","s6h":"Conseil &amp; support","s6p":"Support technique, supervision des systèmes de jeu et conseil opérationnel.","s6pr":"à partir de <b>$12</b>","svc_note":"* Prix indicatifs ; le coût final dépend du périmètre et est fixé dans la facture.","proc_eyebrow":"Processus","proc_h2":"Comment nous travaillons","p1h":"Demande","p1p":"Vous décrivez la tâche via Telegram ou par e-mail — nous convenons des détails.","p2h":"Estimation","p2p":"Nous évaluons le périmètre, les délais et le coût, puis émettons une facture.","p3h":"Réalisation","p3p":"Nous développons, testons et vous tenons informé de l'avancement.","p4h":"Paiement","p4p":"Payez par carte via QR ou par virement bancaire. C'est fait.","tr_eyebrow":"Garanties","tr_h2":"Pourquoi les clients nous font confiance","tr1h":"Confidentialité","tr1p":"Votre code, vos données et vos idées restent entre nous. NDA sur demande.","tr2h":"Garantie de qualité","tr2p":"Nous peaufinons jusqu'à ce que tout fonctionne ; corrections des bugs après livraison.","tr3h":"Délais","tr3p":"Nous fixons les délais dans la facture et les respectons.","tr4h":"Officiel","tr4p":"Micro-entrepreneur, factures et documents de clôture. Transparent et légal.","pay_h":"Paiement","pay_lead":"Pratique et officiel. Chaque facture inclut un QR pour un paiement instantané.","pay1":"Paiements par carte en ligne via un système d'acquisition sécurisé","pay2":"PayPal pour les clients internationaux (USD / EUR)","pay3":"Virement bancaire (IBAN) depuis n'importe quelle banque","pay4":"Code QR dans la facture — payez en quelques minutes","pay_btn":"Payer via PayPal","terms_h":"Conditions (offre publique)","t1":"Les services et produits numériques sont fournis sur demande, selon un périmètre et un coût convenus.","t2":"Paiement en UAH (carte ou virement bancaire) ou via PayPal pour les clients internationaux — sur la base d'une facture.","t3":"Les délais sont convenus individuellement avant le début des travaux.","t4":"Remboursements : pour les services — avant le début des travaux ; pour les produits numériques — si l'accès ou les biens n'ont pas été livrés.","t5":"Le prestataire relève de l'impôt unique du groupe 3 et n'est pas assujetti à la TVA.","t6":"Confidentialité garantie : les données et documents des clients ne sont jamais communiqués à des tiers ; NDA sur demande.","contact_eyebrow":"Contacts","contact_h":"Discutons de votre projet","contact_p":"Écrivez-moi sur Telegram ou par e-mail — je vous répondrai concernant la tâche, les délais et le coût, et j'émettrai une facture.","contact_req":"<b>Micro-entrepreneur Dmytro Nartenko</b><br>Romny, Ukraine · impôt unique du groupe 3","ft_left":"© 2026 Nartenko.QA — Micro-entrepreneur D.&nbsp;Nartenko","ft_right":"Développement · Tests · Automatisation","nav_faq":"FAQ","stack_eyebrow":"Stack","stack_h2":"Stack &amp; compétences","stack_p":"Technologies et outils que nous utilisons au quotidien — du développement et de l'automatisation à la QA de jeux.","stack_c9":"automatisation","faq_eyebrow":"FAQ","faq_h2":"Questions fréquentes","faq_p":"Réponses courtes aux questions les plus fréquentes. Encore des doutes ? Écrivez-moi sur Telegram ou par e-mail.","faq_q1":"Comment commencer ?","faq_a1":"Écrivez-moi sur Telegram ou par e-mail avec une brève description de votre tâche. Nous conviendrons du périmètre, des délais et du coût, et j'émettrai une facture — le travail commence ensuite.","faq_q2":"Qu'en est-il des délais ?","faq_a2":"Les délais dépendent du périmètre et sont convenus individuellement avant le début des travaux. Les petites tâches prennent 1 à 3 jours ; les plus importantes sont divisées en étapes et fixées dans la facture.","faq_q3":"Comment puis-je payer ?","faq_a3":"Par carte (Visa/Mastercard, Apple Pay, Google Pay) via le QR de la facture, par virement bancaire (IBAN), ou via PayPal pour les clients internationaux. Tout est officiel — micro-entrepreneur du groupe 3.","faq_q4":"Y a-t-il une clause de confidentialité / un NDA ?","faq_a4":"Oui. Votre code, vos données et vos idées restent entre nous et ne sont jamais communiqués à des tiers. Un NDA peut être signé sur demande avant le début des travaux.","faq_q5":"Travaillez-vous avec des clients internationaux ?","faq_a5":"Oui, je travaille avec des clients du monde entier. Communication en ukrainien ou en anglais, paiement via PayPal (USD/EUR) ou virement international.","faq_q6":"Qu'en est-il des révisions et de la garantie ?","faq_a6":"Nous peaufinons jusqu'au résultat convenu et corrigeons les bugs après livraison. Remboursements : pour les services — avant le début des travaux ; pour les produits numériques — si l'accès ou les biens n'ont pas été livrés."};
   (function(){
     const els = document.querySelectorAll('[data-i18n]');
-    els.forEach(el => { el.dataset._uk = el.innerHTML; });
+    els.forEach(el => { if(el.dataset._uk == null) el.dataset._uk = el.innerHTML; });
     const DICTS = { en:EN, pl:PL, de:DE, es:ES, fr:FR };
+    // stat-strip labels (UK stays as page markup)
+    Object.assign(EN, {st_l1:"orders delivered", st_l2:"supported languages", st_l3:"official, with invoice", skip:"Skip to content"});
+    Object.assign(PL, {st_l1:"zrealizowanych zamówień", st_l2:"obsługiwane języki", st_l3:"oficjalnie, z fakturą", skip:"Przejdź do treści"});
+    Object.assign(DE, {st_l1:"erledigte Aufträge", st_l2:"unterstützte Sprachen", st_l3:"offiziell, mit Rechnung", skip:"Zum Inhalt springen"});
+    Object.assign(ES, {st_l1:"pedidos completados", st_l2:"idiomas disponibles", st_l3:"oficial, con factura", skip:"Ir al contenido"});
+    Object.assign(FR, {st_l1:"commandes réalisées", st_l2:"langues disponibles", st_l3:"officiel, avec facture", skip:"Aller au contenu"});
     const SUP = ['uk','en','pl','de','es','fr'];
     const CODE = { uk:'UA', en:'EN', pl:'PL', de:'DE', es:'ES', fr:'FR' };
     const btn = document.getElementById('langBtn');
@@ -822,7 +876,7 @@
         b.setAttribute('aria-current', b.getAttribute('data-lang') === lang ? 'true' : 'false'));
       try { localStorage.setItem('nq_lang', lang); } catch(e){}
     }
-    function closeMenu(){ if (menu) menu.classList.remove('open'); if (btn) btn.setAttribute('aria-expanded','false'); }
+    function closeMenu(){ var had = menu && menu.contains(document.activeElement); if (menu) menu.classList.remove('open'); if (btn){ btn.setAttribute('aria-expanded','false'); if(had){ try{ btn.focus(); }catch(e){} } } }
     function openMenu(){ if (menu) menu.classList.add('open'); if (btn) btn.setAttribute('aria-expanded','true'); }
     if (btn) btn.addEventListener('click', function(e){ e.stopPropagation(); (menu && menu.classList.contains('open')) ? closeMenu() : openMenu(); });
     if (menu) menu.querySelectorAll('button').forEach(function(b){
@@ -832,18 +886,22 @@
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Esc') closeMenu(); });
 
     let init = null;
-    try { init = localStorage.getItem('nq_lang'); } catch(e){}
+    try {
+      var pm = location.pathname.match(/\/(uk|en|pl|de|es|fr)(\/|$)/);
+      var qp = new URLSearchParams(location.search).get('lang');
+      if (pm && SUP.indexOf(pm[1]) > -1) init = pm[1];
+      else if (SUP.indexOf(qp) > -1) init = qp;
+      else init = localStorage.getItem('nq_lang');
+    } catch(e){}
     if (SUP.indexOf(init) < 0) {
-      // немає збереженого вибору → визначаємо за мовою браузера: українці → UA, інакше найближча підтримувана або EN
-      var nav = '';
-      try { nav = ((navigator.languages && navigator.languages.join(',')) || navigator.language || ''); } catch(e){}
-      nav = nav.toLowerCase();
-      if (/\buk\b/.test(nav)) init = 'uk';
-      else if (/\bpl\b/.test(nav)) init = 'pl';
-      else if (/\bde\b/.test(nav)) init = 'de';
-      else if (/\bes\b/.test(nav)) init = 'es';
-      else if (/\bfr\b/.test(nav)) init = 'fr';
-      else init = 'en';
+      // немає збереженого вибору → беремо мови браузера У ПОРЯДКУ пріоритету, перша підтримувана; інакше EN
+      var langs = [];
+      try { langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || '']; } catch(e){ langs = ['']; }
+      init = 'en';
+      for (var li = 0; li < langs.length; li++) {
+        var code = String(langs[li] || '').toLowerCase().slice(0,2);
+        if (SUP.indexOf(code) > -1) { init = code; break; }
+      }
     }
     apply(init);
   })();
@@ -885,8 +943,8 @@
         var alpha = p.a * (0.6 + 0.4*Math.sin(p.tp));
         var rad = p.r*4;
         var g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,rad);
-        g.addColorStop(0,'rgba(125,230,250,'+alpha+')');
-        g.addColorStop(1,'rgba(125,230,250,0)');
+        g.addColorStop(0,'rgba(192,132,252,'+alpha+')');
+        g.addColorStop(1,'rgba(192,132,252,0)');
         ctx.fillStyle = g;
         ctx.beginPath(); ctx.arc(p.x,p.y,rad,0,Math.PI*2); ctx.fill();
       }
@@ -1014,7 +1072,7 @@
   .nqc-user{align-self:flex-end; color:#04121a; font-weight:600; border-bottom-right-radius:5px;
     background:linear-gradient(135deg,rgba(168,85,247,.92),rgba(232,121,249,.92))}
   .nqc-quick{display:flex; flex-wrap:wrap; gap:7px; align-self:flex-start; max-width:100%}
-  .nqc-chip{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--cyan,#A855F7);
+  .nqc-chip{font-family:'JetBrains Mono',monospace; font-size:12px; color:#C084FC;
     background:rgba(168,85,247,.08); border:1px solid rgba(168,85,247,.35); border-radius:999px;
     padding:6px 11px; cursor:pointer; transition:.16s ease}
   .nqc-chip:hover{background:rgba(168,85,247,.16); color:#EAF2FF; border-color:rgba(168,85,247,.6)}
@@ -1125,7 +1183,7 @@
         chips:[["services","Послуги"],["price","Ціни"],["pay","Оплата"],["deadline","Строки"],["guarantee","Гарантії"],["contact","Написати"]],
         a:{
           services:"Розробка ботів, скриптів і модів, тестування ігор (QA), автоматизація, цифрові товари та хостинг. Що саме вас цікавить?",
-          price:"Орієнтовно: розробка від 1 500 ₴, QA від 800 ₴, автоматизація від 2 000 ₴, хостинг від 300 ₴/міс. Точна вартість — за обсягом і фіксується в рахунку.",
+          price:"Орієнтовно: розробка від $39, QA від $19, автоматизація від $49, цифрові товари від $3, хостинг від $7/міс. Точна вартість — за обсягом і фіксується в рахунку.",
           pay:"Оплата карткою (Visa/Mastercard, Apple/Google Pay) за QR у рахунку, переказом за реквізитами (IBAN) або через PayPal для міжнародних клієнтів. Усе офіційно, ФОП 3 групи.",
           deadline:"Строки залежать від обсягу й узгоджуються до початку робіт. Невеликі задачі — 1–3 дні, більші розбиваємо на етапи та фіксуємо в рахунку.",
           guarantee:"Доопрацьовуємо до узгодженого результату й виправляємо баги після здачі. Повернення: за послуги — до початку робіт, за цифрові товари — якщо доступ не було надано.",
@@ -1150,7 +1208,7 @@
         chips:[["services","Services"],["price","Prices"],["pay","Payment"],["deadline","Timelines"],["guarantee","Guarantees"],["contact","Contact"]],
         a:{
           services:"Development of bots, scripts and mods, game testing (QA), automation, digital goods and hosting. What exactly are you interested in?",
-          price:"Indicative: development from 1 500 ₴, QA from 800 ₴, automation from 2 000 ₴, hosting from 300 ₴/mo. The exact cost depends on scope and is fixed in the invoice.",
+          price:"Indicative: development from $39, QA from $19, automation from $49, digital goods from $3, hosting from $7/mo. The exact cost depends on scope and is fixed in the invoice.",
           pay:"Pay by card (Visa/Mastercard, Apple/Google Pay) via the QR in the invoice, by bank transfer (IBAN), or via PayPal for international clients. Everything is official — Group 3 sole proprietor.",
           deadline:"Timelines depend on scope and are agreed before work begins. Small tasks take 1–3 days; larger ones are split into stages and fixed in the invoice.",
           guarantee:"We refine to the agreed result and fix bugs after delivery. Refunds: for services — before work starts; for digital goods — if access was not provided.",
@@ -1165,10 +1223,46 @@
           slava:"Героям Слава! 🇺🇦 Glory to the Heroes!"
         },
         fallback:"I'm not sure I got that right. Best to message me on Telegram @DamnGiveMeMoney or email dimanartenko00@gmail.com and I'll reply personally. I can also tell you about services, prices, payment, timelines or guarantees."
+      },
+      pl:{
+        fabOpen:"Otwórz czat z konsultantem", fabClose:"Zamknij czat", close:"Zamknij czat",
+        title:"Konsultant Nartenko.QA", status:"Zwykle odpowiada szybko",
+        placeholder:"Napisz pytanie…", inputAria:"Napisz pytanie do konsultanta",
+        tg:"Napisz na Telegramie", email:"lub e-mail:", typing:"Pisze…",
+        greeting:"Cześć! Jestem konsultantem Nartenko.QA. W czym mogę pomóc? Wybierz temat poniżej lub napisz pytanie.",
+        chips:[["services","Usługi"],["price","Ceny"],["pay","Płatność"],["deadline","Terminy"],["guarantee","Gwarancje"],["contact","Napisz"]],
+        fallback:"Nie jestem pewien, czy dobrze zrozumiałem. Najlepiej napisz na Telegramie @DamnGiveMeMoney lub na e-mail dimanartenko00@gmail.com — odpowiem osobiście. Mogę też opowiedzieć o usługach, cenach, płatności, terminach i gwarancjach."
+      },
+      de:{
+        fabOpen:"Chat mit Berater öffnen", fabClose:"Chat schließen", close:"Chat schließen",
+        title:"Nartenko.QA Berater", status:"Antwortet meist schnell",
+        placeholder:"Frage eingeben…", inputAria:"Ihre Frage an den Berater",
+        tg:"Auf Telegram schreiben", email:"oder E-Mail:", typing:"Schreibt…",
+        greeting:"Hallo! Ich bin der Berater von Nartenko.QA. Wie kann ich helfen? Wählen Sie unten ein Thema oder stellen Sie eine Frage.",
+        chips:[["services","Leistungen"],["price","Preise"],["pay","Zahlung"],["deadline","Termine"],["guarantee","Garantien"],["contact","Kontakt"]],
+        fallback:"Ich bin nicht sicher, ob ich das richtig verstanden habe. Am besten schreiben Sie auf Telegram @DamnGiveMeMoney oder per E-Mail dimanartenko00@gmail.com — ich antworte persönlich. Ich kann auch über Leistungen, Preise, Zahlung, Termine und Garantien informieren."
+      },
+      es:{
+        fabOpen:"Abrir chat con el consultor", fabClose:"Cerrar chat", close:"Cerrar chat",
+        title:"Consultor Nartenko.QA", status:"Suele responder rápido",
+        placeholder:"Escribe tu pregunta…", inputAria:"Escribe tu pregunta al consultor",
+        tg:"Escribir por Telegram", email:"o correo:", typing:"Escribiendo…",
+        greeting:"¡Hola! Soy el consultor de Nartenko.QA. ¿En qué puedo ayudarte? Elige un tema abajo o escribe tu pregunta.",
+        chips:[["services","Servicios"],["price","Precios"],["pay","Pago"],["deadline","Plazos"],["guarantee","Garantías"],["contact","Contacto"]],
+        fallback:"No estoy seguro de haberlo entendido bien. Lo mejor es escribirme por Telegram @DamnGiveMeMoney o al correo dimanartenko00@gmail.com — te responderé personalmente. También puedo contarte sobre servicios, precios, pago, plazos y garantías."
+      },
+      fr:{
+        fabOpen:"Ouvrir le chat avec le consultant", fabClose:"Fermer le chat", close:"Fermer le chat",
+        title:"Consultant Nartenko.QA", status:"Répond généralement vite",
+        placeholder:"Posez votre question…", inputAria:"Posez votre question au consultant",
+        tg:"Écrire sur Telegram", email:"ou e-mail :", typing:"Écrit…",
+        greeting:"Bonjour ! Je suis le consultant de Nartenko.QA. Comment puis-je aider ? Choisissez un sujet ci-dessous ou posez votre question.",
+        chips:[["services","Services"],["price","Tarifs"],["pay","Paiement"],["deadline","Délais"],["guarantee","Garanties"],["contact","Contact"]],
+        fallback:"Je ne suis pas sûr d'avoir bien compris. Le mieux est de m'écrire sur Telegram @DamnGiveMeMoney ou par e-mail dimanartenko00@gmail.com — je répondrai personnellement. Je peux aussi présenter les services, tarifs, paiement, délais et garanties."
       }
     };
 
-    function lang(){ return (document.body.dataset.lang === 'uk') ? 'uk' : 'en'; }
+    function lang(){ var s = document.body.dataset.lang; return T[s] ? s : 'en'; }
     function siteLang(){ return document.body.dataset.lang || 'uk'; }
 
     var RULES = [
@@ -1188,14 +1282,21 @@
       {t:'greet', k:['привіт','вітаю','вітання','добрий','доброго','здоров','hello','hey','howdy','good morning','good afternoon']}
     ];
     function match(text){
-      var s = (text || '').toLowerCase();
+      var raw = (text || '').toLowerCase();
+      var padded = ' ' + raw.replace(/[^0-9a-zа-яіїєґ'’]+/gi, ' ').trim() + ' ';
       for(var i=0;i<RULES.length;i++){
-        for(var j=0;j<RULES[i].k.length;j++){ if(s.indexOf(RULES[i].k[j]) > -1) return RULES[i].t; }
+        for(var j=0;j<RULES[i].k.length;j++){
+          var k = RULES[i].k[j];
+          // Latin tokens → whole-word match (avoids 'key' in "Turkey", 'hey' in "they", 'eur' in "Europe");
+          // Cyrillic stems → substring/prefix match (e.g. 'цін' → 'ціна'/'ціни').
+          if(/^[a-z0-9 ]+$/.test(k)){ if(padded.indexOf(' ' + k + ' ') > -1) return RULES[i].t; }
+          else if(raw.indexOf(k) > -1){ return RULES[i].t; }
+        }
       }
       return null;
     }
 
-    var interacted = false, pendingTimer = null, curTyping = null;
+    var interacted = false, pendingTimer = null, curTyping = null, curAbort = null;
 
     function scrollDown(){ log.scrollTop = log.scrollHeight; }
     function bubble(text, who){
@@ -1245,8 +1346,12 @@
     function ask(userText, forcedTopic){
       interacted = true;
       bubble(userText, 'user');
-      var topic = forcedTopic || match(userText);
-      if(topic){ respond(topic); } else { aiRespond(userText); }
+      var L = T[lang()];
+      if(L && L.a){
+        var topic = forcedTopic || match(userText);
+        if(topic && L.a[topic]){ respond(topic); return; }
+      }
+      aiRespond(userText);
     }
     var WORKER_URL = "https://nartenkoqa-ai.dimanartenko79.workers.dev";  /* Cloudflare Worker (Claude AI) */
     function aiRespond(userText){
@@ -1260,11 +1365,15 @@
         bubble((txt && String(txt).trim()) ? String(txt).trim() : L.fallback, 'bot');
       }
       if(!WORKER_URL){ done(L.fallback); return; }
+      var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+      curAbort = ctrl;
+      var to = setTimeout(function(){ if(ctrl){ try{ ctrl.abort(); }catch(e){} } }, 20000);
+      function fin(txt){ clearTimeout(to); if(curAbort === ctrl) curAbort = null; done(txt); }
       fetch(WORKER_URL, { method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ q:userText, lang:siteLang() }) })
+        body: JSON.stringify({ q:userText, lang:siteLang() }), signal: ctrl ? ctrl.signal : undefined })
         .then(function(r){ return r.json(); })
-        .then(function(d){ done(d && d.reply); })
-        .catch(function(){ done(L.fallback); });
+        .then(function(d){ fin(d && d.reply); })
+        .catch(function(){ fin(L.fallback); });
     }
     function renderGreeting(){
       log.innerHTML = '';
@@ -1294,13 +1403,13 @@
     }
 
     function isOpen(){ return root.classList.contains('open'); }
-    function openChat(skipFocus){
+    function openChat(skipFocus, noPersist){
       root.classList.add('open');
       panel.hidden = false;
       fab.setAttribute('aria-expanded','true');
       fab.setAttribute('aria-label', T[lang()].fabClose);
       if(!log.children.length) renderGreeting();
-      try{ localStorage.setItem('nq_chat_open','1'); }catch(e){}
+      if(!noPersist){ try{ localStorage.setItem('nq_chat_open','1'); }catch(e){} }
       if(!skipFocus) setTimeout(function(){ try{ input.focus(); }catch(e){} }, 60);
     }
     function closeChat(returnFocus){
@@ -1309,12 +1418,32 @@
       fab.setAttribute('aria-expanded','false');
       fab.setAttribute('aria-label', T[lang()].fabOpen);
       if(pendingTimer){ clearTimeout(pendingTimer); pendingTimer = null; }
+      if(curTyping && curTyping.parentNode){ curTyping.parentNode.removeChild(curTyping); }
+      curTyping = null;
+      if(curAbort){ try{ curAbort.abort(); }catch(e){} curAbort = null; }
       try{ localStorage.setItem('nq_chat_open','0'); }catch(e){}
       if(returnFocus){ try{ fab.focus(); }catch(e){} }
     }
 
     fab.addEventListener('click', function(){ isOpen() ? closeChat(true) : openChat(); });
     closeBtn.addEventListener('click', function(){ closeChat(true); });
+    (function(){ var db = document.getElementById('nqc-discord'); if(!db) return;
+      db.addEventListener('click', function(){
+        var nick = db.getAttribute('data-nick') || '';
+        var orig = db.textContent;
+        function ok(){ db.textContent = (siteLang()==='uk'?'Скопійовано ✓':'Copied ✓'); setTimeout(function(){ db.textContent = orig; }, 1400); }
+        function fb(){ try{ var ta=document.createElement('textarea'); ta.value=nick; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); ok(); }catch(e){} }
+        try{ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(nick).then(ok, fb); } else { fb(); } }catch(e){ fb(); }
+      });
+    })();
+    (function(){ var t = document.getElementById('navToggle'), h = document.querySelector('header.nav'), lk = document.getElementById('navLinks'); if(!t||!h) return;
+      function setOpen(o){ h.classList.toggle('menu-open', o); t.setAttribute('aria-expanded', o?'true':'false'); }
+      t.addEventListener('click', function(e){ e.stopPropagation(); setOpen(!h.classList.contains('menu-open')); });
+      if(lk) lk.addEventListener('click', function(e){ if(e.target && e.target.tagName === 'A') setOpen(false); });
+      document.addEventListener('click', function(e){ if(h.classList.contains('menu-open') && !h.contains(e.target)) setOpen(false); });
+      document.addEventListener('keydown', function(e){ if((e.key === 'Escape' || e.key === 'Esc') && h.classList.contains('menu-open')) setOpen(false); });
+    })();
+    try{ document.querySelectorAll('.card .ico svg, .titem .ico svg, .step .n').forEach(function(s){ s.setAttribute('aria-hidden','true'); if(s.tagName.toLowerCase()==='svg') s.setAttribute('focusable','false'); }); }catch(e){}
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var v = input.value.trim();
@@ -1344,7 +1473,7 @@
       try{ autoDone = sessionStorage.getItem('nq_chat_auto') || '0'; }catch(e){}
       if(autoDone !== '1'){
         try{ sessionStorage.setItem('nq_chat_auto','1'); }catch(e){}
-        setTimeout(function(){ if(!isOpen()) openChat(true); }, 2200);
+        setTimeout(function(){ if(!isOpen()) openChat(true, true); }, 2200);
       }
     }
   })();

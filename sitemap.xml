@@ -1,4 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nartenkoqa.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://nartenkoqa.com/</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://nartenkoqa.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nartenkoqa.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nartenkoqa.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nartenkoqa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nartenkoqa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nartenkoqa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nartenkoqa.com/"/>
+  </url>
+  <url><loc>https://nartenkoqa.com/en/</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://nartenkoqa.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nartenkoqa.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nartenkoqa.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nartenkoqa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nartenkoqa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nartenkoqa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nartenkoqa.com/"/>
+  </url>
+  <url><loc>https://nartenkoqa.com/pl/</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://nartenkoqa.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nartenkoqa.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nartenkoqa.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nartenkoqa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nartenkoqa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nartenkoqa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nartenkoqa.com/"/>
+  </url>
+  <url><loc>https://nartenkoqa.com/de/</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://nartenkoqa.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nartenkoqa.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nartenkoqa.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nartenkoqa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nartenkoqa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nartenkoqa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nartenkoqa.com/"/>
+  </url>
+  <url><loc>https://nartenkoqa.com/es/</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://nartenkoqa.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nartenkoqa.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nartenkoqa.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nartenkoqa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nartenkoqa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nartenkoqa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nartenkoqa.com/"/>
+  </url>
+  <url><loc>https://nartenkoqa.com/fr/</loc><lastmod>2026-09-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://nartenkoqa.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nartenkoqa.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://nartenkoqa.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://nartenkoqa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nartenkoqa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nartenkoqa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nartenkoqa.com/"/>
+  </url>
 </urlset>
