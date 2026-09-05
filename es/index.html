@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <meta name="google-site-verification" content="7C3EFuLxFGKMMxpXnV8WymMvuYQ6ezsJT_MShJPUJbQ">
-<meta name="x-build" content="20260905-102312">
+<meta name="x-build" content="20260905-104032">
 <title>Nartenko.QA — desarrollo de software, QA de juegos y automatización</title>
 <meta name="description" content="Desarrollo, pruebas y automatización para juegos y software. Servicios, precios, pago con tarjeta/PayPal, contacto. Oficial, con factura.">
 <meta name="robots" content="index,follow">
@@ -163,6 +163,14 @@
   .skip{position:absolute; left:-9999px; top:0; z-index:200; background:var(--cyan); color:#0b0912;
     padding:10px 16px; border-radius:0 0 12px 0; font-weight:700; text-decoration:none}
   .skip:focus{left:0}
+  .cardpay{margin-top:20px}
+  .cp-row{display:flex; gap:10px; flex-wrap:wrap}
+  .cp-amt{flex:1; min-width:130px; background:rgba(255,255,255,.03); border:1px solid var(--line2); color:var(--ink);
+    font-family:inherit; font-size:15px; padding:12px 14px; border-radius:12px; transition:border-color .18s ease}
+  .cp-amt::placeholder{color:var(--muted)}
+  .cp-amt:focus{outline:none; border-color:var(--cyan); box-shadow:0 0 16px rgba(168,85,247,.18)}
+  .cp-btn{white-space:nowrap}
+  .cp-hint{margin-top:9px; font-size:12.5px; color:var(--body)}
 
   /* ============ BUTTONS ============ */
   .btn{position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:8px; font-family:inherit;
@@ -663,7 +671,14 @@
           <li data-i18n="pay3" data-_uk="Переказ за реквізитами (IBAN) у будь-якому банку">Transferencia bancaria (IBAN) desde cualquier banco</li>
           <li data-i18n="pay4" data-_uk="QR-код у рахунку — оплата за пару хвилин">Código QR en la factura — paga en un par de minutos</li>
         </ul>
-        <a class="btn primary" href="https://www.paypal.com/qrcodes/p2pqrc/5ETWW5YGV3PAG" target="_blank" rel="noopener" style="margin-top:20px" data-i18n="pay_btn" data-_uk="Оплатити через PayPal">Pagar con PayPal</a>
+        <div class="cardpay">
+          <div class="cp-row">
+            <input class="cp-amt" id="cp-amt" type="number" min="1" step="1" inputmode="numeric" placeholder="Importe, ₴" aria-label="Сума в гривнях">
+            <button class="btn primary cp-btn" id="cp-btn" type="button" data-i18n="cp_btn" data-_uk="Оплатити карткою">Pagar con tarjeta</button>
+          </div>
+          <div class="cp-hint" id="cp-hint" data-i18n="cp_hint" data-_uk="Visa/Mastercard, Apple/Google&amp;nbsp;Pay — захищена оплата monobank.">Visa/Mastercard, Apple/Google&nbsp;Pay — pago seguro con monobank.</div>
+        </div>
+        <a class="btn ghost" href="https://www.paypal.com/qrcodes/p2pqrc/5ETWW5YGV3PAG" target="_blank" rel="noopener" style="margin-top:12px" data-i18n="pay_btn" data-_uk="Оплатити через PayPal">Pagar con PayPal</a>
       </div>
       <div class="panel terms" id="terms">
         <h3 data-i18n="terms_h" data-_uk="Умови (публічна оферта)">Condiciones (oferta pública)</h3>
@@ -855,11 +870,11 @@
     els.forEach(el => { if(el.dataset._uk == null) el.dataset._uk = el.innerHTML; });
     const DICTS = { en:EN, pl:PL, de:DE, es:ES, fr:FR };
     // stat-strip labels (UK stays as page markup)
-    Object.assign(EN, {st_l1:"orders delivered", st_l2:"supported languages", st_l3:"official, with invoice", skip:"Skip to content"});
-    Object.assign(PL, {st_l1:"zrealizowanych zamówień", st_l2:"obsługiwane języki", st_l3:"oficjalnie, z fakturą", skip:"Przejdź do treści"});
-    Object.assign(DE, {st_l1:"erledigte Aufträge", st_l2:"unterstützte Sprachen", st_l3:"offiziell, mit Rechnung", skip:"Zum Inhalt springen"});
-    Object.assign(ES, {st_l1:"pedidos completados", st_l2:"idiomas disponibles", st_l3:"oficial, con factura", skip:"Ir al contenido"});
-    Object.assign(FR, {st_l1:"commandes réalisées", st_l2:"langues disponibles", st_l3:"officiel, avec facture", skip:"Aller au contenu"});
+    Object.assign(EN, {st_l1:"orders delivered", st_l2:"supported languages", st_l3:"official, with invoice", skip:"Skip to content", cp_btn:"Pay by card", cp_hint:"Visa/Mastercard, Apple/Google&nbsp;Pay — secure monobank checkout."});
+    Object.assign(PL, {st_l1:"zrealizowanych zamówień", st_l2:"obsługiwane języki", st_l3:"oficjalnie, z fakturą", skip:"Przejdź do treści", cp_btn:"Zapłać kartą", cp_hint:"Visa/Mastercard, Apple/Google&nbsp;Pay — bezpieczna płatność monobank."});
+    Object.assign(DE, {st_l1:"erledigte Aufträge", st_l2:"unterstützte Sprachen", st_l3:"offiziell, mit Rechnung", skip:"Zum Inhalt springen", cp_btn:"Mit Karte zahlen", cp_hint:"Visa/Mastercard, Apple/Google&nbsp;Pay — sichere monobank-Zahlung."});
+    Object.assign(ES, {st_l1:"pedidos completados", st_l2:"idiomas disponibles", st_l3:"oficial, con factura", skip:"Ir al contenido", cp_btn:"Pagar con tarjeta", cp_hint:"Visa/Mastercard, Apple/Google&nbsp;Pay — pago seguro con monobank."});
+    Object.assign(FR, {st_l1:"commandes réalisées", st_l2:"langues disponibles", st_l3:"officiel, avec facture", skip:"Aller au contenu", cp_btn:"Payer par carte", cp_hint:"Visa/Mastercard, Apple/Google&nbsp;Pay — paiement sécurisé monobank."});
     const SUP = ['uk','en','pl','de','es','fr'];
     const CODE = { uk:'UA', en:'EN', pl:'PL', de:'DE', es:'ES', fr:'FR' };
     const btn = document.getElementById('langBtn');
@@ -1475,6 +1490,30 @@
       document.addEventListener('keydown', function(e){ if((e.key === 'Escape' || e.key === 'Esc') && h.classList.contains('menu-open')) setOpen(false); });
     })();
     try{ document.querySelectorAll('.card .ico svg, .titem .ico svg, .step .n').forEach(function(s){ s.setAttribute('aria-hidden','true'); if(s.tagName.toLowerCase()==='svg') s.setAttribute('focusable','false'); }); }catch(e){}
+    (function(){
+      var amt=document.getElementById('cp-amt'), pbtn=document.getElementById('cp-btn'), hint=document.getElementById('cp-hint');
+      if(!amt || !pbtn) return;
+      var MONO_URL="https://nartenkoqa-mono.dimanartenko79.workers.dev";
+      var PH={uk:'Сума, ₴',en:'Amount, ₴',pl:'Kwota, ₴',de:'Betrag, ₴',es:'Importe, ₴',fr:'Montant, ₴'};
+      var MSG={uk:{bad:'Введіть суму в ₴',wait:'Створюю оплату…',err:'Не вдалося. Спробуйте ще раз або напишіть у Telegram.'},
+               en:{bad:'Enter amount in ₴',wait:'Creating payment…',err:'Failed. Try again or message us on Telegram.'}};
+      function sl(){ return document.body.dataset.lang || 'uk'; }
+      function setPh(){ amt.placeholder = PH[sl()] || PH.en; }
+      setPh();
+      try{ new MutationObserver(setPh).observe(document.body,{attributes:true,attributeFilter:['data-lang']}); }catch(e){}
+      function m(){ return (sl()==='uk') ? MSG.uk : MSG.en; }
+      pbtn.addEventListener('click', function(){
+        var v=parseFloat(String(amt.value||'').replace(',','.'));
+        if(!(v>=1)){ if(hint) hint.textContent=m().bad; try{amt.focus();}catch(e){} return; }
+        var orig=pbtn.textContent; pbtn.disabled=true; pbtn.textContent=m().wait;
+        var ctrl=(typeof AbortController!=='undefined')?new AbortController():null;
+        var to=setTimeout(function(){ if(ctrl){ try{ctrl.abort();}catch(e){} } },20000);
+        fetch(MONO_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:v,purpose:'Nartenko.QA'}),signal:ctrl?ctrl.signal:undefined})
+          .then(function(r){ return r.json(); })
+          .then(function(d){ clearTimeout(to); if(d && d.url){ location.href=d.url; } else { pbtn.disabled=false; pbtn.textContent=orig; if(hint) hint.textContent=m().err; } })
+          .catch(function(){ clearTimeout(to); pbtn.disabled=false; pbtn.textContent=orig; if(hint) hint.textContent=m().err; });
+      });
+    })();
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var v = input.value.trim();
