@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <meta name="google-site-verification" content="7C3EFuLxFGKMMxpXnV8WymMvuYQ6ezsJT_MShJPUJbQ">
-<meta name="x-build" content="20260905-041920">
+<meta name="x-build" content="20260905-101333">
 <title>Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор</title>
 <meta name="description" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор. Послуги, ціни, оплата карткою/PayPal, контакти. ФОП, офіційно з рахунком.">
 <meta name="robots" content="index,follow">
@@ -1472,7 +1472,10 @@
       // авто-відкриття: чат сам визирає один раз за сесію, коли хтось заходить на сайт
       var autoDone = '0';
       try{ autoDone = sessionStorage.getItem('nq_chat_auto') || '0'; }catch(e){}
-      if(autoDone !== '1'){
+      var isDesktop = false;
+      try{ isDesktop = window.matchMedia('(min-width: 768px)').matches; }catch(e){ isDesktop = (window.innerWidth || 0) >= 768; }
+      // авто-відкриття лише на компʼютері; на телефоні (<768px) чат відкривається тільки по тапу
+      if(autoDone !== '1' && isDesktop){
         try{ sessionStorage.setItem('nq_chat_auto','1'); }catch(e){}
         setTimeout(function(){ if(!isOpen()) openChat(true, true); }, 2200);
       }
