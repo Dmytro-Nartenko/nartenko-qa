@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <meta name="google-site-verification" content="7C3EFuLxFGKMMxpXnV8WymMvuYQ6ezsJT_MShJPUJbQ">
-<meta name="x-build" content="20260905-104032">
+<meta name="x-build" content="20260905-104831">
 <title>Nartenko.QA — desarrollo de software, QA de juegos y automatización</title>
 <meta name="description" content="Desarrollo, pruebas y automatización para juegos y software. Servicios, precios, pago con tarjeta/PayPal, contacto. Oficial, con factura.">
 <meta name="robots" content="index,follow">
@@ -164,6 +164,7 @@
     padding:10px 16px; border-radius:0 0 12px 0; font-weight:700; text-decoration:none}
   .skip:focus{left:0}
   .cardpay{margin-top:20px}
+  .cp-full{width:100%; margin-bottom:10px}
   .cp-row{display:flex; gap:10px; flex-wrap:wrap}
   .cp-amt{flex:1; min-width:130px; background:rgba(255,255,255,.03); border:1px solid var(--line2); color:var(--ink);
     font-family:inherit; font-size:15px; padding:12px 14px; border-radius:12px; transition:border-color .18s ease}
@@ -672,6 +673,7 @@
           <li data-i18n="pay4" data-_uk="QR-код у рахунку — оплата за пару хвилин">Código QR en la factura — paga en un par de minutos</li>
         </ul>
         <div class="cardpay">
+          <input class="cp-amt cp-full" id="cp-purpose" type="text" maxlength="120" placeholder="Concepto del pago (opcional)" aria-label="Призначення платежу">
           <div class="cp-row">
             <input class="cp-amt" id="cp-amt" type="number" min="1" step="1" inputmode="numeric" placeholder="Importe, ₴" aria-label="Сума в гривнях">
             <button class="btn primary cp-btn" id="cp-btn" type="button" data-i18n="cp_btn" data-_uk="Оплатити карткою">Pagar con tarjeta</button>
@@ -1491,14 +1493,15 @@
     })();
     try{ document.querySelectorAll('.card .ico svg, .titem .ico svg, .step .n').forEach(function(s){ s.setAttribute('aria-hidden','true'); if(s.tagName.toLowerCase()==='svg') s.setAttribute('focusable','false'); }); }catch(e){}
     (function(){
-      var amt=document.getElementById('cp-amt'), pbtn=document.getElementById('cp-btn'), hint=document.getElementById('cp-hint');
+      var amt=document.getElementById('cp-amt'), pbtn=document.getElementById('cp-btn'), hint=document.getElementById('cp-hint'), purp=document.getElementById('cp-purpose');
       if(!amt || !pbtn) return;
       var MONO_URL="https://nartenkoqa-mono.dimanartenko79.workers.dev";
       var PH={uk:'Сума, ₴',en:'Amount, ₴',pl:'Kwota, ₴',de:'Betrag, ₴',es:'Importe, ₴',fr:'Montant, ₴'};
+      var PP={uk:'За що оплата (за бажанням)',en:'What is the payment for (optional)',pl:'Za co płatność (opcjonalnie)',de:'Wofür die Zahlung (optional)',es:'Concepto del pago (opcional)',fr:'Objet du paiement (facultatif)'};
       var MSG={uk:{bad:'Введіть суму в ₴',wait:'Створюю оплату…',err:'Не вдалося. Спробуйте ще раз або напишіть у Telegram.'},
                en:{bad:'Enter amount in ₴',wait:'Creating payment…',err:'Failed. Try again or message us on Telegram.'}};
       function sl(){ return document.body.dataset.lang || 'uk'; }
-      function setPh(){ amt.placeholder = PH[sl()] || PH.en; }
+      function setPh(){ amt.placeholder = PH[sl()] || PH.en; if(purp) purp.placeholder = PP[sl()] || PP.en; }
       setPh();
       try{ new MutationObserver(setPh).observe(document.body,{attributes:true,attributeFilter:['data-lang']}); }catch(e){}
       function m(){ return (sl()==='uk') ? MSG.uk : MSG.en; }
@@ -1508,7 +1511,7 @@
         var orig=pbtn.textContent; pbtn.disabled=true; pbtn.textContent=m().wait;
         var ctrl=(typeof AbortController!=='undefined')?new AbortController():null;
         var to=setTimeout(function(){ if(ctrl){ try{ctrl.abort();}catch(e){} } },20000);
-        fetch(MONO_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:v,purpose:'Nartenko.QA'}),signal:ctrl?ctrl.signal:undefined})
+        fetch(MONO_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({amount:v,purpose:(purp&&purp.value.trim())?purp.value.trim():'Оплата послуг Nartenko.QA'}),signal:ctrl?ctrl.signal:undefined})
           .then(function(r){ return r.json(); })
           .then(function(d){ clearTimeout(to); if(d && d.url){ location.href=d.url; } else { pbtn.disabled=false; pbtn.textContent=orig; if(hint) hint.textContent=m().err; } })
           .catch(function(){ clearTimeout(to); pbtn.disabled=false; pbtn.textContent=orig; if(hint) hint.textContent=m().err; });
