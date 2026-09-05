@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <meta name="google-site-verification" content="7C3EFuLxFGKMMxpXnV8WymMvuYQ6ezsJT_MShJPUJbQ">
-<meta name="x-build" content="20260905-101637">
+<meta name="x-build" content="20260905-102312">
 <title>Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор</title>
 <meta name="description" content="Nartenko.QA — розробка, тестування та автоматизація ПЗ й ігор. Послуги, ціни, оплата карткою/PayPal, контакти. ФОП, офіційно з рахунком.">
 <meta name="robots" content="index,follow">
@@ -468,7 +468,7 @@
       </button>
       <div class="langwrap">
         <button id="langBtn" class="langbtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Мова / Language">UA ▾</button>
-        <div class="langmenu" id="langMenu" role="listbox" aria-label="Language">
+        <div class="langmenu" id="langMenu" role="menu" aria-label="Language">
           <button type="button" data-lang="uk"><span>Українська</span><span class="cd">UA</span></button>
           <button type="button" data-lang="en"><span>English</span><span class="cd">EN</span></button>
           <button type="button" data-lang="pl"><span>Polski</span><span class="cd">PL</span></button>
@@ -885,6 +885,26 @@
     });
     document.addEventListener('click', function(e){ if (menu && !menu.contains(e.target) && e.target !== btn) closeMenu(); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape' || e.key === 'Esc') closeMenu(); });
+    // keyboard: menu roles + arrow navigation (WAI-ARIA menu pattern)
+    if (menu) {
+      var mbtns = Array.prototype.slice.call(menu.querySelectorAll('button'));
+      mbtns.forEach(function(b){ b.setAttribute('role','menuitem'); });
+      function focusItem(idx){ if(idx < 0) idx = mbtns.length-1; if(idx >= mbtns.length) idx = 0; try{ mbtns[idx].focus(); }catch(e){} }
+      menu.addEventListener('keydown', function(e){
+        var i = mbtns.indexOf(document.activeElement);
+        if(e.key === 'ArrowDown'){ e.preventDefault(); focusItem(i+1); }
+        else if(e.key === 'ArrowUp'){ e.preventDefault(); focusItem(i-1); }
+        else if(e.key === 'Home'){ e.preventDefault(); focusItem(0); }
+        else if(e.key === 'End'){ e.preventDefault(); focusItem(mbtns.length-1); }
+      });
+      if (btn) btn.addEventListener('keydown', function(e){
+        if(e.key === 'ArrowDown' && !menu.classList.contains('open')){
+          e.preventDefault(); openMenu();
+          var f = menu.querySelector('button[aria-current="true"]') || mbtns[0];
+          if(f) try{ f.focus(); }catch(err){}
+        }
+      });
+    }
 
     let init = null;
     try {
@@ -934,8 +954,19 @@
         });
       }
     }
+    var sprite = null;
+    function buildSprite(){
+      var SS = 32, s = document.createElement('canvas'); s.width = SS; s.height = SS;
+      var sc = s.getContext('2d');
+      var g = sc.createRadialGradient(SS/2,SS/2,0,SS/2,SS/2,SS/2);
+      g.addColorStop(0,'rgba(192,132,252,1)');
+      g.addColorStop(1,'rgba(192,132,252,0)');
+      sc.fillStyle = g; sc.beginPath(); sc.arc(SS/2,SS/2,SS/2,0,Math.PI*2); sc.fill();
+      sprite = s;
+    }
     function draw(){
       ctx.clearRect(0,0,w,h);
+      if(!sprite) buildSprite();
       for(var i=0;i<parts.length;i++){
         var p=parts[i];
         p.x+=p.vx; p.y+=p.vy; p.tp+=p.tw;
@@ -943,18 +974,16 @@
         if(p.x < -12) p.x = w+12; else if(p.x > w+12) p.x = -12;
         var alpha = p.a * (0.6 + 0.4*Math.sin(p.tp));
         var rad = p.r*4;
-        var g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,rad);
-        g.addColorStop(0,'rgba(192,132,252,'+alpha+')');
-        g.addColorStop(1,'rgba(192,132,252,0)');
-        ctx.fillStyle = g;
-        ctx.beginPath(); ctx.arc(p.x,p.y,rad,0,Math.PI*2); ctx.fill();
+        ctx.globalAlpha = alpha < 0 ? 0 : (alpha > 1 ? 1 : alpha);
+        ctx.drawImage(sprite, p.x-rad, p.y-rad, rad*2, rad*2);
       }
+      ctx.globalAlpha = 1;
       raf = requestAnimationFrame(draw);
     }
     function start(){ if(running && !raf) raf = requestAnimationFrame(draw); }
     function stop(){ if(raf){ cancelAnimationFrame(raf); raf=null; } }
     try{
-      size(); make(); start();
+      size(); buildSprite(); make(); start();
       var rt;
       window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(function(){ size(); make(); }, 180); });
       document.addEventListener('visibilitychange', function(){
